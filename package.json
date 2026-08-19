@@ -1,0 +1,12 @@
+{
+  "name": "node-starter",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-site.js",
+    "start": "node index.js",
+    "crawl": "node crawl.js",
+    "download-images": "node scripts/download-images.js",
+    "rename-images": "node scripts/rename-images.js",
+    "test": "node --check index.js && node --check crawl.js && node --check scripts/build-site.js"
+  }
+}

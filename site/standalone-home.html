@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>森森點心坊 – 嘴角上揚的幸福</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --brown: #4e342e;
+      --brown-2: #8d563d;
+      --gold: #c79043;
+      --sand: #eacda3;
+      --sand-soft: #f3e6c9;
+      --pink: #ff9ba7;
+      --pink-soft: #ffe1e5;
+      --ink: #3e352f;
+      --muted: #81746c;
+      --line: #eee4d5;
+      --paper: #ffffff;
+      --cream: #fffaf2;
+      --shadow: 0 18px 42px rgba(78, 52, 46, .10);
+      --font-main: "Microsoft JhengHei", "微軟正黑體", "Noto Sans TC", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 16px/1.7 var(--font-main);
+      overflow-x: hidden;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: var(--font-main);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      min-height: 92px;
+      background: rgba(255, 255, 255, .96);
+      box-shadow: 0 2px 14px rgba(78, 52, 46, .08);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      width: min(1380px, calc(100% - 40px));
+      min-height: 92px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--brown-2);
+      font-weight: 800;
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 50px;
+      height: 50px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--brown-2);
+      font: 800 28px/1 var(--font-main);
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--brown-2);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(18px, 3vw, 46px);
+      margin: 0;
+      padding: 0;
+      color: var(--brown);
+      font-weight: 700;
+      list-style: none;
+    }
+
+    .menu a {
+      position: relative;
+      display: block;
+      padding: 34px 0 31px;
+    }
+
+    .menu a::after {
+      position: absolute;
+      right: 0;
+      bottom: 21px;
+      left: 0;
+      height: 2px;
+      background: var(--gold);
+      content: "";
+      transform: scaleX(0);
+      transition: transform .22s ease;
+    }
+
+    .menu a:hover::after { transform: scaleX(1); }
+
+    .mobile-menu { display: none; }
+
+    .mobile-menu::before {
+      display: block;
+      content: "☰";
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .mobile-menu::after {
+      content: "";
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(280px, 1fr) minmax(360px, 1.25fr);
+      gap: clamp(36px, 8vw, 110px);
+      align-items: center;
+      width: min(1120px, calc(100% - 40px));
+      min-height: 590px;
+      margin: 0 auto;
+      padding: 70px 0 44px;
+    }
+
+    .hero-copy {
+      padding-left: clamp(0px, 2vw, 30px);
+    }
+
+    .sale-note {
+      display: inline-grid;
+      grid-template-columns: 58px auto;
+      align-items: center;
+      margin-bottom: 116px;
+      color: #353535;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .45em;
+      white-space: nowrap;
+    }
+
+    .sale-note::before {
+      height: 60px;
+      background: #ffe85c;
+      content: "";
+    }
+
+    .hero-kicker {
+      margin: 0 0 6px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .14em;
+    }
+
+    .hero h1 {
+      margin: 0;
+      color: #2f2d2c;
+      font: 500 clamp(42px, 5.6vw, 64px)/1.24 var(--font-main);
+      letter-spacing: .13em;
+    }
+
+    .hero-stores {
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+
+    .hero-media {
+      position: relative;
+      height: min(430px, 32vw);
+      min-height: 330px;
+      background: linear-gradient(135deg, #fff8e6, #fff 42%, #f8ead1);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .hero-media::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 64px;
+      height: 100%;
+      background: #ffe85c;
+      content: "";
+    }
+
+    .image-slot {
+      position: relative;
+      display: grid;
+      min-height: 100%;
+      place-items: center;
+      color: rgba(78, 52, 46, .62);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .78), rgba(255, 255, 255, .34)),
+        repeating-linear-gradient(45deg, rgba(199, 144, 67, .12) 0 12px, rgba(234, 205, 163, .16) 12px 24px);
+      text-align: center;
+    }
+
+    .image-slot::before {
+      position: absolute;
+      inset: 22px;
+      border: 1px dashed rgba(78, 52, 46, .24);
+      content: "";
+    }
+
+    .image-slot span {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 132px;
+      min-height: 44px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, .72);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .slider-arrows {
+      pointer-events: none;
+      position: absolute;
+      right: -44px;
+      left: -44px;
+      top: 50%;
+      display: flex;
+      justify-content: space-between;
+      color: #dfc797;
+      font-size: 64px;
+      font-weight: 200;
+      transform: translateY(-50%);
+    }
+
+    .dots {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin: 0;
+      padding: 0 0 4px;
+      list-style: none;
+    }
+
+    .dots li {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #d8d8d8;
+    }
+
+    .dots li:first-child {
+      border-radius: 3px 3px 50% 50%;
+      background: var(--gold);
+    }
+
+    .intro-band {
+      position: relative;
+      overflow: hidden;
+      background: var(--sand-soft);
+    }
+
+    .intro-band::before {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 35%;
+      min-width: 360px;
+      background:
+        radial-gradient(circle at 30% 16%, rgba(255, 255, 255, .82) 0 34px, transparent 35px),
+        radial-gradient(circle at 18% 74%, rgba(255, 255, 255, .56) 0 28px, transparent 29px),
+        linear-gradient(140deg, rgba(255, 255, 255, .33), transparent);
+      content: "";
+      opacity: .9;
+    }
+
+    .section-inner {
+      position: relative;
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .service-layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 56px;
+      align-items: center;
+      padding: 78px 0;
+    }
+
+    .intro-title h2 {
+      margin: 0;
+      color: #8b390f;
+      font-size: 42px;
+      line-height: 1.18;
+      letter-spacing: .05em;
+    }
+
+    .intro-title strong {
+      display: block;
+      margin-top: 3px;
+      color: #8b390f;
+      font-size: 26px;
+      letter-spacing: .05em;
+    }
+
+    .divider-mark {
+      position: relative;
+      width: 2px;
+      height: 150px;
+      margin: 34px 0 24px 4px;
+      background: #c36a4b;
+    }
+
+    .divider-mark::after {
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      border: 4px solid #c36a4b;
+      border-radius: 50%;
+      background: var(--sand-soft);
+      content: "";
+      transform: translateX(-50%);
+    }
+
+    .intro-title p {
+      margin: 0 0 8px;
+      color: #777;
+      font-size: 17px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      background: #f8efe2;
+    }
+
+    .service-card .image-slot {
+      height: 100%;
+      align-items: end;
+      padding: 0 28px 36px;
+      text-align: left;
+    }
+
+    .service-card .image-slot::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 36%;
+      background: linear-gradient(transparent, rgba(48, 39, 34, .74));
+      content: "";
+    }
+
+    .service-card span {
+      justify-self: start;
+      display: block;
+      min-width: 0;
+      background: transparent;
+      color: #fff;
+      font-size: 23px;
+      line-height: 1.45;
+      text-align: left;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+    }
+
+    .service-card em {
+      display: block;
+      color: #fff;
+      font-size: 15px;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .hot-badge {
+      position: absolute;
+      top: 20px;
+      right: 22px;
+      z-index: 2;
+      display: grid;
+      width: 54px;
+      height: 54px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--gold);
+      font-size: 17px;
+    }
+
+    .baby {
+      padding: 76px 0;
+      background: linear-gradient(180deg, var(--pink-soft), #f6bac1);
+    }
+
+    .baby-card {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      min-height: 420px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .baby-visual {
+      position: relative;
+      min-height: 420px;
+    }
+
+    .baby-visual .label {
+      position: absolute;
+      right: 80px;
+      bottom: 96px;
+      z-index: 2;
+      width: 260px;
+      padding: 22px 28px;
+      color: #fff;
+      background: rgba(255, 123, 138, .76);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.25;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .baby-copy {
+      padding: 52px 70px;
+    }
+
+    .baby-copy h2,
+    .news h2,
+    .gift-copy h2 {
+      margin: 0 0 10px;
+      color: var(--brown);
+      font-size: clamp(34px, 4vw, 46px);
+      line-height: 1.22;
+      letter-spacing: .02em;
+    }
+
+    .sub {
+      margin: 0 0 24px;
+      color: #df9f54;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .baby-copy p {
+      margin: 0 0 28px;
+      color: #777;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 32px;
+      color: #fff;
+      background: var(--pink);
+      border: 0;
+      font-weight: 800;
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .button:hover {
+      filter: brightness(.96);
+      transform: translateY(-2px);
+    }
+
+    .news {
+      padding: 78px 0;
+      background: #fff;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section-heading .button {
+      color: #6a3906;
+      background: var(--sand);
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .news-card {
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .news-card .image-slot {
+      min-height: 260px;
+    }
+
+    .news-body {
+      padding: 24px 24px 28px;
+    }
+
+    .date {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .news-card h3 {
+      margin: 8px 0 12px;
+      color: var(--brown);
+      font-size: 24px;
+      line-height: 1.35;
+    }
+
+    .news-card p {
+      margin: 0 0 18px;
+      color: #777;
+    }
+
+    .more {
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .gifts {
+      position: relative;
+      overflow: hidden;
+      padding: 82px 0;
+      background: #f7f3eb;
+    }
+
+    .gift-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .gift-copy p {
+      margin: 0 0 8px;
+      color: #7b6f65;
+      font-size: 20px;
+    }
+
+    .gift-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .gift-item {
+      display: block;
+      min-height: 180px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .gift-item .image-slot {
+      min-height: 180px;
+    }
+
+    .catering {
+      position: relative;
+      padding: 88px 0;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(58, 37, 26, .78), rgba(58, 37, 26, .34)),
+        var(--brown);
+    }
+
+    .catering-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .catering h2 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      letter-spacing: .04em;
+    }
+
+    .catering p {
+      margin: 0 0 24px;
+      color: rgba(255, 255, 255, .82);
+      font-size: 20px;
+    }
+
+    .catering .button {
+      color: #6a3906;
+      background: var(--sand);
+    }
+
+    .menu-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .menu-card {
+      min-height: 300px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .menu-card .image-slot {
+      min-height: 300px;
+      align-items: end;
+      padding: 0 26px 28px;
+    }
+
+    .menu-card .menu-card-copy {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 12px;
+      width: 100%;
+      color: #fff;
+      text-align: left;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, .42);
+    }
+
+    .menu-card .menu-card-copy span,
+    .menu-card .menu-card-copy small {
+      display: block;
+      color: rgba(255, 255, 255, .88);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .menu-card .menu-card-copy strong {
+      display: block;
+      font-size: 26px;
+    }
+
+    .stores {
+      padding: 46px 0;
+      background: #fff;
+    }
+
+    .store-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .store {
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .store h3 {
+      margin: 0 0 8px;
+      color: var(--brown);
+      font-size: 22px;
+    }
+
+    .store p {
+      margin: 0;
+      color: #777;
+      line-height: 1.8;
+    }
+
+    .footer {
+      padding: 40px 0;
+      color: rgba(255, 255, 255, .78);
+      background: var(--brown);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .footer a { color: var(--sand); }
+
+    @media (max-width: 980px) {
+      .nav { min-height: 78px; }
+      .site-header { min-height: 78px; }
+      .menu { display: none; }
+      .mobile-menu {
+        position: fixed;
+        top: 18px;
+        right: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        color: var(--brown);
+      }
+      .hero,
+      .service-layout,
+      .baby-card,
+      .gift-layout,
+      .catering-layout {
+        grid-template-columns: 1fr;
+      }
+      .sale-note { margin-bottom: 52px; }
+      .hero-media { height: 390px; }
+      .service-grid,
+      .news-grid,
+      .store-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .baby-copy { padding: 44px; }
+      .gift-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      body { font-size: 15px; }
+      .nav { width: min(100% - 28px, 1120px); }
+      .nav { gap: 12px; }
+      .mobile-menu {
+        flex: 0 0 42px;
+        margin-left: auto;
+      }
+      .brand-mark { width: 44px; height: 44px; font-size: 24px; }
+      .brand-text { font-size: 18px; }
+      .brand-text span { font-size: 12px; }
+      .hero {
+        min-height: auto;
+        padding: 42px 0 44px;
+      }
+      .sale-note {
+        grid-template-columns: 42px auto;
+        margin-bottom: 38px;
+        font-size: 12px;
+        letter-spacing: .24em;
+      }
+      .sale-note::before { height: 44px; }
+      .hero h1 {
+        font-size: 34px;
+        letter-spacing: .06em;
+      }
+      .hero-stores {
+        font-size: 13px;
+        letter-spacing: .08em;
+      }
+      .hero-media {
+        min-height: 280px;
+        height: 280px;
+      }
+      .slider-arrows { display: none; }
+      .service-layout,
+      .baby,
+      .news,
+      .gifts,
+      .catering {
+        padding: 56px 0;
+      }
+      .intro-title h2,
+      .baby-copy h2,
+      .news h2,
+      .gift-copy h2 {
+        font-size: 32px;
+      }
+      .service-grid,
+      .news-grid,
+      .gift-grid,
+      .menu-cards,
+      .store-grid {
+        grid-template-columns: 1fr;
+      }
+      .service-card,
+      .baby-visual,
+      .baby-card,
+      .menu-card .image-slot,
+      .menu-card {
+        min-height: 310px;
+      }
+      .baby-copy { padding: 34px 24px; }
+      .baby-visual .label {
+        right: 28px;
+        bottom: 46px;
+        width: 220px;
+      }
+      .section-heading {
+        display: block;
+      }
+      .section-heading .button {
+        margin-top: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="主選單">
+      <a class="brand" href="https://www.sensen.com.tw/" target="_blank" rel="noreferrer">
+        <span class="brand-mark">S</span>
+        <span class="brand-text">森森點心坊<span>SenSen Bakery</span></span>
+      </a>
+      <ul class="menu">
+        <li><a href="https://www.sensen.com.tw/%e9%97%9c%e6%96%bc%e6%a3%ae%e6%a3%ae/" target="_blank" rel="noreferrer">關於森森</a></li>
+        <li><a href="https://www.sensen.com.tw/%e6%9c%80%e6%96%b0%e6%b6%88%e6%81%af/" target="_blank" rel="noreferrer">最新消息</a></li>
+        <li><a href="https://www.sensen.com.tw/%e7%94%a2%e5%93%81%e4%bb%8b%e7%b4%b9/%e7%94%9f%e6%97%a5%e8%9b%8b%e7%b3%95-%e4%b8%8b%e6%96%b9%e6%9c%89dm%e4%be%9b%e4%b8%8b%e8%bc%89-264/" target="_blank" rel="noreferrer">產品介紹</a></li>
+        <li><a href="https://www.sensen.com.tw/%e7%b2%be%e7%b7%bb%e5%a4%96%e7%87%b4-355/" target="_blank" rel="noreferrer">酒會/茶會</a></li>
+        <li><a href="https://www.sensen.com.tw/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e6%b3%a2%e5%a3%ab%e9%a0%93%e6%b4%be%e7%b3%bb%e5%88%97/" target="_blank" rel="noreferrer">頂家彌月</a></li>
+        <li><a href="https://www.sensen.com.tw/%e5%b8%b8%e8%a6%8b%e5%95%8f%e9%a1%8c/" target="_blank" rel="noreferrer">常見問題</a></li>
+        <li><a href="https://www.sensen.com.tw/%e9%96%80%e5%b8%82%e8%b3%87%e8%a8%8a/" target="_blank" rel="noreferrer">門市資訊</a></li>
+        <li><a href="https://www.sensen.com.tw/contact/" target="_blank" rel="noreferrer">連絡我們</a></li>
+      </ul>
+      <span class="mobile-menu" aria-hidden="true"></span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="首頁主視覺">
+      <div class="hero-copy">
+        <div class="sale-note">每週 6 款麵包特價 ON SALE</div>
+        <p class="hero-kicker">每週指定分店特價放送!</p>
+        <h1>BREAD!<br>SENSEN BAKERY</h1>
+        <p class="hero-stores">周一澄和店 / 周二博愛店 / 周三新富店 / 周四文龍店</p>
+      </div>
+      <div class="hero-media">
+        <div class="image-slot"><img src="data/images/image-photo-4.jpg" alt="森森點心坊首頁輪播圖片"></div>
+      </div>
+      <div class="slider-arrows" aria-hidden="true"><span>‹</span><span>›</span></div>
+      <ol class="dots" aria-label="輪播指示">
+        <li></li><li></li><li></li><li></li><li></li>
+      </ol>
+    </section>
+
+    <section class="intro-band">
+      <div class="section-inner service-layout">
+        <div class="intro-title">
+          <h2>享受</h2>
+          <strong>嘴角上揚的幸福</strong>
+          <div class="divider-mark" aria-hidden="true"></div>
+          <p>Fresh, healthy and delicious.</p>
+          <p>Sensen always thinks about you.</p>
+        </div>
+        <div class="service-grid">
+          <a class="service-card" href="https://www.sensen.com.tw/%e7%94%a2%e5%93%81%e4%bb%8b%e7%b4%b9/%e7%94%9f%e6%97%a5%e8%9b%8b%e7%b3%95-%e4%b8%8b%e6%96%b9%e6%9c%89dm%e4%be%9b%e4%b8%8b%e8%bc%89-264/" target="_blank" rel="noreferrer">
+            <b class="hot-badge">Hot</b>
+            <div class="image-slot"><span><em>Birthday Cake</em>生日蛋糕</span></div>
+          </a>
+          <a class="service-card" href="https://www.sensen.com.tw/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e6%b3%a2%e5%a3%ab%e9%a0%93%e6%b4%be%e7%b3%bb%e5%88%97/" target="_blank" rel="noreferrer">
+            <div class="image-slot"><span><em>Baby Gift Box</em>彌月禮盒</span></div>
+          </a>
+          <a class="service-card" href="https://www.sensen.com.tw/%e7%b2%be%e7%b7%bb%e5%a4%96%e7%87%b4-355/" target="_blank" rel="noreferrer">
+            <div class="image-slot"><span><em>Catering</em>酒會/茶會</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="baby" aria-labelledby="baby-title">
+      <div class="section-inner baby-card">
+        <div class="baby-visual">
+          <div class="image-slot"><span>彌月蛋糕圖片預留位</span></div>
+          <div class="label">Top House<br>&amp;<br>Sensen Bakery</div>
+        </div>
+        <div class="baby-copy">
+          <h2 id="baby-title">彌月試吃申請</h2>
+          <p class="sub">Top house &amp; Sensen bakery</p>
+          <p>無論您是懷孕中的媽咪或是寶寶剛誕生，都感謝您給予機會選擇森森彌月蛋糕，讓我們與您一同分享這份幸福的喜悅！產前產後均可申請，產前建議懷孕 35 週以上的媽咪唷！</p>
+          <a class="button" href="https://www.sensen.com.tw/%E9%A0%82%E5%AE%B6%E5%BD%8C%E6%9C%88/taste_apply/" target="_blank" rel="noreferrer">♥ 線上申請</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="news" aria-labelledby="news-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <h2 id="news-title">最新消息 latest news</h2>
+            <p class="sub">森森點心坊的近期活動與預購資訊</p>
+          </div>
+          <a class="button" href="https://www.sensen.com.tw/%e6%9c%80%e6%96%b0%e6%b6%88%e6%81%af/" target="_blank" rel="noreferrer">更多訊息</a>
+        </div>
+        <div class="news-grid">
+          <article class="news-card">
+            <div class="image-slot"><span>活動圖片預留位</span></div>
+            <div class="news-body">
+              <span class="date">2025-08-01</span>
+              <h3>仲夏88折</h3>
+              <p>森森點心坊夏末甜甜優惠來囉！即日起至 9/12，指定品項優惠登場。</p>
+              <a class="more" href="https://www.sensen.com.tw/latest-news/%e4%bb%b2%e5%a4%8f88%e6%8a%98/" target="_blank" rel="noreferrer">更多</a>
+            </div>
+          </article>
+          <article class="news-card">
+            <div class="image-slot"><span>中秋月餅圖片預留位</span></div>
+            <div class="news-body">
+              <span class="date">2025-07-28</span>
+              <h3>2025中秋月餅</h3>
+              <p>最期待的中秋月餅季開跑，節慶禮盒與團圓心意同步準備。</p>
+              <a class="more" href="https://www.sensen.com.tw/latest-news/2025%e4%b8%ad%e7%a7%8b%e6%9c%88%e9%a4%85/" target="_blank" rel="noreferrer">更多</a>
+            </div>
+          </article>
+          <article class="news-card">
+            <div class="image-slot"><span>父親節圖片預留位</span></div>
+            <div class="news-body">
+              <span class="date">2025-07-04</span>
+              <h3>2025父親節預購</h3>
+              <p>「他總說不用，但我們知道他值得。」父親節預購甜點，為心意留一份位置。</p>
+              <a class="more" href="https://www.sensen.com.tw/latest-news/bebuilder-2073/" target="_blank" rel="noreferrer">更多</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gifts" aria-labelledby="gift-title">
+      <div class="section-inner gift-layout">
+        <div class="gift-copy">
+          <h2 id="gift-title">精選伴手禮</h2>
+          <p>各式經典組合</p>
+          <p>多樣化的選擇</p>
+          <p>吃進嘴裡都是幸福的味道</p>
+          <p><a class="more" href="https://www.sensen.com.tw/%e7%94%a2%e5%93%81%e4%bb%8b%e7%b4%b9/%e4%bc%b4%e6%89%8b%e7%a6%ae/" target="_blank" rel="noreferrer">更多伴手禮</a></p>
+        </div>
+        <div class="gift-grid">
+          <a class="gift-item" href="https://www.sensen.com.tw/product-item/%e8%b1%86%e5%a1%94%e7%a6%ae%e7%9b%92/" target="_blank" rel="noreferrer"><div class="image-slot"><span>豆塔禮盒</span></div></a>
+          <a class="gift-item" href="https://www.sensen.com.tw/product-item/%e6%a3%ae%e6%a3%ae%e8%82%89%e9%ac%86%e9%a4%85/" target="_blank" rel="noreferrer"><div class="image-slot"><span>森森肉鬆餅</span></div></a>
+          <a class="gift-item" href="https://www.sensen.com.tw/product-item/%e6%b3%95%e5%bc%8f%e8%9d%b4%e8%9d%b6%e9%85%a5-1657/" target="_blank" rel="noreferrer"><div class="image-slot"><span>法式蝴蝶酥</span></div></a>
+          <a class="gift-item" href="https://www.sensen.com.tw/product-item/%e9%88%95%e6%89%a3%e7%89%9b%e8%bb%8b%e9%a4%85/" target="_blank" rel="noreferrer"><div class="image-slot"><span>杏仁千層酥</span></div></a>
+          <a class="gift-item" href="https://www.sensen.com.tw/product-item/%e5%a4%aa%e9%99%bd%e9%a4%85%e7%a6%ae%e7%9b%92/" target="_blank" rel="noreferrer"><div class="image-slot"><span>太陽餅禮盒</span></div></a>
+          <a class="gift-item" href="https://www.sensen.com.tw/product-item/%e6%89%8b%e5%b7%a5%e8%9b%8b%e6%8d%b2/" target="_blank" rel="noreferrer"><div class="image-slot"><span>手工蛋捲</span></div></a>
+          <a class="gift-item" href="https://www.sensen.com.tw/product-item/%e9%88%95%e6%89%a3%e9%a4%85%e4%b9%be/" target="_blank" rel="noreferrer"><div class="image-slot"><span>鈕扣餅乾</span></div></a>
+          <a class="gift-item" href="https://www.sensen.com.tw/product-item/%e9%b3%b3%e6%a2%a8%e9%85%a5%e7%a6%ae%e7%9b%92/" target="_blank" rel="noreferrer"><div class="image-slot"><span>鳳梨酥禮盒</span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="catering" aria-labelledby="catering-title">
+      <div class="section-inner catering-layout">
+        <div>
+          <h2 id="catering-title">酒會/外燴服務</h2>
+          <p>嚴選食材。精心烹調。味覺饗宴</p>
+          <a class="button" href="https://www.sensen.com.tw/%e7%b2%be%e7%b7%bb%e5%a4%96%e7%87%b4-355/" target="_blank" rel="noreferrer">了解更多</a>
+        </div>
+        <div class="menu-cards">
+          <a class="menu-card" href="https://docs.google.com/spreadsheets/d/1KrLWkMaNHhZr7AmkgCZ4WQcbLzb99YAB/edit?gid=703529566#gid=703529566" target="_blank" rel="noreferrer">
+            <div class="image-slot"><div class="menu-card-copy"><span>Buffet</span><strong>精緻外燴</strong><small>菜單下載</small></div></div>
+          </a>
+          <a class="menu-card" href="https://docs.google.com/spreadsheets/d/1VC55JlLWInSVZedy83H81pEhQEspFYr0/edit?gid=1715716833#gid=1715716833" target="_blank" rel="noreferrer">
+            <div class="image-slot"><div class="menu-card-copy"><span>Tea Party</span><strong>茶會點心</strong><small>菜單下載</small></div></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stores" aria-label="門市資訊">
+      <div class="section-inner store-grid">
+        <a class="store" href="https://goo.gl/maps/3oxsrUzT22G2" target="_blank" rel="noreferrer">
+          <h3>澄和店</h3>
+          <p>三民區澄和路78號<br>07-3816662</p>
+        </a>
+        <a class="store" href="https://goo.gl/maps/JptBgTTquh92" target="_blank" rel="noreferrer">
+          <h3>新富店</h3>
+          <p>鳳山區新富路276號<br>07-7675992</p>
+        </a>
+        <a class="store" href="https://goo.gl/maps/Wea9v9dtqCs" target="_blank" rel="noreferrer">
+          <h3>博愛店</h3>
+          <p>鳳山區博愛路219號<br>07-7993070</p>
+        </a>
+        <a class="store" href="https://goo.gl/maps/NpDLVEYQHAk" target="_blank" rel="noreferrer">
+          <h3>文龍店</h3>
+          <p>鳳山區文龍東路336號<br>07-7335812</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2018 - 2026 森森點心坊. All Rights Reserved. <a href="https://www.sensen.com.tw/%e9%9a%b1%e7%a7%81%e6%ac%8a%e6%a2%9d%e6%ac%be/" target="_blank" rel="noreferrer">隱私權政策</a>
+  </footer>
+</body>
+</html>

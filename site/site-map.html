@@ -1,0 +1,1111 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>全站頁面</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="主選單">
+      <a class="brand" href="/" aria-label="森森點心坊首頁"><img class="brand-logo" src="/assets/images/logo.png" alt="森森點心坊 SenSen Bakery"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="開啟主選單"><span></span><span></span><span></span></button>
+      <div class="menu" id="site-menu"><div class="menu-item"><a href="/%e9%97%9c%e6%96%bc%e6%a3%ae%e6%a3%ae/">關於森森</a></div><div class="menu-item"><a href="/%e6%9c%80%e6%96%b0%e6%b6%88%e6%81%af/">最新消息</a></div><div class="menu-item"><a href="/%e7%94%a2%e5%93%81%e4%bb%8b%e7%b4%b9/%e7%94%9f%e6%97%a5%e8%9b%8b%e7%b3%95-%e4%b8%8b%e6%96%b9%e6%9c%89dm%e4%be%9b%e4%b8%8b%e8%bc%89-264/">產品介紹 <span class="menu-arrow">⌄</span></a><div class="submenu"><a href="/%e7%94%a2%e5%93%81%e4%bb%8b%e7%b4%b9/%e7%94%9f%e6%97%a5%e8%9b%8b%e7%b3%95-%e4%b8%8b%e6%96%b9%e6%9c%89dm%e4%be%9b%e4%b8%8b%e8%bc%89-264/">生日蛋糕</a><a href="/%e7%94%a2%e5%93%81%e4%bb%8b%e7%b4%b9/%e4%bc%b4%e6%89%8b%e7%a6%ae/">伴手禮</a><a href="/%e6%a3%ae%e6%a3%ae%e5%92%96%e5%95%a1/">飲品 MENU</a></div></div><div class="menu-item"><a href="/%e7%b2%be%e7%b7%bb%e5%a4%96%e7%87%b4-355/">酒會/茶會 <span class="menu-arrow">⌄</span></a><div class="submenu"><a href="/%e7%b2%be%e7%b7%bb%e5%a4%96%e7%87%b4-355/">精緻外燴</a><a href="/%e8%8c%b6%e6%9c%83%e9%bb%9e%e5%bf%83-tea-party/">茶會點心</a></div></div><div class="menu-item"><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e6%b3%a2%e5%a3%ab%e9%a0%93%e6%b4%be%e7%b3%bb%e5%88%97/">頂家彌月 <span class="menu-arrow">⌄</span></a><div class="submenu"><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/taste_apply/">彌月試吃申請</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e6%b3%a2%e5%a3%ab%e9%a0%93%e6%b4%be%e7%b3%bb%e5%88%97/">波士頓派系列</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e5%a4%a7%e7%86%8a-%e5%b0%8f%e7%86%8a%e7%a6%ae%e7%9b%92/">大熊/小熊禮盒</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e5%9c%93%e5%9c%93%e6%b4%be-744/">圓圓派</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e9%a6%99%e6%9d%91%e4%b9%b3%e9%85%aa%e7%a6%ae%e7%9b%92/">鄉村乳酪禮盒</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e5%bd%8c%e6%9c%88%e9%95%b7%e6%a2%9d%e8%9b%8b%e7%b3%95/">長條蛋糕</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e6%90%ad%e9%85%8d%e5%96%ae%e5%93%81/">搭配單品</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e5%bd%8c%e6%9c%88%e8%ac%9d%e5%8d%a1/">彌月謝卡</a></div></div><div class="menu-item"><a href="/%e5%b8%b8%e8%a6%8b%e5%95%8f%e9%a1%8c/">常見問題</a></div><div class="menu-item"><a href="/%e9%96%80%e5%b8%82%e8%b3%87%e8%a8%8a/">門市資訊</a></div><div class="menu-item"><a href="/contact/">連絡我們</a></div><div class="mobile-nav-actions" aria-label="森森會員功能">
+        <a class="mobile-nav-action" href="/customer/admin/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c.8-3.3 3.1-5 7-5s6.2 1.7 7 5"></path></svg><span>會員中心</span></a>
+        <button class="mobile-nav-action cart-trigger" type="button" aria-controls="sensen-cart-drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L20 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="17" cy="20" r="1"></circle></svg><span>購物車</span><b class="cart-count" aria-live="polite">0</b></button>
+        <a class="mobile-nav-action" href="http://127.0.0.1:8081/admin/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 9h8M8 13h5M8 17h3"></path></svg><span>員工後台</span></a>
+      </div><a class="mobile-menu-social" href="https://www.facebook.com/sensenbakery/" target="_blank" rel="noreferrer" aria-label="Facebook">f</a></div>
+      <div class="nav-actions" aria-label="森森會員功能">
+        <a class="nav-action" href="/customer/admin/" aria-label="客戶後台" title="客戶後台"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c.8-3.3 3.1-5 7-5s6.2 1.7 7 5"></path></svg></a>
+        <button class="nav-action cart-trigger" type="button" aria-controls="sensen-cart-drawer" aria-expanded="false" aria-label="開啟購物車" title="購物車"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L20 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="17" cy="20" r="1"></circle></svg><span class="cart-count" aria-live="polite">0</span></button>
+        <a class="nav-action" href="http://127.0.0.1:8081/admin/" aria-label="森森員工後台" title="森森員工後台"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 9h8M8 13h5M8 17h3"></path></svg></a>
+      </div>
+    </nav>
+  </header>
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="hero-banner"><div class="image-slot"><span>頁首圖片預留位</span></div><div class="hero-banner-title"><p>/site-map.html</p><h1>全站頁面</h1></div></div>
+    </section>
+    <section class="directory"><h2>全站頁面</h2><p>以下為本地複製出的站內頁面索引。圖片皆以預留位呈現。</p>
+    <section class="directory-group">
+      <h2>首頁</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/">
+          <span>森森點心坊 – 嘴角上揚的幸福</span>
+          <small>/</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>404-error</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/404-error">
+          <span>404 error – 森森點心坊</span>
+          <small>/404-error</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>門市資訊</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/門市資訊">
+          <span>門市資訊 – 森森點心坊</span>
+          <small>/門市資訊</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>茶會點心-tea-party</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/茶會點心-tea-party">
+          <span>茶會點心 – 森森點心坊</span>
+          <small>/茶會點心-tea-party</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>常見問題</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/常見問題">
+          <span>常見問題 – 森森點心坊</span>
+          <small>/常見問題</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>產品介紹</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/產品介紹">
+          <span>產品介紹 – 森森點心坊</span>
+          <small>/產品介紹</small>
+        </a><a class="directory-card" href="/產品介紹/生日蛋糕-下方有dm供下載-264">
+          <span>生日蛋糕 (下方有DM供下載) – 森森點心坊</span>
+          <small>/產品介紹/生日蛋糕-下方有dm供下載-264</small>
+        </a><a class="directory-card" href="/產品介紹/生日蛋糕-下方有dm供下載-264/page/2">
+          <span>生日蛋糕 (下方有DM供下載)</span>
+          <small>/產品介紹/生日蛋糕-下方有dm供下載-264/page/2</small>
+        </a><a class="directory-card" href="/產品介紹/伴手禮">
+          <span>伴手禮 – 森森點心坊</span>
+          <small>/產品介紹/伴手禮</small>
+        </a><a class="directory-card" href="/產品介紹/page/2">
+          <span>產品介紹</span>
+          <small>/產品介紹/page/2</small>
+        </a><a class="directory-card" href="/產品介紹/page/3">
+          <span>產品介紹</span>
+          <small>/產品介紹/page/3</small>
+        </a><a class="directory-card" href="/產品介紹/page/4">
+          <span>產品介紹</span>
+          <small>/產品介紹/page/4</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>頂家彌月</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/頂家彌月">
+          <span>頂家彌月 – 森森點心坊</span>
+          <small>/頂家彌月</small>
+        </a><a class="directory-card" href="/頂家彌月/大熊-小熊禮盒">
+          <span>大熊/小熊禮盒 – 森森點心坊</span>
+          <small>/頂家彌月/大熊-小熊禮盒</small>
+        </a><a class="directory-card" href="/頂家彌月/波士頓派系列">
+          <span>波士頓派系列</span>
+          <small>/頂家彌月/波士頓派系列</small>
+        </a><a class="directory-card" href="/頂家彌月/香村乳酪禮盒">
+          <span>鄉村乳酪禮盒</span>
+          <small>/頂家彌月/香村乳酪禮盒</small>
+        </a><a class="directory-card" href="/頂家彌月/圓圓派-744">
+          <span>圓圓派 – 森森點心坊</span>
+          <small>/頂家彌月/圓圓派-744</small>
+        </a><a class="directory-card" href="/頂家彌月/搭配單品">
+          <span>搭配單品 – 森森點心坊</span>
+          <small>/頂家彌月/搭配單品</small>
+        </a><a class="directory-card" href="/頂家彌月/彌月長條蛋糕">
+          <span>彌月長條蛋糕 – 森森點心坊</span>
+          <small>/頂家彌月/彌月長條蛋糕</small>
+        </a><a class="directory-card" href="/頂家彌月/彌月謝卡">
+          <span>彌月謝卡 – 森森點心坊</span>
+          <small>/頂家彌月/彌月謝卡</small>
+        </a><a class="directory-card" href="/頂家彌月/taste_apply">
+          <span>彌月試吃申請 – 森森點心坊</span>
+          <small>/頂家彌月/taste_apply</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>最新消息</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/最新消息">
+          <span>最新消息 – 森森點心坊</span>
+          <small>/最新消息</small>
+        </a><a class="directory-card" href="/最新消息/page/10">
+          <span>最新消息</span>
+          <small>/最新消息/page/10</small>
+        </a><a class="directory-card" href="/最新消息/page/11">
+          <span>最新消息</span>
+          <small>/最新消息/page/11</small>
+        </a><a class="directory-card" href="/最新消息/page/12">
+          <span>最新消息</span>
+          <small>/最新消息/page/12</small>
+        </a><a class="directory-card" href="/最新消息/page/13">
+          <span>最新消息</span>
+          <small>/最新消息/page/13</small>
+        </a><a class="directory-card" href="/最新消息/page/14">
+          <span>最新消息</span>
+          <small>/最新消息/page/14</small>
+        </a><a class="directory-card" href="/最新消息/page/15">
+          <span>最新消息</span>
+          <small>/最新消息/page/15</small>
+        </a><a class="directory-card" href="/最新消息/page/2">
+          <span>最新消息</span>
+          <small>/最新消息/page/2</small>
+        </a><a class="directory-card" href="/最新消息/page/3">
+          <span>最新消息</span>
+          <small>/最新消息/page/3</small>
+        </a><a class="directory-card" href="/最新消息/page/4">
+          <span>最新消息</span>
+          <small>/最新消息/page/4</small>
+        </a><a class="directory-card" href="/最新消息/page/5">
+          <span>最新消息</span>
+          <small>/最新消息/page/5</small>
+        </a><a class="directory-card" href="/最新消息/page/6">
+          <span>最新消息</span>
+          <small>/最新消息/page/6</small>
+        </a><a class="directory-card" href="/最新消息/page/7">
+          <span>最新消息</span>
+          <small>/最新消息/page/7</small>
+        </a><a class="directory-card" href="/最新消息/page/8">
+          <span>最新消息</span>
+          <small>/最新消息/page/8</small>
+        </a><a class="directory-card" href="/最新消息/page/9">
+          <span>最新消息</span>
+          <small>/最新消息/page/9</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>森森咖啡</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/森森咖啡">
+          <span>森森咖啡 – 森森點心坊</span>
+          <small>/森森咖啡</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>精緻外燴-355</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/精緻外燴-355">
+          <span>精緻外燴 – 森森點心坊</span>
+          <small>/精緻外燴-355</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>隱私權條款</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/隱私權條款">
+          <span>隱私權條款 – 森森點心坊</span>
+          <small>/隱私權條款</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>關於森森</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/關於森森">
+          <span>關於森森 – 森森點心坊</span>
+          <small>/關於森森</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>author</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/author/admin">
+          <span>wei – 森森點心坊</span>
+          <small>/author/admin</small>
+        </a><a class="directory-card" href="/author/mon">
+          <span>孟瑾 – 森森點心坊</span>
+          <small>/author/mon</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>cart</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/cart">
+          <span>購物車</span>
+          <small>/cart</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>category</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/category/latest-news">
+          <span>最新消息 – 森森點心坊</span>
+          <small>/category/latest-news</small>
+        </a><a class="directory-card" href="/category/latest-news/page/10">
+          <span>最新消息</span>
+          <small>/category/latest-news/page/10</small>
+        </a><a class="directory-card" href="/category/latest-news/page/11">
+          <span>最新消息</span>
+          <small>/category/latest-news/page/11</small>
+        </a><a class="directory-card" href="/category/latest-news/page/12">
+          <span>最新消息</span>
+          <small>/category/latest-news/page/12</small>
+        </a><a class="directory-card" href="/category/latest-news/page/2">
+          <span>最新消息</span>
+          <small>/category/latest-news/page/2</small>
+        </a><a class="directory-card" href="/category/latest-news/page/3">
+          <span>最新消息</span>
+          <small>/category/latest-news/page/3</small>
+        </a><a class="directory-card" href="/category/latest-news/page/4">
+          <span>最新消息</span>
+          <small>/category/latest-news/page/4</small>
+        </a><a class="directory-card" href="/category/latest-news/page/5">
+          <span>最新消息</span>
+          <small>/category/latest-news/page/5</small>
+        </a><a class="directory-card" href="/category/latest-news/page/6">
+          <span>最新消息</span>
+          <small>/category/latest-news/page/6</small>
+        </a><a class="directory-card" href="/category/latest-news/page/7">
+          <span>最新消息</span>
+          <small>/category/latest-news/page/7</small>
+        </a><a class="directory-card" href="/category/latest-news/page/8">
+          <span>最新消息</span>
+          <small>/category/latest-news/page/8</small>
+        </a><a class="directory-card" href="/category/latest-news/page/9">
+          <span>最新消息</span>
+          <small>/category/latest-news/page/9</small>
+        </a><a class="directory-card" href="/category/new-arrival">
+          <span>新品上市 – 森森點心坊</span>
+          <small>/category/new-arrival</small>
+        </a><a class="directory-card" href="/category/new-arrival/page/2">
+          <span>新品上市</span>
+          <small>/category/new-arrival/page/2</small>
+        </a><a class="directory-card" href="/category/new-arrival/page/3">
+          <span>新品上市</span>
+          <small>/category/new-arrival/page/3</small>
+        </a><a class="directory-card" href="/category/new-arrival/page/4">
+          <span>新品上市</span>
+          <small>/category/new-arrival/page/4</small>
+        </a><a class="directory-card" href="/category/new-arrival/page/5">
+          <span>新品上市</span>
+          <small>/category/new-arrival/page/5</small>
+        </a><a class="directory-card" href="/category/season-only">
+          <span>季節限定 – 森森點心坊</span>
+          <small>/category/season-only</small>
+        </a><a class="directory-card" href="/category/season-only/page/2">
+          <span>季節限定</span>
+          <small>/category/season-only/page/2</small>
+        </a><a class="directory-card" href="/category/season-only/page/3">
+          <span>季節限定</span>
+          <small>/category/season-only/page/3</small>
+        </a><a class="directory-card" href="/category/sensen-coffee">
+          <span>森森飲品 – 森森點心坊</span>
+          <small>/category/sensen-coffee</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>checkout</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/checkout">
+          <span>結帳</span>
+          <small>/checkout</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>contact</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/contact">
+          <span>連絡我們 – 森森點心坊</span>
+          <small>/contact</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>customer</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/customer/admin">
+          <span>會員登入</span>
+          <small>/customer/admin</small>
+        </a><a class="directory-card" href="/customer/admin/backup">
+          <span>會員後台</span>
+          <small>/customer/admin/backup</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>latest-news</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/latest-news/【2019moon-cake】">
+          <span>2019MOON CAKE – 森森點心坊</span>
+          <small>/latest-news/【2019moon-cake】</small>
+        </a><a class="directory-card" href="/latest-news/🍍🍍🍍鳳梨來了🍍🍍🍍">
+          <span>🍍🍍鳳梨來了!🍍🍍 – 森森點心坊</span>
+          <small>/latest-news/🍍🍍🍍鳳梨來了🍍🍍🍍</small>
+        </a><a class="directory-card" href="/latest-news/🍍鳳梨來了🍍">
+          <span>🍍鳳梨來了!🍍</span>
+          <small>/latest-news/🍍鳳梨來了🍍</small>
+        </a><a class="directory-card" href="/latest-news/🍓🍓🍓黃金草莓捲🍓🍓🍓">
+          <span>頂家彌月 黃金草莓捲🍓 – 森森點心坊</span>
+          <small>/latest-news/🍓🍓🍓黃金草莓捲🍓🍓🍓</small>
+        </a><a class="directory-card" href="/latest-news/🍓草莓蛋糕罐子🍓">
+          <span>🍓草莓蛋糕罐子🍓 – 森森點心坊</span>
+          <small>/latest-news/🍓草莓蛋糕罐子🍓</small>
+        </a><a class="directory-card" href="/latest-news/🍹森森全新飲品上市🍹">
+          <span>🍹森森全新飲品🍹 – 森森點心坊</span>
+          <small>/latest-news/🍹森森全新飲品上市🍹</small>
+        </a><a class="directory-card" href="/latest-news/🎀2019母親節蛋糕🎀預購開跑囉">
+          <span>🎀2019母親節蛋糕🎀預購開跑囉! – 森森點心坊</span>
+          <small>/latest-news/🎀2019母親節蛋糕🎀預購開跑囉</small>
+        </a><a class="directory-card" href="/latest-news/🎉春節伴手禮系列🎉">
+          <span>🎉春節伴手禮系列🎉 – 森森點心坊</span>
+          <small>/latest-news/🎉春節伴手禮系列🎉</small>
+        </a><a class="directory-card" href="/latest-news/💐明天就是母親節了💐">
+          <span>💐明天就是母親節了💐 – 森森點心坊</span>
+          <small>/latest-news/💐明天就是母親節了💐</small>
+        </a><a class="directory-card" href="/latest-news/📣澄和店週年慶📣">
+          <span>📣澄和店週年慶📣</span>
+          <small>/latest-news/📣澄和店週年慶📣</small>
+        </a><a class="directory-card" href="/latest-news/100元生日蛋糕抵用卷">
+          <span>100元生日蛋糕抵用卷 – 森森點心坊</span>
+          <small>/latest-news/100元生日蛋糕抵用卷</small>
+        </a><a class="directory-card" href="/latest-news/11月份的好康大放送將於10號開始舉行囉">
+          <span>11月份的好康大放送將於10號開始舉行囉 – 森森點心坊</span>
+          <small>/latest-news/11月份的好康大放送將於10號開始舉行囉</small>
+        </a><a class="directory-card" href="/latest-news/11月份的好康大放送熱烈進行中">
+          <span>11月份的好康大放送熱烈進行中 – 森森點心坊</span>
+          <small>/latest-news/11月份的好康大放送熱烈進行中</small>
+        </a><a class="directory-card" href="/latest-news/1460">
+          <span>森森點心坊</span>
+          <small>/latest-news/1460</small>
+        </a><a class="directory-card" href="/latest-news/1489">
+          <span>父親節蛋糕</span>
+          <small>/latest-news/1489</small>
+        </a><a class="directory-card" href="/latest-news/1522">
+          <span>肉鬆餅</span>
+          <small>/latest-news/1522</small>
+        </a><a class="directory-card" href="/latest-news/1577">
+          <span>1577</span>
+          <small>/latest-news/1577</small>
+        </a><a class="directory-card" href="/latest-news/2019中秋目錄即將出爐">
+          <span>中秋目錄即將出爐 – 森森點心坊</span>
+          <small>/latest-news/2019中秋目錄即將出爐</small>
+        </a><a class="directory-card" href="/latest-news/2019母親節蛋糕預告">
+          <span>2019母親節蛋糕預告 – 森森點心坊</span>
+          <small>/latest-news/2019母親節蛋糕預告</small>
+        </a><a class="directory-card" href="/latest-news/2019頂家彌月目錄">
+          <span>2019頂家彌月目錄 – 森森點心坊</span>
+          <small>/latest-news/2019頂家彌月目錄</small>
+        </a><a class="directory-card" href="/latest-news/2019頂家彌月新目錄">
+          <span>2019頂家彌月新目錄 – 森森點心坊</span>
+          <small>/latest-news/2019頂家彌月新目錄</small>
+        </a><a class="directory-card" href="/latest-news/2019聖誕新品">
+          <span>2019聖誕新品 – 森森點心坊</span>
+          <small>/latest-news/2019聖誕新品</small>
+        </a><a class="directory-card" href="/latest-news/2020中秋禮盒">
+          <span>2020中秋禮盒</span>
+          <small>/latest-news/2020中秋禮盒</small>
+        </a><a class="directory-card" href="/latest-news/2020父親節">
+          <span>2020父親節 – 森森點心坊</span>
+          <small>/latest-news/2020父親節</small>
+        </a><a class="directory-card" href="/latest-news/2020母親節蛋糕">
+          <span>2020母親節蛋糕</span>
+          <small>/latest-news/2020母親節蛋糕</small>
+        </a><a class="directory-card" href="/latest-news/²⁰²¹-𝐅𝐚𝐭𝐡𝐞𝐫𝐬-𝐃𝐚𝐲✨">
+          <span>²⁰²¹ 𝐅𝐚𝐭𝐡𝐞𝐫’𝐬 𝐃𝐚𝐲✨ – 森森點心坊</span>
+          <small>/latest-news/²⁰²¹-𝐅𝐚𝐭𝐡𝐞𝐫𝐬-𝐃𝐚𝐲✨</small>
+        </a><a class="directory-card" href="/latest-news/²⁰²¹-𝐅𝐚𝐭𝐡𝐞𝐫𝐬-𝐃𝐚𝐲✨-2">
+          <span>²⁰²¹ 𝐅𝐚𝐭𝐡𝐞𝐫’𝐬 𝐃𝐚𝐲✨ – 森森點心坊</span>
+          <small>/latest-news/²⁰²¹-𝐅𝐚𝐭𝐡𝐞𝐫𝐬-𝐃𝐚𝐲✨-2</small>
+        </a><a class="directory-card" href="/latest-news/2021中秋dm">
+          <span>2021中秋DM – 森森點心坊</span>
+          <small>/latest-news/2021中秋dm</small>
+        </a><a class="directory-card" href="/latest-news/2021父親節蛋糕">
+          <span>2021父親節蛋糕</span>
+          <small>/latest-news/2021父親節蛋糕</small>
+        </a><a class="directory-card" href="/latest-news/2021母親節蛋糕">
+          <span>2021母親節蛋糕 – 森森點心坊</span>
+          <small>/latest-news/2021母親節蛋糕</small>
+        </a><a class="directory-card" href="/latest-news/2022中秋dm">
+          <span>2022中秋DM – 森森點心坊</span>
+          <small>/latest-news/2022中秋dm</small>
+        </a><a class="directory-card" href="/latest-news/2022父親節蛋糕">
+          <span>2022父親節蛋糕 – 森森點心坊</span>
+          <small>/latest-news/2022父親節蛋糕</small>
+        </a><a class="directory-card" href="/latest-news/2022母親節蛋糕">
+          <span>2022母親節蛋糕 – 森森點心坊</span>
+          <small>/latest-news/2022母親節蛋糕</small>
+        </a><a class="directory-card" href="/latest-news/2022母親節蛋糕-2">
+          <span>2022母親節蛋糕</span>
+          <small>/latest-news/2022母親節蛋糕-2</small>
+        </a><a class="directory-card" href="/latest-news/2022新春禮盒">
+          <span>2022新春禮盒 – 森森點心坊</span>
+          <small>/latest-news/2022新春禮盒</small>
+        </a><a class="directory-card" href="/latest-news/2023中秋dm">
+          <span>2023中秋DM</span>
+          <small>/latest-news/2023中秋dm</small>
+        </a><a class="directory-card" href="/latest-news/2023父親節蛋糕">
+          <span>2023父親節蛋糕</span>
+          <small>/latest-news/2023父親節蛋糕</small>
+        </a><a class="directory-card" href="/latest-news/2023母親節蛋糕">
+          <span>2023母親節蛋糕 – 森森點心坊</span>
+          <small>/latest-news/2023母親節蛋糕</small>
+        </a><a class="directory-card" href="/latest-news/2023春節伴手禮">
+          <span>2023春節伴手禮</span>
+          <small>/latest-news/2023春節伴手禮</small>
+        </a><a class="directory-card" href="/latest-news/2024中秋禮盒">
+          <span>2024中秋禮盒</span>
+          <small>/latest-news/2024中秋禮盒</small>
+        </a><a class="directory-card" href="/latest-news/2024母親節蛋糕">
+          <span>2024母親節蛋糕</span>
+          <small>/latest-news/2024母親節蛋糕</small>
+        </a><a class="directory-card" href="/latest-news/2024新春禮盒">
+          <span>2024新春禮盒</span>
+          <small>/latest-news/2024新春禮盒</small>
+        </a><a class="directory-card" href="/latest-news/2025中秋月餅">
+          <span>2025中秋月餅 – 森森點心坊</span>
+          <small>/latest-news/2025中秋月餅</small>
+        </a><a class="directory-card" href="/latest-news/2025母親節蛋糕預購開跑">
+          <span>2025母親節蛋糕預購開跑</span>
+          <small>/latest-news/2025母親節蛋糕預購開跑</small>
+        </a><a class="directory-card" href="/latest-news/88節快樂">
+          <span>88節快樂 – 森森點心坊</span>
+          <small>/latest-news/88節快樂</small>
+        </a><a class="directory-card" href="/latest-news/88節蛋糕預購開跑">
+          <span>88節蛋糕預購開跑! – 森森點心坊</span>
+          <small>/latest-news/88節蛋糕預購開跑</small>
+        </a><a class="directory-card" href="/latest-news/土鳳梨酥禮盒">
+          <span>土鳳梨酥禮盒 – 森森點心坊</span>
+          <small>/latest-news/土鳳梨酥禮盒</small>
+        </a><a class="directory-card" href="/latest-news/中秋月圓">
+          <span>中秋月圓</span>
+          <small>/latest-news/中秋月圓</small>
+        </a><a class="directory-card" href="/latest-news/中秋預購開跑">
+          <span>中秋預購開跑! – 森森點心坊</span>
+          <small>/latest-news/中秋預購開跑</small>
+        </a><a class="directory-card" href="/latest-news/中秋dm出爐囉">
+          <span>中秋DM出爐囉! – 森森點心坊</span>
+          <small>/latest-news/中秋dm出爐囉</small>
+        </a><a class="directory-card" href="/latest-news/丹麥波羅">
+          <span>丹麥波羅</span>
+          <small>/latest-news/丹麥波羅</small>
+        </a><a class="directory-card" href="/latest-news/五倍券優惠">
+          <span>五倍券優惠 – 森森點心坊</span>
+          <small>/latest-news/五倍券優惠</small>
+        </a><a class="directory-card" href="/latest-news/今年的森森芒果季開始囉-3">
+          <span>森森芒果季!</span>
+          <small>/latest-news/今年的森森芒果季開始囉-3</small>
+        </a><a class="directory-card" href="/latest-news/文龍年中慶">
+          <span>文龍年中慶 – 森森點心坊</span>
+          <small>/latest-news/文龍年中慶</small>
+        </a><a class="directory-card" href="/latest-news/文龍初秋賞">
+          <span>文龍初秋賞 – 森森點心坊</span>
+          <small>/latest-news/文龍初秋賞</small>
+        </a><a class="directory-card" href="/latest-news/文龍周年慶">
+          <span>文龍周年慶 – 森森點心坊</span>
+          <small>/latest-news/文龍周年慶</small>
+        </a><a class="directory-card" href="/latest-news/文龍週年慶">
+          <span>文龍週年慶 – 森森點心坊</span>
+          <small>/latest-news/文龍週年慶</small>
+        </a><a class="directory-card" href="/latest-news/文龍感恩季">
+          <span>文龍感恩季 – 森森點心坊</span>
+          <small>/latest-news/文龍感恩季</small>
+        </a><a class="directory-card" href="/latest-news/父愛">
+          <span>父愛</span>
+          <small>/latest-news/父愛</small>
+        </a><a class="directory-card" href="/latest-news/父親節蛋糕預購">
+          <span>父親節蛋糕預購 – 森森點心坊</span>
+          <small>/latest-news/父親節蛋糕預購</small>
+        </a><a class="directory-card" href="/latest-news/父親節蛋糕預購開跑囉">
+          <span>父親節蛋糕預購開跑! – 森森點心坊</span>
+          <small>/latest-news/父親節蛋糕預購開跑囉</small>
+        </a><a class="directory-card" href="/latest-news/父親節蛋糕預購開跑囉-2">
+          <span>父親節蛋糕預購開跑! – 森森點心坊</span>
+          <small>/latest-news/父親節蛋糕預購開跑囉-2</small>
+        </a><a class="directory-card" href="/latest-news/布丁燒禮盒">
+          <span>布丁燒禮盒 – 森森點心坊</span>
+          <small>/latest-news/布丁燒禮盒</small>
+        </a><a class="directory-card" href="/latest-news/生日蛋糕卷">
+          <span>生日蛋糕卷 – 森森點心坊</span>
+          <small>/latest-news/生日蛋糕卷</small>
+        </a><a class="directory-card" href="/latest-news/生吐司">
+          <span>生吐司</span>
+          <small>/latest-news/生吐司</small>
+        </a><a class="directory-card" href="/latest-news/仲夏88折">
+          <span>仲夏88折 – 森森點心坊</span>
+          <small>/latest-news/仲夏88折</small>
+        </a><a class="directory-card" href="/latest-news/吉祥桂圓糕">
+          <span>吉祥桂圓糕 – 森森點心坊</span>
+          <small>/latest-news/吉祥桂圓糕</small>
+        </a><a class="directory-card" href="/latest-news/吉祥桂圓糕-2">
+          <span>吉祥桂圓糕 – 森森點心坊</span>
+          <small>/latest-news/吉祥桂圓糕-2</small>
+        </a><a class="directory-card" href="/latest-news/肉鬆餅">
+          <span>肉鬆餅</span>
+          <small>/latest-news/肉鬆餅</small>
+        </a><a class="directory-card" href="/latest-news/肉鬆餅-2">
+          <span>肉鬆餅</span>
+          <small>/latest-news/肉鬆餅-2</small>
+        </a><a class="directory-card" href="/latest-news/肉鬆餅禮盒">
+          <span>肉鬆餅禮盒 – 森森點心坊</span>
+          <small>/latest-news/肉鬆餅禮盒</small>
+        </a><a class="directory-card" href="/latest-news/初夏賞">
+          <span>初夏賞</span>
+          <small>/latest-news/初夏賞</small>
+        </a><a class="directory-card" href="/latest-news/芋見幸福">
+          <span>芋見幸福</span>
+          <small>/latest-news/芋見幸福</small>
+        </a><a class="directory-card" href="/latest-news/芋頭蛋糕罐">
+          <span>芋頭蛋糕罐</span>
+          <small>/latest-news/芋頭蛋糕罐</small>
+        </a><a class="directory-card" href="/latest-news/咖啡買一送一">
+          <span>咖啡買一送一 – 森森點心坊</span>
+          <small>/latest-news/咖啡買一送一</small>
+        </a><a class="directory-card" href="/latest-news/果乾塔">
+          <span>果乾塔</span>
+          <small>/latest-news/果乾塔</small>
+        </a><a class="directory-card" href="/latest-news/法式經典檸檬塔">
+          <span>法式經典檸檬塔 – 森森點心坊</span>
+          <small>/latest-news/法式經典檸檬塔</small>
+        </a><a class="directory-card" href="/latest-news/法式蝴蝶酥">
+          <span>法式蝴蝶酥</span>
+          <small>/latest-news/法式蝴蝶酥</small>
+        </a><a class="directory-card" href="/latest-news/波蘿蛋黃酥">
+          <span>波蘿蛋黃酥 – 森森點心坊</span>
+          <small>/latest-news/波蘿蛋黃酥</small>
+        </a><a class="directory-card" href="/latest-news/波蘿蛋黃酥-2">
+          <span>波蘿蛋黃酥 – 森森點心坊</span>
+          <small>/latest-news/波蘿蛋黃酥-2</small>
+        </a><a class="directory-card" href="/latest-news/春節日式大福禮盒">
+          <span>春節日式大福禮盒 – 森森點心坊</span>
+          <small>/latest-news/春節日式大福禮盒</small>
+        </a><a class="directory-card" href="/latest-news/春節限定-如意發糕">
+          <span>春節限定 如意發糕 – 森森點心坊</span>
+          <small>/latest-news/春節限定-如意發糕</small>
+        </a><a class="directory-card" href="/latest-news/春節禮盒-買10送1">
+          <span>春節禮盒 買10送1</span>
+          <small>/latest-news/春節禮盒-買10送1</small>
+        </a><a class="directory-card" href="/latest-news/春節禮盒預購開跑囉">
+          <span>春節禮盒預購開跑囉!! – 森森點心坊</span>
+          <small>/latest-news/春節禮盒預購開跑囉</small>
+        </a><a class="directory-card" href="/latest-news/活力陽光三明治">
+          <span>活力陽光三明治 – 森森點心坊</span>
+          <small>/latest-news/活力陽光三明治</small>
+        </a><a class="directory-card" href="/latest-news/重要公告">
+          <span>重要公告</span>
+          <small>/latest-news/重要公告</small>
+        </a><a class="directory-card" href="/latest-news/振興券專屬優惠">
+          <span>振興券專屬優惠 – 森森點心坊</span>
+          <small>/latest-news/振興券專屬優惠</small>
+        </a><a class="directory-card" href="/latest-news/桂圓糕">
+          <span>桂圓糕</span>
+          <small>/latest-news/桂圓糕</small>
+        </a><a class="directory-card" href="/latest-news/㊙情人節限定㊙">
+          <span>㊙情人節限定㊙ – 森森點心坊</span>
+          <small>/latest-news/㊙情人節限定㊙</small>
+        </a><a class="directory-card" href="/latest-news/草莓大福禮盒">
+          <span>草莓大福禮盒 – 森森點心坊</span>
+          <small>/latest-news/草莓大福禮盒</small>
+        </a><a class="directory-card" href="/latest-news/草莓芙蓮蛋糕盒-2">
+          <span>草莓芙蓮蛋糕盒</span>
+          <small>/latest-news/草莓芙蓮蛋糕盒-2</small>
+        </a><a class="directory-card" href="/latest-news/草莓芙蓮蛋糕盒-3">
+          <span>草莓芙蓮蛋糕盒</span>
+          <small>/latest-news/草莓芙蓮蛋糕盒-3</small>
+        </a><a class="directory-card" href="/latest-news/草莓蛋糕盒開賣">
+          <span>草莓蛋糕盒開賣!!</span>
+          <small>/latest-news/草莓蛋糕盒開賣</small>
+        </a><a class="directory-card" href="/latest-news/草莓蛋糕盒熱銷中🔥🔥🔥">
+          <span>草莓蛋糕盒熱銷中!!🔥 – 森森點心坊</span>
+          <small>/latest-news/草莓蛋糕盒熱銷中🔥🔥🔥</small>
+        </a><a class="directory-card" href="/latest-news/草莓藏心－季節限定">
+          <span>草莓藏心－季節限定</span>
+          <small>/latest-news/草莓藏心－季節限定</small>
+        </a><a class="directory-card" href="/latest-news/頂家彌月🔥人氣波士頓派🔥">
+          <span>頂家彌月🔥人氣波士頓派🔥 – 森森點心坊</span>
+          <small>/latest-news/頂家彌月🔥人氣波士頓派🔥</small>
+        </a><a class="directory-card" href="/latest-news/頂家彌月油飯">
+          <span>頂家彌月油飯 – 森森點心坊</span>
+          <small>/latest-news/頂家彌月油飯</small>
+        </a><a class="directory-card" href="/latest-news/頂家彌月試吃">
+          <span>頂家彌月試吃 – 森森點心坊</span>
+          <small>/latest-news/頂家彌月試吃</small>
+        </a><a class="directory-card" href="/latest-news/森森日式烤年糕">
+          <span>森森日式烤年糕 – 森森點心坊</span>
+          <small>/latest-news/森森日式烤年糕</small>
+        </a><a class="directory-card" href="/latest-news/森森吐司">
+          <span>森森吐司</span>
+          <small>/latest-news/森森吐司</small>
+        </a><a class="directory-card" href="/latest-news/森森春節伴手禮預購中">
+          <span>森森春節伴手禮預購中! – 森森點心坊</span>
+          <small>/latest-news/森森春節伴手禮預購中</small>
+        </a><a class="directory-card" href="/latest-news/森森特調">
+          <span>森森特調</span>
+          <small>/latest-news/森森特調</small>
+        </a><a class="directory-card" href="/latest-news/森森草莓季">
+          <span>森森草莓季</span>
+          <small>/latest-news/森森草莓季</small>
+        </a><a class="directory-card" href="/latest-news/森森感恩季part2">
+          <span>森森感恩季Part2 – 森森點心坊</span>
+          <small>/latest-news/森森感恩季part2</small>
+        </a><a class="directory-card" href="/latest-news/森森vip集點卡">
+          <span>森森VIP集點卡 – 森森點心坊</span>
+          <small>/latest-news/森森vip集點卡</small>
+        </a><a class="directory-card" href="/latest-news/週三新富優惠日">
+          <span>週三新富優惠日 – 森森點心坊</span>
+          <small>/latest-news/週三新富優惠日</small>
+        </a><a class="directory-card" href="/latest-news/陽光三明治">
+          <span>陽光三明治 – 森森點心坊</span>
+          <small>/latest-news/陽光三明治</small>
+        </a><a class="directory-card" href="/latest-news/新春禮盒">
+          <span>新春禮盒</span>
+          <small>/latest-news/新春禮盒</small>
+        </a><a class="directory-card" href="/latest-news/新富仲夏賞">
+          <span>新富仲夏賞 – 森森點心坊</span>
+          <small>/latest-news/新富仲夏賞</small>
+        </a><a class="directory-card" href="/latest-news/新富店專屬優惠">
+          <span>新富店專屬優惠</span>
+          <small>/latest-news/新富店專屬優惠</small>
+        </a><a class="directory-card" href="/latest-news/新富店開幕慶">
+          <span>新富店開幕慶 – 森森點心坊</span>
+          <small>/latest-news/新富店開幕慶</small>
+        </a><a class="directory-card" href="/latest-news/預購活動">
+          <span>預購活動</span>
+          <small>/latest-news/預購活動</small>
+        </a><a class="directory-card" href="/latest-news/實聯制登記">
+          <span>實聯制登記</span>
+          <small>/latest-news/實聯制登記</small>
+        </a><a class="directory-card" href="/latest-news/瑪格麗特">
+          <span>瑪格麗特</span>
+          <small>/latest-news/瑪格麗特</small>
+        </a><a class="directory-card" href="/latest-news/維也納麵包">
+          <span>維也納麵包 – 森森點心坊</span>
+          <small>/latest-news/維也納麵包</small>
+        </a><a class="directory-card" href="/latest-news/聚財金元寶">
+          <span>聚財金元寶 – 森森點心坊</span>
+          <small>/latest-news/聚財金元寶</small>
+        </a><a class="directory-card" href="/latest-news/慶新年">
+          <span>慶新年</span>
+          <small>/latest-news/慶新年</small>
+        </a><a class="directory-card" href="/latest-news/摩登媽咪">
+          <span>摩登媽咪</span>
+          <small>/latest-news/摩登媽咪</small>
+        </a><a class="directory-card" href="/latest-news/摯愛森林">
+          <span>摯愛森林</span>
+          <small>/latest-news/摯愛森林</small>
+        </a><a class="directory-card" href="/latest-news/歐包系列">
+          <span>歐包系列</span>
+          <small>/latest-news/歐包系列</small>
+        </a><a class="directory-card" href="/latest-news/澄和初夏賞">
+          <span>澄和初夏賞 – 森森點心坊</span>
+          <small>/latest-news/澄和初夏賞</small>
+        </a><a class="directory-card" href="/latest-news/澄和店優惠">
+          <span>澄和店優惠 – 森森點心坊</span>
+          <small>/latest-news/澄和店優惠</small>
+        </a><a class="directory-card" href="/latest-news/澄和感恩季">
+          <span>澄和感恩季 – 森森點心坊</span>
+          <small>/latest-news/澄和感恩季</small>
+        </a><a class="directory-card" href="/latest-news/澄和慶新年">
+          <span>澄和慶新年 – 森森點心坊</span>
+          <small>/latest-news/澄和慶新年</small>
+        </a><a class="directory-card" href="/latest-news/蝴蝶酥宅配訂購">
+          <span>蝴蝶酥宅配訂購 – 森森點心坊</span>
+          <small>/latest-news/蝴蝶酥宅配訂購</small>
+        </a><a class="directory-card" href="/latest-news/餐盒">
+          <span>/餐盒/</span>
+          <small>/latest-news/餐盒</small>
+        </a><a class="directory-card" href="/latest-news/餐盒menu">
+          <span>餐盒MENU</span>
+          <small>/latest-news/餐盒menu</small>
+        </a><a class="directory-card" href="/latest-news/彌月試吃品項">
+          <span>彌月試吃品項 – 森森點心坊</span>
+          <small>/latest-news/彌月試吃品項</small>
+        </a><a class="directory-card" href="/latest-news/彌月試吃品項-2">
+          <span>彌月試吃品項 – 森森點心坊</span>
+          <small>/latest-news/彌月試吃品項-2</small>
+        </a><a class="directory-card" href="/latest-news/職人手感">
+          <span>職人手感</span>
+          <small>/latest-news/職人手感</small>
+        </a><a class="directory-card" href="/latest-news/歡慶新富店開幕">
+          <span>歡慶新富店開幕 – 森森點心坊</span>
+          <small>/latest-news/歡慶新富店開幕</small>
+        </a><a class="directory-card" href="/latest-news/bebuilder-1930">
+          <span>2024父親節蛋糕預購開跑</span>
+          <small>/latest-news/bebuilder-1930</small>
+        </a><a class="directory-card" href="/latest-news/bebuilder-2073">
+          <span>2025父親節預購 – 森森點心坊</span>
+          <small>/latest-news/bebuilder-2073</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>new-arrival</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/new-arrival/🍊纖橙冰咖啡🍊">
+          <span>🍊纖橙冰咖啡🍊</span>
+          <small>/new-arrival/🍊纖橙冰咖啡🍊</small>
+        </a><a class="directory-card" href="/new-arrival/🍫義式巧克🍫">
+          <span>🍫義式巧克🍫 – 森森點心坊</span>
+          <small>/new-arrival/🍫義式巧克🍫</small>
+        </a><a class="directory-card" href="/new-arrival/🎉蛋糕罐子-新發售🎉">
+          <span>蛋糕罐子 新發售 – 森森點心坊</span>
+          <small>/new-arrival/🎉蛋糕罐子-新發售🎉</small>
+        </a><a class="directory-card" href="/new-arrival/3吋草莓塔">
+          <span>3吋草莓塔</span>
+          <small>/new-arrival/3吋草莓塔</small>
+        </a><a class="directory-card" href="/new-arrival/日式烤年糕">
+          <span>日式烤年糕 – 森森點心坊</span>
+          <small>/new-arrival/日式烤年糕</small>
+        </a><a class="directory-card" href="/new-arrival/布丁燒">
+          <span>布丁燒</span>
+          <small>/new-arrival/布丁燒</small>
+        </a><a class="directory-card" href="/new-arrival/白葡萄">
+          <span>白葡萄</span>
+          <small>/new-arrival/白葡萄</small>
+        </a><a class="directory-card" href="/new-arrival/多佳米拉">
+          <span>多佳米拉</span>
+          <small>/new-arrival/多佳米拉</small>
+        </a><a class="directory-card" href="/new-arrival/多佳米拉-2">
+          <span>多佳米拉</span>
+          <small>/new-arrival/多佳米拉-2</small>
+        </a><a class="directory-card" href="/new-arrival/西點禮盒">
+          <span>西點禮盒</span>
+          <small>/new-arrival/西點禮盒</small>
+        </a><a class="directory-card" href="/new-arrival/芒果仙境">
+          <span>芒果仙境</span>
+          <small>/new-arrival/芒果仙境</small>
+        </a><a class="directory-card" href="/new-arrival/芒果奶酪">
+          <span>芒果奶酪</span>
+          <small>/new-arrival/芒果奶酪</small>
+        </a><a class="directory-card" href="/new-arrival/芒果奶露麵包">
+          <span>芒果奶露麵包</span>
+          <small>/new-arrival/芒果奶露麵包</small>
+        </a><a class="directory-card" href="/new-arrival/芒果奶露麵包-2">
+          <span>芒果奶露麵包</span>
+          <small>/new-arrival/芒果奶露麵包-2</small>
+        </a><a class="directory-card" href="/new-arrival/芒果季即將開始囉">
+          <span>芒果季即將開始囉!</span>
+          <small>/new-arrival/芒果季即將開始囉</small>
+        </a><a class="directory-card" href="/new-arrival/芒果蛋糕盒">
+          <span>芒果蛋糕盒</span>
+          <small>/new-arrival/芒果蛋糕盒</small>
+        </a><a class="directory-card" href="/new-arrival/芒果輕乳酪">
+          <span>芒果輕乳酪</span>
+          <small>/new-arrival/芒果輕乳酪</small>
+        </a><a class="directory-card" href="/new-arrival/芒果慕斯">
+          <span>芒果慕斯</span>
+          <small>/new-arrival/芒果慕斯</small>
+        </a><a class="directory-card" href="/new-arrival/法式核桃">
+          <span>/法式核桃/ – 森森點心坊</span>
+          <small>/new-arrival/法式核桃</small>
+        </a><a class="directory-card" href="/new-arrival/洛神花小吐司">
+          <span>洛神花小吐司 – 森森點心坊</span>
+          <small>/new-arrival/洛神花小吐司</small>
+        </a><a class="directory-card" href="/new-arrival/香芒泡芙">
+          <span>香芒泡芙</span>
+          <small>/new-arrival/香芒泡芙</small>
+        </a><a class="directory-card" href="/new-arrival/栗子蒙布朗-mont-blanc">
+          <span>栗子蒙布朗 Mont blanc – 森森點心坊</span>
+          <small>/new-arrival/栗子蒙布朗-mont-blanc</small>
+        </a><a class="directory-card" href="/new-arrival/草莓甜心">
+          <span>草莓甜心</span>
+          <small>/new-arrival/草莓甜心</small>
+        </a><a class="directory-card" href="/new-arrival/草莓甜心-2">
+          <span>草莓甜心</span>
+          <small>/new-arrival/草莓甜心-2</small>
+        </a><a class="directory-card" href="/new-arrival/草莓甜心-3">
+          <span>草莓甜心</span>
+          <small>/new-arrival/草莓甜心-3</small>
+        </a><a class="directory-card" href="/new-arrival/森森蝴蝶酥">
+          <span>森森蝴蝶酥 – 森森點心坊</span>
+          <small>/new-arrival/森森蝴蝶酥</small>
+        </a><a class="directory-card" href="/new-arrival/新品上市">
+          <span>新品上市-貴妃乳酪 – 森森點心坊</span>
+          <small>/new-arrival/新品上市</small>
+        </a><a class="directory-card" href="/new-arrival/新品上市-2">
+          <span>新品上市-藍蒂斯 – 森森點心坊</span>
+          <small>/new-arrival/新品上市-2</small>
+        </a><a class="directory-card" href="/new-arrival/新品上市✨肉鬆球✨">
+          <span>新品上市✨肉鬆球✨ – 森森點心坊</span>
+          <small>/new-arrival/新品上市✨肉鬆球✨</small>
+        </a><a class="directory-card" href="/new-arrival/新品上市✨蔥酥熱狗✨">
+          <span>新品上市✨蔥酥熱狗✨ – 森森點心坊</span>
+          <small>/new-arrival/新品上市✨蔥酥熱狗✨</small>
+        </a><a class="directory-card" href="/new-arrival/聖誕草莓泡芙">
+          <span>聖誕草莓泡芙 – 森森點心坊</span>
+          <small>/new-arrival/聖誕草莓泡芙</small>
+        </a><a class="directory-card" href="/new-arrival/葡萄圓舞曲">
+          <span>葡萄圓舞曲 – 森森點心坊</span>
+          <small>/new-arrival/葡萄圓舞曲</small>
+        </a><a class="directory-card" href="/new-arrival/蝴蝶酥">
+          <span>蝴蝶酥</span>
+          <small>/new-arrival/蝴蝶酥</small>
+        </a><a class="directory-card" href="/new-arrival/優荔-lichi">
+          <span>優荔  Litchi – 森森點心坊</span>
+          <small>/new-arrival/優荔-lichi</small>
+        </a><a class="directory-card" href="/new-arrival/戀戀草莓季">
+          <span>戀戀草莓季</span>
+          <small>/new-arrival/戀戀草莓季</small>
+        </a><a class="directory-card" href="/new-arrival/bebuilder-1845">
+          <span>草莓大福</span>
+          <small>/new-arrival/bebuilder-1845</small>
+        </a><a class="directory-card" href="/new-arrival/new-杏仁千層酥-new">
+          <span>NEW 杏仁千層酥 NEW – 森森點心坊</span>
+          <small>/new-arrival/new-杏仁千層酥-new</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>orders</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/orders">
+          <span>我的訂單</span>
+          <small>/orders</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>product-item</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/product-item/土鳳梨酥禮盒">
+          <span>土鳳梨酥禮盒 – 森森點心坊</span>
+          <small>/product-item/土鳳梨酥禮盒</small>
+        </a><a class="directory-card" href="/product-item/天使">
+          <span>天使 – 森森點心坊</span>
+          <small>/product-item/天使</small>
+        </a><a class="directory-card" href="/product-item/太陽餅禮盒">
+          <span>經典奶油餅禮盒 – 森森點心坊</span>
+          <small>/product-item/太陽餅禮盒</small>
+        </a><a class="directory-card" href="/product-item/手工蛋捲">
+          <span>手工蛋捲 – 森森點心坊</span>
+          <small>/product-item/手工蛋捲</small>
+        </a><a class="directory-card" href="/product-item/日式大福禮盒">
+          <span>日式大福禮盒 – 森森點心坊</span>
+          <small>/product-item/日式大福禮盒</small>
+        </a><a class="directory-card" href="/product-item/北極熊">
+          <span>北極熊 – 森森點心坊</span>
+          <small>/product-item/北極熊</small>
+        </a><a class="directory-card" href="/product-item/古拉瓦">
+          <span>古拉瓦 – 森森點心坊</span>
+          <small>/product-item/古拉瓦</small>
+        </a><a class="directory-card" href="/product-item/可愛兔">
+          <span>可愛兔 – 森森點心坊</span>
+          <small>/product-item/可愛兔</small>
+        </a><a class="directory-card" href="/product-item/皮卡丘">
+          <span>皮卡丘 – 森森點心坊</span>
+          <small>/product-item/皮卡丘</small>
+        </a><a class="directory-card" href="/product-item/宇治禾風-205">
+          <span>宇治禾風 – 森森點心坊</span>
+          <small>/product-item/宇治禾風-205</small>
+        </a><a class="directory-card" href="/product-item/百香洋梨-728">
+          <span>百香洋梨 – 森森點心坊</span>
+          <small>/product-item/百香洋梨-728</small>
+        </a><a class="directory-card" href="/product-item/豆塔禮盒">
+          <span>豆塔禮盒 – 森森點心坊</span>
+          <small>/product-item/豆塔禮盒</small>
+        </a><a class="directory-card" href="/product-item/拉拉熊">
+          <span>拉拉熊 – 森森點心坊</span>
+          <small>/product-item/拉拉熊</small>
+        </a><a class="directory-card" href="/product-item/法式蝴蝶酥-1657">
+          <span>法式蝴蝶酥 – 森森點心坊</span>
+          <small>/product-item/法式蝴蝶酥-1657</small>
+        </a><a class="directory-card" href="/product-item/泡芙王國">
+          <span>泡芙王國 – 森森點心坊</span>
+          <small>/product-item/泡芙王國</small>
+        </a><a class="directory-card" href="/product-item/波笛-209">
+          <span>波笛 – 森森點心坊</span>
+          <small>/product-item/波笛-209</small>
+        </a><a class="directory-card" href="/product-item/玫瑰花束-210">
+          <span>玫瑰花束 – 森森點心坊</span>
+          <small>/product-item/玫瑰花束-210</small>
+        </a><a class="directory-card" href="/product-item/草莓修多季節限定">
+          <span>草莓修多(季節限定) – 森森點心坊</span>
+          <small>/product-item/草莓修多季節限定</small>
+        </a><a class="directory-card" href="/product-item/草莓萊思克季節限定-1868">
+          <span>草莓萊思克(季節限定) – 森森點心坊</span>
+          <small>/product-item/草莓萊思克季節限定-1868</small>
+        </a><a class="directory-card" href="/product-item/馬卡龍森林">
+          <span>馬卡龍森林 – 森森點心坊</span>
+          <small>/product-item/馬卡龍森林</small>
+        </a><a class="directory-card" href="/product-item/莓麗朵-245">
+          <span>莓麗朵 – 森森點心坊</span>
+          <small>/product-item/莓麗朵-245</small>
+        </a><a class="directory-card" href="/product-item/雪芙蕾">
+          <span>雪芙蕾 – 森森點心坊</span>
+          <small>/product-item/雪芙蕾</small>
+        </a><a class="directory-card" href="/product-item/喜八柴柴-259">
+          <span>喜八柴柴 – 森森點心坊</span>
+          <small>/product-item/喜八柴柴-259</small>
+        </a><a class="directory-card" href="/product-item/森森肉鬆餅">
+          <span>森森肉鬆餅 – 森森點心坊</span>
+          <small>/product-item/森森肉鬆餅</small>
+        </a><a class="directory-card" href="/product-item/焦糖派對-732">
+          <span>焦糖派對 – 森森點心坊</span>
+          <small>/product-item/焦糖派對-732</small>
+        </a><a class="directory-card" href="/product-item/鈕扣牛軋餅">
+          <span>杏仁千層酥 – 森森點心坊</span>
+          <small>/product-item/鈕扣牛軋餅</small>
+        </a><a class="directory-card" href="/product-item/鈕扣餅乾">
+          <span>鈕釦牛軋餅 – 森森點心坊</span>
+          <small>/product-item/鈕扣餅乾</small>
+        </a><a class="directory-card" href="/product-item/黃色小鴨-1876">
+          <span>黃色小鴨 – 森森點心坊</span>
+          <small>/product-item/黃色小鴨-1876</small>
+        </a><a class="directory-card" href="/product-item/黑森林">
+          <span>黑森林 – 森森點心坊</span>
+          <small>/product-item/黑森林</small>
+        </a><a class="directory-card" href="/product-item/黑爵士-207">
+          <span>黑爵士 – 森森點心坊</span>
+          <small>/product-item/黑爵士-207</small>
+        </a><a class="directory-card" href="/product-item/榛果脆心巧思">
+          <span>榛果脆心巧思 – 森森點心坊</span>
+          <small>/product-item/榛果脆心巧思</small>
+        </a><a class="directory-card" href="/product-item/綠寶石萊思克季節限定-1870">
+          <span>綠寶石萊思克(季節限定) – 森森點心坊</span>
+          <small>/product-item/綠寶石萊思克季節限定-1870</small>
+        </a><a class="directory-card" href="/product-item/蜘蛛人-1157">
+          <span>蜘蛛人 – 森森點心坊</span>
+          <small>/product-item/蜘蛛人-1157</small>
+        </a><a class="directory-card" href="/product-item/鳳梨酥禮盒">
+          <span>達克瓦茲禮盒 – 森森點心坊</span>
+          <small>/product-item/鳳梨酥禮盒</small>
+        </a><a class="directory-card" href="/product-item/摩卡">
+          <span>摩卡 – 森森點心坊</span>
+          <small>/product-item/摩卡</small>
+        </a><a class="directory-card" href="/product-item/藍莓萊思克-204">
+          <span>藍莓萊思克 – 森森點心坊</span>
+          <small>/product-item/藍莓萊思克-204</small>
+        </a><a class="directory-card" href="/product-item/繽紛世界">
+          <span>繽紛世界 – 森森點心坊</span>
+          <small>/product-item/繽紛世界</small>
+        </a><a class="directory-card" href="/product-item/oreo冰淇淋蛋糕-1878">
+          <span>OREO – 森森點心坊</span>
+          <small>/product-item/oreo冰淇淋蛋糕-1878</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>product-types</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/product-types/生日蛋糕">
+          <span>生日蛋糕 – 森森點心坊</span>
+          <small>/product-types/生日蛋糕</small>
+        </a><a class="directory-card" href="/product-types/生日蛋糕/page/2">
+          <span>生日蛋糕</span>
+          <small>/product-types/生日蛋糕/page/2</small>
+        </a><a class="directory-card" href="/product-types/冰淇淋蛋糕">
+          <span>冰淇淋蛋糕 – 森森點心坊</span>
+          <small>/product-types/冰淇淋蛋糕</small>
+        </a><a class="directory-card" href="/product-types/伴手禮">
+          <span>伴手禮 – 森森點心坊</span>
+          <small>/product-types/伴手禮</small>
+        </a><a class="directory-card" href="/product-types/所有蛋糕">
+          <span>所有蛋糕 – 森森點心坊</span>
+          <small>/product-types/所有蛋糕</small>
+        </a><a class="directory-card" href="/product-types/所有蛋糕/page/2">
+          <span>所有蛋糕</span>
+          <small>/product-types/所有蛋糕/page/2</small>
+        </a><a class="directory-card" href="/product-types/所有蛋糕/page/3">
+          <span>所有蛋糕</span>
+          <small>/product-types/所有蛋糕/page/3</small>
+        </a><a class="directory-card" href="/product-types/造形蛋糕">
+          <span>造形蛋糕 – 森森點心坊</span>
+          <small>/product-types/造形蛋糕</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>season-only</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/season-only/今年的森森芒果季開始囉">
+          <span>森森芒果季! – 森森點心坊</span>
+          <small>/season-only/今年的森森芒果季開始囉</small>
+        </a><a class="directory-card" href="/season-only/今年的森森芒果季開始囉-2">
+          <span>森森芒果季 – 森森點心坊</span>
+          <small>/season-only/今年的森森芒果季開始囉-2</small>
+        </a><a class="directory-card" href="/season-only/草莓芙蓮蛋糕盒">
+          <span>草莓芙蓮蛋糕盒 – 森森點心坊</span>
+          <small>/season-only/草莓芙蓮蛋糕盒</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>sensen-coffee</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/sensen-coffee/🍹森森全新飲品上市🍹-2">
+          <span>🍹森森全新飲品🍹 – 森森點心坊</span>
+          <small>/sensen-coffee/🍹森森全新飲品上市🍹-2</small>
+        </a><a class="directory-card" href="/sensen-coffee/多多系列">
+          <span>多多系列</span>
+          <small>/sensen-coffee/多多系列</small>
+        </a><a class="directory-card" href="/sensen-coffee/黑糖鮮奶">
+          <span>黑糖鮮奶</span>
+          <small>/sensen-coffee/黑糖鮮奶</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>slide-types</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/slide-types/index-slider">
+          <span>首頁 – 森森點心坊</span>
+          <small>/slide-types/index-slider</small>
+        </a>
+      </div>
+    </section>
+    <section class="directory-group">
+      <h2>tag</h2>
+      <div class="directory-grid">
+        <a class="directory-card" href="/tag/好康">
+          <span>好康 – 森森點心坊</span>
+          <small>/tag/好康</small>
+        </a><a class="directory-card" href="/tag/新品">
+          <span>新品 – 森森點心坊</span>
+          <small>/tag/新品</small>
+        </a>
+      </div>
+    </section></section>
+  </main>
+  
+  <script>
+  (() => {
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("#site-menu");
+    if (!toggle || !menu) return;
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      toggle.setAttribute("aria-label", expanded ? "開啟主選單" : "關閉主選單");
+      menu.classList.toggle("is-open", !expanded);
+    });
+    menu.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "開啟主選單");
+        menu.classList.remove("is-open");
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "開啟主選單");
+        menu.classList.remove("is-open");
+        toggle.focus();
+      }
+    });
+  })();
+  </script>
+  <footer class="footer">© 2018 - 2026 森森點心坊. All Rights Reserved. | Design by <a href="https://www.aq-webdesign.com/index.html" target="_blank" rel="noreferrer">A.Q.webdesign</a>. | <a href="https://www.sensen.com.tw/%e9%9a%b1%e7%A7%81%e6%ac%8a%e6%a2%9d%e6%ac%be/">隱私權政策</a></footer>
+  <div class="sensen-cart-overlay" id="sensen-cart-overlay" hidden></div>
+  <aside class="sensen-cart-drawer" id="sensen-cart-drawer" aria-label="購物車" aria-hidden="true"><div class="sensen-cart-head"><h2>購物車</h2><button class="sensen-cart-close" type="button" aria-label="關閉購物車">×</button></div><div class="sensen-cart-body"><p data-cart-message>載入中…</p><div data-cart-items></div><div class="sensen-cart-fields" data-cart-options hidden><label>優惠碼<div class="sensen-cart-coupon-row"><input data-cart-coupon type="text" placeholder="輸入優惠碼" autocomplete="off"><button class="sensen-cart-coupon-apply" type="button" data-cart-apply-coupon>套用</button></div></label><label>Pickup date（取貨日期）<input data-cart-pickup type="date"></label><small data-cart-date-hint></small><p class="sensen-cart-quote-message" data-cart-quote-message role="status"></p></div></div><div class="sensen-cart-foot"><div class="sensen-cart-price-lines" data-cart-price-lines hidden><div><span>小計</span><strong data-cart-subtotal>$0.00</strong></div><div data-cart-discount-row hidden><span>折扣</span><strong data-cart-discount>-$0.00</strong></div><div class="is-total"><span>合計</span><strong data-cart-total>$0.00</strong></div></div><a class="button" href="/checkout/">結帳</a><a class="sensen-cart-secondary" href="/customer/admin/">前往會員中心</a></div></aside>
+  <script src="/assets/cart-drawer.js"></script>
+</body>
+</html>

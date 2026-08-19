@@ -1,0 +1,12 @@
+[
+  {"id":"emerald-lysk","title":"綠寶石萊思克（季節限定）","cat":"生日蛋糕","price":"$680","priceValue":680,"quantity":25,"day":"5","img":"http://127.0.0.1:3000/assets/images/cake-2024-11.png","desc":"新鮮水果與細緻鮮奶油蛋糕。"},
+  {"id":"strawberry-lysk","title":"草莓萊思克（季節限定）","cat":"生日蛋糕","price":"$680","priceValue":680,"quantity":25,"day":"5","img":"http://127.0.0.1:3000/assets/images/cake-2024-10.png","desc":"草莓與鮮奶油搭配的生日蛋糕。"},
+  {"id":"caramel-party","title":"焦糖派對","cat":"生日蛋糕","price":"$780","priceValue":780,"quantity":25,"day":"5","img":"http://127.0.0.1:3000/assets/images/cake-2024-1.png","desc":"焦糖風味生日蛋糕。"},
+  {"id":"gulava","title":"古拉瓦","cat":"生日蛋糕","price":"$780","priceValue":780,"quantity":25,"day":"5","img":"http://127.0.0.1:3000/assets/images/cake-21.png","desc":"森森經典生日蛋糕。"},
+  {"id":"passion-pear","title":"百香洋梨","cat":"生日蛋糕","price":"$780","priceValue":780,"quantity":25,"day":"5","img":"http://127.0.0.1:3000/assets/images/cake-2024-2.png","desc":"百香果與洋梨風味蛋糕。"},
+  {"id":"spiderman","title":"蜘蛛人","cat":"造型蛋糕","price":"$980","priceValue":980,"quantity":15,"day":"7","img":"http://127.0.0.1:3000/assets/images/dsc03882.png","desc":"造型生日蛋糕。"},
+  {"id":"polar-bear","title":"北極熊","cat":"造型蛋糕","price":"$980","priceValue":980,"quantity":15,"day":"7","img":"http://127.0.0.1:3000/assets/images/cake-2020-9.png","desc":"可愛造型生日蛋糕。"},
+  {"id":"oreo-ice-cream","title":"OREO","cat":"冰淇淋蛋糕","price":"$880","priceValue":880,"quantity":15,"day":"7","img":"http://127.0.0.1:3000/assets/images/cake-2024-15.png","desc":"OREO 冰淇淋蛋糕。"},
+  {"id":"yellow-duck-ice-cream","title":"黃色小鴨","cat":"冰淇淋蛋糕","price":"$880","priceValue":880,"quantity":15,"day":"7","img":"http://127.0.0.1:3000/assets/images/cake-2024-14.png","desc":"黃色小鴨冰淇淋蛋糕。"},
+  {"id":"black-knight-ice-cream","title":"黑爵士","cat":"冰淇淋蛋糕","price":"$880","priceValue":880,"quantity":15,"day":"7","img":"http://127.0.0.1:3000/assets/images/cake-2024-13.png","desc":"巧克力風味冰淇淋蛋糕。"}
+]

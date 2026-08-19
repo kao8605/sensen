@@ -1,0 +1,418 @@
+{
+  "users": [
+    {
+      "id": "sensen-admin-2026",
+      "name": "森森管理員",
+      "email": "admin@sensen.local",
+      "phone": "",
+      "salt": "41f6df27492aae5990604d12c4596db3",
+      "passwordHash": "086e1dd897d09b6710141f1e28ef2e191f972208c48354c2d8299389188496fe69af3b7d0ad7f1b61bb23e53393b47eb0def3b2a509b897e073bc830defdb276",
+      "address": null,
+      "createdAt": "2026-08-14T00:00:00.000Z",
+      "role": "admin",
+      "isAdmin": true
+    },
+    {
+      "id": "6e351042aab2f8387e5a72e9ca5e3ed8851c1f74f3dcc2f7d2ffe46c00c9cf4b",
+      "name": "Test User",
+      "email": "test1785317734967@example.com",
+      "phone": "123",
+      "salt": "4bb9b84915322932b8638c427fdaf9c5",
+      "passwordHash": "b25a63e18aafaf8c9b2bddb56d3bf4e75bbef369e31102641146edc89dcfdbc05dbd8ac9e70f150a26c41b98dc79b95c76aacc4978da47fea9489c8eb5587e64",
+      "address": null,
+      "createdAt": "2026-07-29T09:35:35.070Z",
+      "role": "customer",
+      "isAdmin": false
+    },
+    {
+      "id": "23d5457a62a1980c3e75f31d2704329b2e60fc6314491c70ab4872076bf76d41",
+      "name": "Test User",
+      "email": "codex-test-1785321129@example.com",
+      "phone": "123",
+      "salt": "91d234e91fe9b1aa4280f7d5a9b705a9",
+      "passwordHash": "4593ede316052453c0322de5af8769e38e2d034bc8a8871c8a830b2631b2a1c8d1860f57854f8dfc8ee1cc427f9270025ce37aba6618b7dca8d2fa9acfab88b7",
+      "address": null,
+      "createdAt": "2026-07-29T10:32:09.940Z",
+      "role": "customer",
+      "isAdmin": false
+    },
+    {
+      "id": "f5a7d19b30560cc00b6b635f7c9520b78a778c178399aa977b6d2e1635639bdf",
+      "name": "Browser Test",
+      "email": "browser-test-1785321231@example.com",
+      "phone": "123",
+      "salt": "482fdda229ee1c948b4534b67b6f8298",
+      "passwordHash": "35873318d950c1744e0cd3e1c1a948269903bd66215a8cefa96b4d1595c30a4d75fbc3243840dfdf5aaec41afbb0a2a4dc61616cb5874d80950b191b5b05fca8",
+      "address": null,
+      "createdAt": "2026-07-29T10:33:51.986Z",
+      "role": "customer",
+      "isAdmin": false
+    },
+    {
+      "id": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "name": "kao",
+      "email": "jinfeng8605@gmail.com",
+      "phone": "0906843286",
+      "salt": "f6bf2c5292e2a078f349502690b32ecb",
+      "passwordHash": "ea8456f8f4e41d0910074258256d62d59bbb345e3323d5b7ab20ddc168f0e71fad1d51510a9f50b5518425a0e4ca346e57a9fdabfb0ce91330ae287f9cb2c8cd",
+      "address": null,
+      "createdAt": "2026-07-29T10:35:04.202Z",
+      "role": "customer",
+      "isAdmin": false
+    },
+    {
+      "id": "24ca0162c99a2146a89aed42c0bf277a4a067fb5ac7f5dea4ed6eff279a8f5d3",
+      "name": "Yu-Hsuan Kao",
+      "email": "jinfeng8604@gmail.com",
+      "phone": "0906843286",
+      "salt": "b095939320ee1a67e941fd8c32c9c8c4",
+      "passwordHash": "166f516c0ba44c294614a318c279e1f58628659e358cbbd2308bcfc785d06e1b72be500b3d48a8e64f9145058b35a3db78287922f28153dd87d72e25302462d8",
+      "address": null,
+      "role": "customer",
+      "isAdmin": false,
+      "createdAt": "2026-08-13T20:23:42.342Z"
+    },
+    {
+      "id": "36e6ea71f94b9a2165b1dae7e8ff38a0f76f3fe0dd7a5ad9df7d7fed4b856f60",
+      "name": "Yu-Hsuan Kao",
+      "email": "jinfeng8603@gmail.com",
+      "phone": "0906843286",
+      "salt": "2a15cbc5284a14101cbc1cafba4d0387",
+      "passwordHash": "6e0a6efa4c6adaa7a1a74d2ac604d31e9a5a3fbe3697949fd8b1d17b9ec9454464f776cba502edd711f6db21947fe3eef7266e44530d91edec45a15a9666d86b",
+      "address": null,
+      "role": "customer",
+      "isAdmin": false,
+      "createdAt": "2026-08-13T20:27:38.815Z"
+    }
+  ],
+  "sessions": {
+    "7c7054a352e6b57fd26bae9da182ecf0477842287c132fefa7fbb761e40336be": {
+      "userId": "6e351042aab2f8387e5a72e9ca5e3ed8851c1f74f3dcc2f7d2ffe46c00c9cf4b",
+      "createdAt": "2026-07-29T09:35:35.070Z"
+    },
+    "3c80aa318e2241c26e702ba2eed6f3ddd0d93924700f0323255005f7e1966e69": {
+      "userId": "23d5457a62a1980c3e75f31d2704329b2e60fc6314491c70ab4872076bf76d41",
+      "createdAt": "2026-07-29T10:32:09.943Z"
+    },
+    "17e201c6ee2f4d2f50a1086c809d40e32de48dfcf11feada9b993716de0bc312": {
+      "userId": "f5a7d19b30560cc00b6b635f7c9520b78a778c178399aa977b6d2e1635639bdf",
+      "createdAt": "2026-07-29T10:33:51.992Z"
+    },
+    "b6e6043ead6af3e5603081d4a5e589c50c2c6f3be0574b066afac2c09a34a723": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-07-31T18:30:21.935Z"
+    },
+    "844def0a78dbcec7f527cd35be5145a1f4523b70ce058f24c7dc68a9569d694f": {
+      "userId": "24ca0162c99a2146a89aed42c0bf277a4a067fb5ac7f5dea4ed6eff279a8f5d3",
+      "createdAt": "2026-08-13T20:23:42.342Z"
+    },
+    "56e548d0c459134af85815e7fbf9e3cedd2445945b7f117e841043c5632a891a": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T20:24:05.622Z"
+    },
+    "3adf00b83f19bfcc78e2396aa3d550687dc626d1dd991c4bb33b94e3d65f55ee": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T20:24:28.814Z"
+    },
+    "49ba31978427c8ddc6e6fd9f4fcff7806f8110028911ddeb18d7f88989c43d5f": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T20:26:54.410Z"
+    },
+    "c3245d31ddb97e5543822a722c88f3f4c7ebdb6847ef60b5154c0f1686264596": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T20:27:03.540Z"
+    },
+    "b49c229704eeb38d0374cd81abbe8df896f07ab4e7fdc5420371c9fd2a95b508": {
+      "userId": "36e6ea71f94b9a2165b1dae7e8ff38a0f76f3fe0dd7a5ad9df7d7fed4b856f60",
+      "createdAt": "2026-08-13T20:27:38.815Z"
+    },
+    "f02c828d83d465b3404d6e9bef2e5737800c6a4527fdfcd85a16254dc46dbc3f": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T20:35:35.755Z"
+    },
+    "082fb5b681ba768f327a42bedb677f6a69ca6abeb5589b1a5cb08adc3c17c4e2": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T20:48:48.812Z"
+    },
+    "8eba5ade9089db8fd05039acbfcf1bd5b2b1c866851039cf24c72f7dbf2155bd": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T20:53:08.342Z"
+    },
+    "e9bc7f29e729a465784dfcc5d70e2f7a48f4ec064028ed3b4fbd83fb0038441f": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T22:42:34.241Z"
+    },
+    "4caa00aff769f306dd9577cc62f632d68763d8972b4abd4d20f41b85a4eeda8f": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T22:42:35.726Z"
+    },
+    "ec9e5d7e0f474aa9a1398143df630bf46a21b4e6d63c3a81dca117adafc729a1": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T22:42:56.877Z"
+    },
+    "03029c276ecceedcad0654b33af34fd81f75766628e3ed68a169d375023b5e1d": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T22:43:40.772Z"
+    },
+    "5372ea628d08f4805abce03634d4ed063dfab0d2a3fa54c8bf30a0d93ee4e5c2": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T22:43:50.320Z"
+    },
+    "2b62920e89d97cee0bfd3e6d8e33796908030092f7364f52548a005a653a4fa7": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T22:48:02.408Z"
+    },
+    "79129074c72a1872e5e3c3aab449b5676da9afdc21fbad746e59b06f7791dce8": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T22:50:28.212Z"
+    },
+    "20620a90a1d0a29ce2c5d29e84113528ed242f5b62d1358f2398a45924dba679": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T22:58:43.530Z"
+    },
+    "0498c5a1326bb5830190d177172718654f8cac0305f6ec509916e7eaa279b2c5": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T22:58:49.119Z"
+    },
+    "ee7782f4d00b3a6c0de77b542f89bbe6dca9d5f470f3745835b51b39d3a16eba": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T23:02:07.547Z"
+    },
+    "d71d2bb5a97cabe3d69b3678e673ad1077b2bb8252d7913ded83643e469dfa28": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T23:02:10.097Z"
+    },
+    "525b498e54504fb7979dd7fa2ddddf1d5b2b13ac70013d661b451817d6931633": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T23:06:16.580Z"
+    },
+    "b2f57be9b118ab5b38647ea19e637d82c57945c78e389fe20bbe0277656e1fd4": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T23:06:18.986Z"
+    },
+    "5de76b0a8ce25a221028cb5c2e9d9a3dd791770f1db9996aae2cad13b953811c": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T23:06:28.008Z"
+    },
+    "8e96863952d28683cf1be1ebea69084fb8a5d0b891ff6a6e8fe6506676e752fe": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T23:08:54.061Z"
+    },
+    "7025abb279394327e9799f91507ef96c2e945c2678b7b960fa93e4992591e32a": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T23:08:55.041Z"
+    },
+    "5ad30882fae8c349a26f722a2ed94c40ac43281757b810d41624406a45b83b9c": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T23:08:55.857Z"
+    },
+    "9c165d9621ae26a821c9b25495eac7f52d0ecfec4f5b15cb671e72d29eb512b9": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T23:08:56.516Z"
+    },
+    "90ca5f16e12ad29df41f767a9c79e224cfcd6d795b0cb179ac30e73782e4c4ec": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T23:10:17.555Z"
+    },
+    "6eb3de8a597e8d2e0dcc9f01e454052354a576cb79856559bcf7f27be915c419": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T23:12:27.576Z"
+    },
+    "75814bebd789c8ea937101cacfac6f2a1f80ad11675a224f75c9ab4cc01b3d42": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T23:25:05.367Z"
+    },
+    "da53f7ed8a3987d0ea84041ae2ac5b2e5d44a66df05ef5cabca237088fe0da69": {
+      "userId": "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907",
+      "createdAt": "2026-08-13T23:34:54.816Z"
+    },
+    "ec0f98e53d91b27fb43a1e26fc5ea389f5a29a69d0834055e629b66e4ead6b60": {
+      "userId": "sensen-admin-2026",
+      "createdAt": "2026-08-14T00:00:17.366Z"
+    },
+    "8bf7cc8addf4837fc0e1590938d7db4a10ae31c4f328479da84d4ab76534cf7b": {
+      "userId": "sensen-admin-2026",
+      "createdAt": "2026-08-18T10:31:53.743Z"
+    }
+  },
+  "guestCarts": {
+    "ms5wjva64xyz8b8u8mj": [
+      {
+        "id": "chicken-noodle-lunch-set",
+        "title": "Chicken Noodle Lunch Set",
+        "cat": "NOODLES",
+        "price": "$11.99",
+        "priceValue": 11.99,
+        "img": "img/QuickMeals/2.webp",
+        "desc": "A fast lunch set with stir-fried noodles, chicken, broccoli, peppers, onions and shiitake mushrooms.",
+        "qty": 1
+      }
+    ],
+    "d0542b7e1b0d7e43397489edab410deed9a3ee4b60af8b9348c469679cec4d13": [
+      {
+        "id": "emerald-lysk",
+        "title": "綠寶石萊思克（季節限定）",
+        "cat": "生日蛋糕",
+        "price": "$680",
+        "priceValue": 680,
+        "quantity": 25,
+        "day": "5",
+        "img": "/assets/images/cake-2024-11.png",
+        "desc": "新鮮水果與細緻鮮奶油蛋糕。",
+        "source": "static",
+        "qty": 2
+      }
+    ],
+    "84a4d4f2267f13a41f2e32c83b78d6b740e34458470715c9cac021a014cae34c": [],
+    "fb41e3baa266fc3c22e48e72d592c7f85711106325d180b3754009dcda9dc6fe": []
+  },
+  "userCarts": {
+    "6e351042aab2f8387e5a72e9ca5e3ed8851c1f74f3dcc2f7d2ffe46c00c9cf4b": [],
+    "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907": []
+  },
+  "orders": [],
+  "productOverrides": {
+    "chicken-rice-lunch-set": {
+      "title": "Chicken Rice Lunch Set",
+      "cat": "RICE",
+      "img": "img/QuickMeals/1.webp",
+      "desc": "A quick lunch set with steamed rice, saucy chicken, broccoli, baby corn, mushrooms and cabbage.",
+      "quantity": 80,
+      "day": "5",
+      "priceValue": 13.99,
+      "price": "$13.99",
+      "updatedAt": "2026-07-30T15:11:49.588Z"
+    },
+    "chicken-fried-rice-set": {
+      "title": "Chicken Fried Rice Set",
+      "cat": "RICE",
+      "img": "img/QuickMeals/3.webp",
+      "desc": "A satisfying fried rice lunch set with egg, peas, carrots, scallions, chicken and broccoli.",
+      "quantity": 28,
+      "day": "5",
+      "priceValue": 12.99,
+      "price": "$12.99",
+      "updatedAt": "2026-07-31T18:29:30.827Z"
+    },
+    "emerald-lysk": {
+      "title": "綠寶石萊思克（季節限定）",
+      "cat": "生日蛋糕",
+      "sku": "emerald-lysk",
+      "spec": "",
+      "img": "/assets/images/cake-2024-11.png",
+      "desc": "新鮮水果與細緻鮮奶油蛋糕。",
+      "quantity": 25,
+      "day": "5",
+      "published": true,
+      "priceValue": 680,
+      "price": "$680.00",
+      "updatedAt": "2026-08-18T10:53:48.765Z"
+    },
+    "strawberry-lysk": {
+      "title": "草莓萊思克（季節限定）",
+      "cat": "生日蛋糕",
+      "sku": "strawberry-lysk",
+      "spec": "",
+      "img": "/assets/images/cake-2024-10.png",
+      "desc": "草莓與鮮奶油搭配的生日蛋糕。",
+      "quantity": 25,
+      "day": "5",
+      "published": true,
+      "priceValue": 680,
+      "price": "$680.00",
+      "updatedAt": "2026-08-18T10:49:55.031Z"
+    }
+  },
+  "productAdditions": [
+    {
+      "id": "123",
+      "source": "admin",
+      "title": "123",
+      "sku": "123",
+      "cat": "NOODLES",
+      "priceValue": 11,
+      "price": "$11.00",
+      "quantity": 14,
+      "img": "img/menu/20267095717.webp",
+      "desc": "123",
+      "rating": "4.8",
+      "reviews": "24",
+      "cal": "520",
+      "time": "15",
+      "createdAt": "2026-07-30T13:47:51.288Z",
+      "updatedAt": "2026-07-30T13:47:51.290Z",
+      "day": "5"
+    },
+    {
+      "id": "codex-excel-test",
+      "source": "admin",
+      "title": "Codex Excel Test",
+      "sku": "",
+      "cat": "NOODLES",
+      "priceValue": 9.99,
+      "price": "$9.99",
+      "quantity": 6,
+      "day": "5",
+      "img": "img/menu/1.webp",
+      "desc": "Temporary import test",
+      "rating": "4.8",
+      "reviews": "24",
+      "cal": "520",
+      "time": "15",
+      "createdAt": "2026-07-30T15:09:12.771Z",
+      "updatedAt": "2026-07-30T15:09:12.784Z"
+    }
+  ],
+  "deletedProducts": [
+    "123",
+    "codex-excel-test",
+    "chicken-herbal-soup"
+  ],
+  "reservations": [],
+  "messages": [],
+  "subscribers": [
+    {
+      "id": "f285a9612f91",
+      "email": "123@gmail.com",
+      "status": "active",
+      "createdAt": "2026-07-30T15:01:10.496Z"
+    }
+  ],
+  "searches": [],
+  "coupons": [
+    {
+      "code": "WELCOME15",
+      "label": "Welcome 15% off",
+      "type": "percent",
+      "value": 15,
+      "min": 0,
+      "enabled": true,
+      "updatedAt": "2026-08-10T07:03:03.922Z"
+    },
+    {
+      "code": "PATRIA10",
+      "label": "Patria 10% off",
+      "type": "percent",
+      "value": 10,
+      "min": 0,
+      "enabled": true,
+      "updatedAt": "2026-08-10T07:03:03.923Z"
+    },
+    {
+      "code": "FAMILY5",
+      "label": "$5 family order discount",
+      "type": "fixed",
+      "value": 5,
+      "min": 40,
+      "enabled": true,
+      "updatedAt": "2026-08-10T07:03:03.923Z"
+    }
+  ],
+  "lineStates": {
+    "094a2c1325e775bcbe9341da3f814815058ce1987c2eee3b90db018a0ea12ded": {
+      "nonce": "a18bc2dd0588d43f313a0bbe4fbdf904fc586316f336a3448eac6a24db6ecda2",
+      "createdAt": 1786353841025
+    }
+  },
+  "lineTickets": {}
+}

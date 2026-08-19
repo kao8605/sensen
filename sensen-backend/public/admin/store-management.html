@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>門市管理｜森森點心坊</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.webp">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.webp">
+  <link rel="manifest" href="./assets/site.webmanifest">
+  <script type="module" src="./assets/js/main-CnSylLUz.js?v=sensen-20260814"></script>
+  <link rel="stylesheet" href="./assets/css/main-CM9hUMvt.css">
+  <link rel="stylesheet" href="./store-management.css">
+</head>
+
+<body>
+  <div id="overlay" class="overlay"></div>
+
+  <nav id="topbar" class="navbar bg-white border-bottom fixed-top topbar px-3">
+    <button id="toggleBtn" class="d-none d-lg-inline-flex btn btn-light btn-icon btn-sm" type="button" aria-label="收合側欄">
+      <i class="ti ti-layout-sidebar-left-expand"></i>
+    </button>
+    <button id="mobileBtn" class="btn btn-light btn-icon btn-sm d-lg-none me-2" type="button" aria-label="開啟側欄">
+      <i class="ti ti-layout-sidebar-left-expand"></i>
+    </button>
+    <div class="ms-auto d-flex align-items-center gap-3">
+      <span class="text-secondary small d-none d-sm-inline">SENSEN BAKERY · ADMIN</span>
+      <img src="./assets/images/avatar-1.jpg" alt="管理員" class="avatar avatar-sm rounded-circle">
+    </div>
+  </nav>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="logo-area">
+      <div class="patria-admin-brand">
+        <span class="patria-admin-icon"><i class="ti ti-tools-kitchen-2"></i></span>
+        <span class="patria-admin-copy"><strong>Pat<span>ria</span></strong><em>CHINESE FOOD &amp; RESTAURANT</em></span>
+      </div>
+    </div>
+    <ul class="nav flex-column">
+      <li class="px-4 py-2"><small class="nav-text">Main</small></li>
+      <li><a class="nav-link" href="index.html"><i class="ti ti-home"></i><span class="nav-text">Dashboard</span></a></li>
+      <li><a class="nav-link" href="inventory.html"><i class="ti ti-box-seam"></i><span class="nav-text">商品庫存</span></a></li>
+      <li><a class="nav-link active" href="store-management.html"><i class="ti ti-shopping-cart"></i><span class="nav-text">門市管理</span></a></li>
+      <li><a class="nav-link" href="create-product.html"><i class="ti ti-plus"></i><span class="nav-text">Add Product</span></a></li>
+      <li><a class="nav-link" href="reports.html"><i class="ti ti-receipt"></i><span class="nav-text">Reports</span></a></li>
+      <li><a class="nav-link" href="discount-codes.html"><i class="ti ti-discount-2"></i><span class="nav-text">Discount Codes</span></a></li>
+      <li><a class="nav-link" href="docs.html"><i class="ti ti-file-text"></i><span class="nav-text">Docs</span></a></li>
+      <li><a class="nav-link" href="http://127.0.0.1:3000/"><i class="ti ti-arrow-back-up"></i><span class="nav-text">Back to 森森</span></a></li>
+      <li class="px-4 pt-4 pb-2"><small class="nav-text">Account</small></li>
+      <li><a class="nav-link" href="signin.html"><i class="ti ti-logout"></i><span class="nav-text">Log in</span></a></li>
+      <li><a class="nav-link" href="signup.html"><i class="ti ti-user-plus"></i><span class="nav-text">Sign up</span></a></li>
+    </ul>
+  </aside>
+
+  <main id="content" class="content py-10" data-admin-page="store-management">
+    <div class="container-fluid management-content">
+      <div class="management-header d-flex justify-content-between align-items-end gap-3 flex-wrap">
+        <div>
+          <p class="management-eyebrow text-primary mb-2">SENSEN BAKERY · ADMIN</p>
+          <h1 class="fs-3 mb-1">門市管理</h1>
+          <p class="text-secondary mb-0">集中管理訂單、物流與客戶消費紀錄。</p>
+        </div>
+        <button class="btn btn-primary" id="refresh-all" type="button"><i class="ti ti-refresh me-1"></i>重新整理</button>
+      </div>
+
+      <p id="global-message" class="text-success small mb-3" role="status"></p>
+      <div id="load-error" class="alert alert-danger" hidden></div>
+      <div class="alert alert-info management-notice d-flex align-items-start gap-2" role="note">
+        <i class="ti ti-info-circle fs-5"></i>
+        <span>商品新增、編輯、庫存、規格與上下架，請統一前往 <a href="inventory.html" class="alert-link">商品庫存</a> 頁面管理。</span>
+      </div>
+
+      <section class="management-card" id="orders">
+        <div class="management-card-head d-flex justify-content-between align-items-center gap-3 flex-wrap">
+          <div>
+            <div class="d-flex align-items-center gap-2"><i class="ti ti-shopping-bag text-primary fs-4"></i><h2 class="h5 mb-0">訂單管理</h2></div>
+            <span id="order-count" class="text-secondary small"></span>
+          </div>
+          <div class="d-flex gap-2 flex-wrap">
+            <button class="btn btn-outline-success btn-sm" id="export-csv" type="button"><i class="ti ti-file-type-csv me-1"></i>匯出 CSV</button>
+            <button class="btn btn-outline-success btn-sm" id="export-xls" type="button"><i class="ti ti-file-spreadsheet me-1"></i>匯出 Excel</button>
+          </div>
+        </div>
+        <div class="management-toolbar">
+          <div class="input-group">
+            <span class="input-group-text bg-white"><i class="ti ti-search"></i></span>
+            <input id="order-search" class="form-control" type="search" placeholder="訂單編號／客戶／Email" aria-label="搜尋訂單">
+          </div>
+          <select id="order-status-filter" class="form-select" aria-label="訂單狀態">
+            <option value="">全部狀態</option>
+            <option value="pending_payment">待付款</option>
+            <option value="processing">處理中</option>
+            <option value="shipped">已出貨</option>
+            <option value="completed">已完成</option>
+            <option value="cancelled">取消</option>
+          </select>
+          <label class="management-date-field">日期<input id="order-date-from" class="form-control" type="date"></label>
+          <label class="management-date-field">至<input id="order-date-to" class="form-control" type="date"></label>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light"><tr><th>訂單</th><th>客戶</th><th>物流</th><th>金額</th><th>狀態</th><th class="text-end">明細</th></tr></thead>
+            <tbody id="order-table"><tr><td colspan="6" class="text-secondary py-4">載入中…</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="management-card" id="customers">
+        <div class="management-card-head d-flex align-items-center gap-3">
+          <i class="ti ti-users text-primary fs-4"></i>
+          <div><h2 class="h5 mb-1">客戶資料與消費紀錄</h2><span class="text-secondary small">可查看個別客戶歷史訂單與累計消費。</span></div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light"><tr><th>客戶</th><th>Email</th><th>電話</th><th>會員地址</th><th>訂單數</th><th>累計消費</th><th class="text-end">操作</th></tr></thead>
+            <tbody id="customer-table"><tr><td colspan="7" class="text-secondary py-4">載入中…</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <dialog id="order-dialog">
+    <div class="dialog-head"><h2 class="h5 mb-0">訂單明細與物流</h2><button class="close-dialog" type="button" onclick="this.closest('dialog').close()" aria-label="關閉">×</button></div>
+    <div class="dialog-body">
+      <div id="order-detail-content"></div><hr>
+      <form id="order-form">
+        <input type="hidden" name="orderId">
+        <div class="row g-3">
+          <div class="col-md-6"><label class="form-label">訂單狀態<select class="form-select" name="status"><option value="created">訂單已建立</option><option value="pending_payment">待付款</option><option value="processing">處理中</option><option value="shipped">已出貨</option><option value="ready_for_pickup">待取貨</option><option value="completed">已完成</option><option value="picked_up">已取貨</option><option value="cancelled">取消</option></select></label></div>
+          <div class="col-md-6"><label class="form-label">物流單號<input class="form-control" name="trackingNumber" placeholder="填寫後可提供給客戶"></label></div>
+          <div class="col-12"><label class="form-check"><input class="form-check-input" name="notify" type="checkbox"><span class="form-check-label">儲存後寄送狀態／出貨通知信</span></label></div>
+        </div>
+        <p id="order-form-message" class="text-danger small"></p>
+        <div class="dialog-foot px-0 pb-0"><button class="btn btn-primary" type="submit">儲存訂單狀態</button></div>
+      </form>
+    </div>
+  </dialog>
+
+  <dialog id="customer-dialog">
+    <div class="dialog-head"><h2 class="h5 mb-0">客戶消費紀錄</h2><button class="close-dialog" type="button" onclick="this.closest('dialog').close()" aria-label="關閉">×</button></div>
+    <div class="dialog-body" id="customer-detail"></div>
+  </dialog>
+
+  <script src="./store-orders-management.js"></script>
+</body>
+
+</html>

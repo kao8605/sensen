@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>優惠碼｜森森點心坊</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.webp">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.webp">
+  <link rel="manifest" href="./assets/site.webmanifest">
+  <script type="module" src="./assets/js/main-CnSylLUz.js?v=sensen-20260814"></script>
+  <link rel="stylesheet" href="./assets/css/main-CM9hUMvt.css">
+  <link rel="stylesheet" href="./store-management.css">
+  <link rel="stylesheet" href="./discount-codes.css">
+</head>
+
+<body>
+  <div id="overlay" class="overlay"></div>
+
+  <nav id="topbar" class="navbar bg-white border-bottom fixed-top topbar px-3">
+    <button id="toggleBtn" class="d-none d-lg-inline-flex btn btn-light btn-icon btn-sm" type="button" aria-label="收合側欄"><i class="ti ti-layout-sidebar-left-expand"></i></button>
+    <button id="mobileBtn" class="btn btn-light btn-icon btn-sm d-lg-none me-2" type="button" aria-label="開啟側欄"><i class="ti ti-layout-sidebar-left-expand"></i></button>
+    <div class="ms-auto d-flex align-items-center gap-3"><span class="text-secondary small d-none d-sm-inline">SENSEN BAKERY · ADMIN</span><img src="./assets/images/avatar-1.jpg" alt="管理員" class="avatar avatar-sm rounded-circle"></div>
+  </nav>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="logo-area"><div class="patria-admin-brand"><span class="patria-admin-icon"><i class="ti ti-tools-kitchen-2"></i></span><span class="patria-admin-copy"><strong>Pat<span>ria</span></strong><em>CHINESE FOOD &amp; RESTAURANT</em></span></div></div>
+    <ul class="nav flex-column">
+      <li class="px-4 py-2"><small class="nav-text">Main</small></li>
+      <li><a class="nav-link" href="index.html"><i class="ti ti-home"></i><span class="nav-text">Dashboard</span></a></li>
+      <li><a class="nav-link" href="inventory.html"><i class="ti ti-box-seam"></i><span class="nav-text">商品庫存</span></a></li>
+      <li><a class="nav-link" href="store-management.html"><i class="ti ti-shopping-cart"></i><span class="nav-text">門市管理</span></a></li>
+      <li><a class="nav-link" href="create-product.html"><i class="ti ti-plus"></i><span class="nav-text">Add Product</span></a></li>
+      <li><a class="nav-link" href="reports.html"><i class="ti ti-receipt"></i><span class="nav-text">Reports</span></a></li>
+      <li><a class="nav-link active" href="discount-codes.html"><i class="ti ti-discount-2"></i><span class="nav-text">Discount Codes</span></a></li>
+      <li><a class="nav-link" href="docs.html"><i class="ti ti-file-text"></i><span class="nav-text">Docs</span></a></li>
+      <li><a class="nav-link" href="http://127.0.0.1:3000/"><i class="ti ti-arrow-back-up"></i><span class="nav-text">Back to 森森</span></a></li>
+      <li class="px-4 pt-4 pb-2"><small class="nav-text">Account</small></li>
+      <li><a class="nav-link" href="signin.html"><i class="ti ti-logout"></i><span class="nav-text">Log in</span></a></li>
+      <li><a class="nav-link" href="signup.html"><i class="ti ti-user-plus"></i><span class="nav-text">Sign up</span></a></li>
+    </ul>
+  </aside>
+
+  <main id="content" class="content py-10" data-admin-page="discount-codes">
+    <div class="container-fluid management-content coupon-page">
+      <div class="management-header d-flex justify-content-between align-items-end gap-3 flex-wrap">
+        <div><p class="management-eyebrow text-primary mb-2">SENSEN BAKERY · ADMIN</p><h1 class="fs-3 mb-1">優惠碼</h1><p class="text-secondary mb-0">建立與管理可使用的優惠碼，設定會即時同步至前台結帳。</p></div>
+        <a class="btn btn-outline-secondary" href="index.html"><i class="ti ti-arrow-left me-1"></i>返回後台首頁</a>
+      </div>
+
+      <p id="coupon-message" class="text-success small mb-3" role="status"></p>
+      <div id="coupon-error" class="alert alert-danger" hidden></div>
+
+      <section class="management-card">
+        <div class="management-card-head d-flex justify-content-between align-items-center gap-3 flex-wrap">
+          <div class="d-flex align-items-center gap-2"><i class="ti ti-discount-2 text-primary fs-4"></i><h2 class="h5 mb-0">新增優惠碼</h2></div>
+          <span class="badge bg-primary-subtle text-primary"><span id="coupon-count">0</span> 組優惠碼</span>
+        </div>
+        <div class="p-4">
+          <form id="discount-form">
+            <div class="coupon-form-grid">
+              <div><label class="form-label" for="coupon-code">優惠碼</label><input id="coupon-code" class="form-control text-uppercase" name="code" placeholder="WELCOME15" required></div>
+              <div><label class="form-label" for="coupon-label">優惠說明</label><input id="coupon-label" class="form-control" name="label" placeholder="首購 15% 折扣" required></div>
+              <div><label class="form-label" for="coupon-type">折扣類型</label><select id="coupon-type" class="form-select" name="type"><option value="percent">百分比折扣</option><option value="fixed">固定金額</option></select></div>
+              <div><label class="form-label" for="coupon-value">折扣值</label><input id="coupon-value" class="form-control" name="value" type="number" min="0" step="0.01" placeholder="10" required></div>
+              <div><label class="form-label" for="coupon-min">最低消費</label><input id="coupon-min" class="form-control" name="min" type="number" min="0" step="0.01" value="0"></div>
+              <div class="coupon-form-action"><label class="form-check mb-2"><input class="form-check-input" name="enabled" type="checkbox" checked><span class="form-check-label">立即啟用</span></label><button class="btn btn-primary w-100" type="submit"><i class="ti ti-plus me-1"></i>新增優惠碼</button></div>
+            </div>
+            <p id="coupon-form-status" class="small mb-0 mt-3 text-secondary">優惠碼設定會立即同步至前台結帳。</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="management-card">
+        <div class="management-card-head d-flex align-items-center gap-2"><i class="ti ti-list-details text-primary fs-4"></i><div><h2 class="h5 mb-1">優惠碼列表</h2><span class="text-secondary small">可暫停、重新啟用或刪除優惠碼。</span></div></div>
+        <div class="table-responsive"><table class="table table-hover align-middle mb-0"><thead class="table-light"><tr><th>優惠碼</th><th>折扣類型</th><th>折扣值</th><th>最低消費</th><th>狀態</th><th class="text-end">操作</th></tr></thead><tbody id="coupon-table"><tr><td colspan="6" class="text-secondary py-4">載入中…</td></tr></tbody></table></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="./discount-codes-management.js"></script>
+</body>
+
+</html>

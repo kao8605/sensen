@@ -1,0 +1,174 @@
+body {
+  background: #f8fafc;
+}
+
+.management-content {
+  max-width: 1520px;
+}
+
+.management-header {
+  margin-bottom: 1.5rem;
+}
+
+.management-eyebrow {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.management-notice {
+  border: 0;
+  border-left: 3px solid var(--bs-info, #0dcaf0);
+  box-shadow: 0 .25rem .75rem rgba(32, 45, 64, .05);
+}
+
+.management-card {
+  overflow: hidden;
+  margin-top: 1.5rem;
+  border: 1px solid rgba(32, 45, 64, .08);
+  border-radius: .75rem;
+  background: #fff;
+  box-shadow: 0 .25rem .9rem rgba(32, 45, 64, .06);
+}
+
+.management-card-head {
+  min-height: 82px;
+  padding: 1.15rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid var(--bs-border-color, #e9ecef);
+}
+
+.management-toolbar {
+  display: grid;
+  grid-template-columns: minmax(250px, 1fr) minmax(150px, 180px) auto auto;
+  align-items: center;
+  gap: .75rem;
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid var(--bs-border-color, #e9ecef);
+}
+
+.management-toolbar .input-group,
+.management-toolbar .form-select {
+  min-width: 0;
+}
+
+.management-date-field {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: var(--bs-secondary-color, #6c757d);
+  font-size: .875rem;
+  white-space: nowrap;
+}
+
+.management-date-field .form-control {
+  min-width: 145px;
+}
+
+.management-card .table {
+  --bs-table-hover-bg: #f8fbff;
+}
+
+.management-card .table th {
+  padding: .85rem 1.5rem;
+  color: #687386;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  white-space: nowrap;
+}
+
+.management-card .table td {
+  padding: 1rem 1.5rem;
+}
+
+.customer-address-cell {
+  min-width: 190px;
+  max-width: 300px;
+  color: #526174;
+  white-space: normal;
+}
+
+.customer-address-panel {
+  padding: 1rem;
+  border: 1px solid rgba(32, 45, 64, .08);
+  border-radius: .5rem;
+  background: #f8fafc;
+}
+
+dialog {
+  width: min(760px, calc(100% - 24px));
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: .75rem;
+  box-shadow: 0 1.5rem 4rem rgba(18, 29, 45, .24);
+}
+
+dialog::backdrop {
+  background: rgba(20, 26, 35, .48);
+}
+
+.dialog-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 1.5rem;
+  border-bottom: 1px solid var(--bs-border-color, #e9ecef);
+}
+
+.dialog-body {
+  max-height: 72vh;
+  padding: 1.5rem;
+  overflow: auto;
+}
+
+.dialog-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: .75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--bs-border-color, #e9ecef);
+}
+
+.close-dialog {
+  padding: .1rem .35rem;
+  color: var(--bs-secondary-color, #6c757d);
+  font-size: 1.6rem;
+  line-height: 1;
+  background: transparent;
+  border: 0;
+}
+
+@media (max-width: 991.98px) {
+  .management-toolbar {
+    grid-template-columns: minmax(220px, 1fr) minmax(140px, 180px);
+  }
+
+  .management-date-field .form-control {
+    flex: 1;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .management-header {
+    align-items: flex-start !important;
+  }
+
+  .management-toolbar {
+    grid-template-columns: 1fr;
+    padding: .9rem 1rem;
+  }
+
+  .management-card-head {
+    padding: 1rem;
+  }
+
+  .management-card .table th,
+  .management-card .table td {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}

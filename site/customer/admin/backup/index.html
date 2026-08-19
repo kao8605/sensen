@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>會員後台</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="主選單">
+      <a class="brand" href="/" aria-label="森森點心坊首頁"><img class="brand-logo" src="/assets/images/logo.png" alt="森森點心坊 SenSen Bakery"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="開啟主選單"><span></span><span></span><span></span></button>
+      <div class="menu" id="site-menu"><div class="menu-item"><a href="/%e9%97%9c%e6%96%bc%e6%a3%ae%e6%a3%ae/">關於森森</a></div><div class="menu-item"><a href="/%e6%9c%80%e6%96%b0%e6%b6%88%e6%81%af/">最新消息</a></div><div class="menu-item"><a href="/%e7%94%a2%e5%93%81%e4%bb%8b%e7%b4%b9/%e7%94%9f%e6%97%a5%e8%9b%8b%e7%b3%95-%e4%b8%8b%e6%96%b9%e6%9c%89dm%e4%be%9b%e4%b8%8b%e8%bc%89-264/">產品介紹 <span class="menu-arrow">⌄</span></a><div class="submenu"><a href="/%e7%94%a2%e5%93%81%e4%bb%8b%e7%b4%b9/%e7%94%9f%e6%97%a5%e8%9b%8b%e7%b3%95-%e4%b8%8b%e6%96%b9%e6%9c%89dm%e4%be%9b%e4%b8%8b%e8%bc%89-264/">生日蛋糕</a><a href="/%e7%94%a2%e5%93%81%e4%bb%8b%e7%b4%b9/%e4%bc%b4%e6%89%8b%e7%a6%ae/">伴手禮</a><a href="/%e6%a3%ae%e6%a3%ae%e5%92%96%e5%95%a1/">飲品 MENU</a></div></div><div class="menu-item"><a href="/%e7%b2%be%e7%b7%bb%e5%a4%96%e7%87%b4-355/">酒會/茶會 <span class="menu-arrow">⌄</span></a><div class="submenu"><a href="/%e7%b2%be%e7%b7%bb%e5%a4%96%e7%87%b4-355/">精緻外燴</a><a href="/%e8%8c%b6%e6%9c%83%e9%bb%9e%e5%bf%83-tea-party/">茶會點心</a></div></div><div class="menu-item"><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e6%b3%a2%e5%a3%ab%e9%a0%93%e6%b4%be%e7%b3%bb%e5%88%97/">頂家彌月 <span class="menu-arrow">⌄</span></a><div class="submenu"><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/taste_apply/">彌月試吃申請</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e6%b3%a2%e5%a3%ab%e9%a0%93%e6%b4%be%e7%b3%bb%e5%88%97/">波士頓派系列</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e5%a4%a7%e7%86%8a-%e5%b0%8f%e7%86%8a%e7%a6%ae%e7%9b%92/">大熊/小熊禮盒</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e5%9c%93%e5%9c%93%e6%b4%be-744/">圓圓派</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e9%a6%99%e6%9d%91%e4%b9%b3%e9%85%aa%e7%a6%ae%e7%9b%92/">鄉村乳酪禮盒</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e5%bd%8c%e6%9c%88%e9%95%b7%e6%a2%9d%e8%9b%8b%e7%b3%95/">長條蛋糕</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e6%90%ad%e9%85%8d%e5%96%ae%e5%93%81/">搭配單品</a><a href="/%e9%a0%82%e5%ae%b6%e5%bd%8c%e6%9c%88/%e5%bd%8c%e6%9c%88%e8%ac%9d%e5%8d%a1/">彌月謝卡</a></div></div><div class="menu-item"><a href="/%e5%b8%b8%e8%a6%8b%e5%95%8f%e9%a1%8c/">常見問題</a></div><div class="menu-item"><a href="/%e9%96%80%e5%b8%82%e8%b3%87%e8%a8%8a/">門市資訊</a></div><div class="menu-item"><a href="/contact/">連絡我們</a></div><div class="mobile-nav-actions" aria-label="森森會員功能">
+        <a class="mobile-nav-action" href="/customer/admin/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c.8-3.3 3.1-5 7-5s6.2 1.7 7 5"></path></svg><span>會員中心</span></a>
+        <button class="mobile-nav-action cart-trigger" type="button" aria-controls="sensen-cart-drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L20 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="17" cy="20" r="1"></circle></svg><span>購物車</span><b class="cart-count" aria-live="polite">0</b></button>
+        <a class="mobile-nav-action" href="http://127.0.0.1:8081/admin/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 9h8M8 13h5M8 17h3"></path></svg><span>員工後台</span></a>
+      </div><a class="mobile-menu-social" href="https://www.facebook.com/sensenbakery/" target="_blank" rel="noreferrer" aria-label="Facebook">f</a></div>
+      <div class="nav-actions" aria-label="森森會員功能">
+        <a class="nav-action" href="/customer/admin/" aria-label="客戶後台" title="客戶後台"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c.8-3.3 3.1-5 7-5s6.2 1.7 7 5"></path></svg></a>
+        <button class="nav-action cart-trigger" type="button" aria-controls="sensen-cart-drawer" aria-expanded="false" aria-label="開啟購物車" title="購物車"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L20 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="17" cy="20" r="1"></circle></svg><span class="cart-count" aria-live="polite">0</span></button>
+        <a class="nav-action" href="http://127.0.0.1:8081/admin/" aria-label="森森員工後台" title="森森員工後台"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 9h8M8 13h5M8 17h3"></path></svg></a>
+      </div>
+    </nav>
+  </header>
+  <main class="page-main">
+    
+    <section class="account-shell" data-store-account data-account-route="dashboard">
+    <div class="account-layout">
+      <aside class="account-sidebar">
+        <a class="account-brand" href="/"><span class="account-brand-mark">S</span><span><b>森森點心坊</b><small>會員中心</small></span></a>
+        <div class="account-user-card"><span class="account-avatar">S</span><div><strong data-sidebar-user>會員您好</strong><small>SenSen Bakery</small></div></div>
+        <button class="account-menu-toggle" type="button" aria-expanded="false" aria-controls="account-navigation"><span class="account-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span><span>會員選單</span><b>⌄</b></button>
+        <nav class="account-nav" id="account-navigation" aria-label="會員功能">
+          <a class="account-side-link" href="/"><span>⌂</span>首頁</a>
+          <a class="account-side-link" href="/產品介紹/生日蛋糕-下方有dm供下載-264/"><span>▦</span>產品介紹</a>
+          <a class="account-side-link" href="/聯絡我們/"><span>◎</span>聯絡我們</a>
+          <span class="account-side-divider"></span>
+          <button type="button" data-account-tab="overview" class="active"><span>▦</span>帳戶總覽</button>
+          <button type="button" data-account-tab="orders"><span>☷</span>我的訂單 <em data-sidebar-order-count></em></button>
+          <button type="button" data-account-tab="address"><span>⌖</span>收件地址</button>
+          <button type="button" data-account-tab="profile"><span>●</span>會員資料</button>
+          <a class="account-side-link account-mobile-store-link" href="/"><span>↩</span>返回森森官網</a>
+          <button type="button" class="account-mobile-logout" data-account-logout><span>↪</span>登出</button>
+        </nav>
+        <div class="account-sidebar-footer"><a href="/">返回森森官網</a><button type="button" data-account-logout>登出</button></div>
+      </aside>
+      <div class="account-content">
+        <div class="account-topbar"><span>會員中心 / <b data-account-title>帳戶總覽</b></span></div>
+        <div id="account-message" role="status"></div>
+        <div data-account-panel="login" class="account-auth-grid" hidden>
+          <section class="account-login-card"><h1><span></span>Login</h1><form class="account-form" data-account-login><label>Username or email address <b>*</b><input name="login" type="text" required autocomplete="username"></label><label>Password <b>*</b><input name="password" type="password" required autocomplete="current-password"></label><div class="account-auth-actions"><button class="save-btn" type="submit">Log in</button><a class="account-line-btn" href="/auth/line"><span>LINE</span> 使用 LINE 登入</a></div></form></section>
+          <section class="account-login-card"><h1><span></span>Register</h1><form class="account-form" data-account-register><label>Full Name <b>*</b><input name="name" required autocomplete="name"></label><label>Email address <b>*</b><input name="email" type="email" required autocomplete="email"></label><label>Phone<input name="phone" type="tel" autocomplete="tel"></label><label>Password <b>*</b><input name="password" type="password" minlength="6" required autocomplete="new-password"></label><div class="account-auth-actions"><button class="save-btn" type="submit">Register</button></div></form></section>
+        </div>
+        <div data-account-panel="app"><div class="account-heading"><p class="account-kicker">MEMBER DASHBOARD</p><h1>歡迎回來，<span data-user-name></span></h1><p class="account-desc" data-user-email></p></div><section class="content-section account-overview-section" data-account-section="overview"><div class="section-title"><div><p class="account-kicker">ACTIVITY</p><h2>Recent Orders</h2></div><button type="button" data-account-tab-link="orders">查看全部訂單</button></div><div data-account-orders></div></section><div class="account-lower-grid"><section class="content-section account-preview-card"><h2>Saved Address</h2><p data-address-preview>尚未儲存收件地址。</p><button type="button" data-account-tab-link="address">編輯地址</button></section><section class="content-section account-preview-card"><h2>物流 Shipping</h2><p>查看取貨日期與訂單物流狀態。</p><button type="button" data-account-tab-link="orders">查看訂單</button></section></div><section class="content-section" data-account-section="profile" hidden><div class="section-title"><div><p class="account-kicker">ACCOUNT</p><h2>會員資料</h2></div></div><form class="account-form" data-profile-form><label>姓名<input name="name" required></label><label>電子信箱<input name="email" type="email" required></label><label>電話<input name="phone"></label><button class="save-btn" type="submit">儲存資料</button></form></section><section class="content-section" data-account-section="address" hidden><div class="section-title"><div><p class="account-kicker">DELIVERY</p><h2>收件地址</h2></div></div><form class="account-form" data-address-form><label>收件人<input name="fullName"></label><label>電話<input name="phone"></label><label>地址<input name="address"></label><label>城市<input name="city"></label><label>郵遞區號<input name="zip"></label><button class="save-btn" type="submit">儲存地址</button></form></section><section class="content-section" data-account-section="orders" hidden><div class="section-title"><div><p class="account-kicker">HISTORY</p><h2>我的訂單</h2></div></div><div data-account-orders-full></div></section></div>
+      </div>
+    </div>
+  </section>
+  <script>(() => {
+    const api = async (path, options = {}) => { const response = await fetch(path, { ...options, credentials: "include", headers: { Accept: "application/json", ...(options.body ? { "Content-Type": "application/json" } : {}) } }); const data = await response.json().catch(() => ({})); if (!response.ok) throw new Error(data.error || "操作失敗。"); return data; };
+    const root = document.querySelector("[data-store-account]"), message = document.querySelector("#account-message"), login = document.querySelector("[data-account-panel=login]"), app = document.querySelector("[data-account-panel=app]"), loginForm = document.querySelector("[data-account-login]"), registerForm = document.querySelector("[data-account-register]"), profileForm = document.querySelector("[data-profile-form]"), addressForm = document.querySelector("[data-address-form]"); let user = null, orders = [];
+    const showMessage = (text, error = false) => { message.textContent = text || ""; message.className = text ? (error ? "account-error" : "account-success") : ""; };
+    const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => char === "&" ? "&amp;" : char === "<" ? "&lt;" : char === ">" ? "&gt;" : char === String.fromCharCode(34) ? "&quot;" : "&#39;");
+    const renderOrders = target => { target.innerHTML = orders.length ? orders.map(order => '<div class="order-row"><b>#' + escapeHtml(String(order.id).slice(0, 12)) + '</b><span class="status">' + escapeHtml(order.status || "已建立") + '</span><strong>$' + Number(order.total || 0).toFixed(2) + '</strong></div>').join("") : "<p>目前沒有訂單。</p>"; };
+    const render = data => { user = data.user; orders = data.orders || []; login.hidden = true; app.hidden = false; document.querySelector("[data-user-name]").textContent = user.name || "會員"; document.querySelector("[data-sidebar-user]").textContent = user.name || "會員您好"; document.querySelector("[data-user-email]").textContent = user.email || ""; document.querySelector("[data-sidebar-order-count]").textContent = orders.length ? "(" + orders.length + ")" : ""; profileForm.elements.name.value = user.name || ""; profileForm.elements.email.value = user.email || ""; profileForm.elements.phone.value = user.phone || ""; const address = data.address || {}; ["fullName", "phone", "address", "city", "zip"].forEach(key => { addressForm.elements[key].value = address[key] || ""; }); const addressText = [address.address, address.city, address.zip].filter(Boolean).join("，"); document.querySelector("[data-address-preview]").textContent = addressText || "尚未儲存收件地址。"; renderOrders(document.querySelector("[data-account-orders]")); renderOrders(document.querySelector("[data-account-orders-full]")); api("/api/cart").then(cart => { const count = (cart.items || []).reduce((sum, item) => sum + Number(item.qty || 0), 0); document.querySelectorAll("[data-cart-count]").forEach(item => { item.textContent = count; }); }); };
+    const load = async (showError = false) => { try { const me = await api("/api/me"); const ordersData = await api("/api/orders"); render({ ...me, ...ordersData }); return true; } catch (error) { login.hidden = false; app.hidden = true; if (showError) showMessage(error.message, true); return false; } };
+    loginForm.addEventListener("submit", async event => { event.preventDefault(); const form = new FormData(event.currentTarget), button = event.currentTarget.querySelector("button[type=submit]"); button.disabled = true; button.textContent = "登入中…"; showMessage(""); try { await api("/api/login", { method: "POST", body: JSON.stringify({ login: String(form.get("login") || "").trim(), password: form.get("password") }) }); window.location.assign("/customer/admin/backup/"); } catch (error) { showMessage(error.message, true); button.disabled = false; button.textContent = "Log in"; } });
+    registerForm.addEventListener("submit", async event => { event.preventDefault(); const form = new FormData(event.currentTarget), button = event.currentTarget.querySelector("button[type=submit]"); button.disabled = true; button.textContent = "註冊中…"; showMessage(""); try { await api("/api/register", { method: "POST", body: JSON.stringify(Object.fromEntries(form)) }); window.location.assign("/customer/admin/backup/"); } catch (error) { showMessage(error.message, true); button.disabled = false; button.textContent = "Register"; } });
+    profileForm.addEventListener("submit", async event => { event.preventDefault(); try { const data = await api("/api/me", { method: "PUT", body: JSON.stringify(Object.fromEntries(new FormData(event.currentTarget))) }); showMessage("會員資料已更新。"); user = data.user; document.querySelector("[data-user-name]").textContent = user.name || "會員"; document.querySelector("[data-sidebar-user]").textContent = user.name || "會員您好"; } catch (error) { showMessage(error.message, true); } });
+    addressForm.addEventListener("submit", async event => { event.preventDefault(); try { await api("/api/address", { method: "PUT", body: JSON.stringify(Object.fromEntries(new FormData(event.currentTarget))) }); showMessage("收件地址已更新。"); } catch (error) { showMessage(error.message, true); } });
+    const switchTab = tab => { document.querySelectorAll("[data-account-tab]").forEach(item => item.classList.toggle("active", item.dataset.accountTab === tab)); document.querySelectorAll("[data-account-section]").forEach(section => { section.hidden = section.dataset.accountSection !== tab; }); const labels = { overview: "帳戶總覽", profile: "會員資料", address: "收件地址", orders: "我的訂單" }; document.querySelector("[data-account-title]").textContent = labels[tab] || labels.overview; };
+    document.querySelectorAll("[data-account-tab], [data-account-tab-link]").forEach(button => button.addEventListener("click", () => switchTab(button.dataset.accountTab || button.dataset.accountTabLink)));
+    const accountMenuToggle = document.querySelector(".account-menu-toggle"), accountNav = document.querySelector(".account-nav");
+    accountMenuToggle?.addEventListener("click", () => { const isOpen = accountMenuToggle.getAttribute("aria-expanded") === "true"; accountMenuToggle.setAttribute("aria-expanded", String(!isOpen)); accountNav.classList.toggle("is-open", !isOpen); });
+    document.querySelectorAll(".account-nav [data-account-tab]").forEach(button => button.addEventListener("click", () => { if (window.matchMedia("(max-width: 760px)").matches) { accountMenuToggle.setAttribute("aria-expanded", "false"); accountNav.classList.remove("is-open"); } }));
+    document.querySelectorAll("[data-account-logout]").forEach(button => button.addEventListener("click", async () => { button.disabled = true; await api("/api/logout", { method: "POST" }); window.location.assign("/customer/admin/"); })); if (root.dataset.accountRoute === "dashboard") load(true); else api("/api/me").then(() => window.location.assign("/customer/admin/backup/")).catch(() => {});
+  })();</script>
+  </main>
+  
+  <script>
+  (() => {
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("#site-menu");
+    if (!toggle || !menu) return;
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      toggle.setAttribute("aria-label", expanded ? "開啟主選單" : "關閉主選單");
+      menu.classList.toggle("is-open", !expanded);
+    });
+    menu.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "開啟主選單");
+        menu.classList.remove("is-open");
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "開啟主選單");
+        menu.classList.remove("is-open");
+        toggle.focus();
+      }
+    });
+  })();
+  </script>
+  <footer class="footer">© 2018 - 2026 森森點心坊. All Rights Reserved. | Design by <a href="https://www.aq-webdesign.com/index.html" target="_blank" rel="noreferrer">A.Q.webdesign</a>. | <a href="https://www.sensen.com.tw/%e9%9a%b1%e7%A7%81%e6%ac%8a%e6%a2%9d%e6%ac%be/">隱私權政策</a></footer>
+  <div class="sensen-cart-overlay" id="sensen-cart-overlay" hidden></div>
+  <aside class="sensen-cart-drawer" id="sensen-cart-drawer" aria-label="購物車" aria-hidden="true"><div class="sensen-cart-head"><h2>購物車</h2><button class="sensen-cart-close" type="button" aria-label="關閉購物車">×</button></div><div class="sensen-cart-body"><p data-cart-message>載入中…</p><div data-cart-items></div><div class="sensen-cart-fields" data-cart-options hidden><label>優惠碼<div class="sensen-cart-coupon-row"><input data-cart-coupon type="text" placeholder="輸入優惠碼" autocomplete="off"><button class="sensen-cart-coupon-apply" type="button" data-cart-apply-coupon>套用</button></div></label><label>Pickup date（取貨日期）<input data-cart-pickup type="date"></label><small data-cart-date-hint></small><p class="sensen-cart-quote-message" data-cart-quote-message role="status"></p></div></div><div class="sensen-cart-foot"><div class="sensen-cart-price-lines" data-cart-price-lines hidden><div><span>小計</span><strong data-cart-subtotal>$0.00</strong></div><div data-cart-discount-row hidden><span>折扣</span><strong data-cart-discount>-$0.00</strong></div><div class="is-total"><span>合計</span><strong data-cart-total>$0.00</strong></div></div><a class="button" href="/checkout/">結帳</a><a class="sensen-cart-secondary" href="/customer/admin/">前往會員中心</a></div></aside>
+  <script src="/assets/cart-drawer.js"></script>
+</body>
+</html>
