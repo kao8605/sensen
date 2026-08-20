@@ -3,10 +3,13 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build-site.js",
-    "start": "node index.js",
+    "start": "node frontend/server.js",
+    "frontend": "node frontend/server.js",
+    "backend": "node sensen-backend/server.js",
+    "dev": "node scripts/dev.js",
     "crawl": "node crawl.js",
     "download-images": "node scripts/download-images.js",
     "rename-images": "node scripts/rename-images.js",
-    "test": "node --check index.js && node --check crawl.js && node --check scripts/build-site.js"
+    "test": "node --check index.js && node --check crawl.js && node --check frontend/server.js && node --check scripts/dev.js && node --check scripts/build-site.js && node --check sensen-backend/server.js"
   }
 }

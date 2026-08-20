@@ -9,10 +9,20 @@
 需要先安裝 Node.js，接著在此資料夾執行：
 
 ```bash
-npm start
+npm run dev
 ```
 
+這會同時啟動前端 `http://127.0.0.1:3000` 與後端 API `http://127.0.0.1:8081`。
 看到啟動訊息後，用瀏覽器開啟 <http://127.0.0.1:3000>。
+
+若要分開啟動，可使用兩個終端機：
+
+```bash
+npm run frontend
+npm run backend
+```
+
+前端服務提供 `site/` 與 `frontend/admin/` 的頁面，並將 `/api/*` 代理給後端；後端服務只提供 API 與 LINE 登入回呼，不再直接提供 HTML 管理介面。
 
 ## 重新產生整站
 

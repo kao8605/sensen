@@ -264,11 +264,32 @@
       }
     ],
     "84a4d4f2267f13a41f2e32c83b78d6b740e34458470715c9cac021a014cae34c": [],
-    "fb41e3baa266fc3c22e48e72d592c7f85711106325d180b3754009dcda9dc6fe": []
+    "fb41e3baa266fc3c22e48e72d592c7f85711106325d180b3754009dcda9dc6fe": [],
+    "4d21448027a4780e05510c2bed15baf50a10e801b14800f39a70ff7c24f58000": [
+      {
+        "id": "souvenir-butter-cake",
+        "title": "經典奶油餅禮盒",
+        "cat": "伴手禮",
+        "price": "$450",
+        "priceValue": 450,
+        "quantity": 25,
+        "day": "5",
+        "img": "/assets/images/sun-cake-thumbnail-copy.jpg",
+        "desc": "暫定價格，正式價格以商品目錄為準。",
+        "temporaryPrice": true,
+        "source": "static",
+        "sku": "souvenir-butter-cake",
+        "spec": "",
+        "published": true,
+        "qty": 1
+      }
+    ],
+    "7ebb10e218d8f382b11b3c386d01d8ad525b4306a58f5bda5acd650f203cea9c": []
   },
   "userCarts": {
     "6e351042aab2f8387e5a72e9ca5e3ed8851c1f74f3dcc2f7d2ffe46c00c9cf4b": [],
-    "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907": []
+    "af6a671ffdc4474cdc7d8dfdc37ab0a4cdb76984440d7b5fe86c46c61588a907": [],
+    "sensen-admin-2026": []
   },
   "orders": [],
   "productOverrides": {

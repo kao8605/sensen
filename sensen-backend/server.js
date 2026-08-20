@@ -28,10 +28,7 @@ function loadEnvFile(envPath) {
 loadEnvFile(ENV_PATH);
 
 const ROOT = __dirname;
-const PUBLIC_ROOT = path.join(ROOT, 'public');
-const ADMIN_ROOT = path.join(PUBLIC_ROOT, 'admin');
 const DATA_DIR = path.join(ROOT, 'data');
-const IMAGE_ROOT = path.join(ROOT, '..', 'data', 'images');
 const DB_PATH = path.join(DATA_DIR, 'db.json');
 const PRODUCTS_PATH = path.join(DATA_DIR, 'sensen-products.json');
 const HOST = process.env.HOST || '127.0.0.1';
@@ -65,22 +62,6 @@ if (!IS_PRODUCTION) {
   ALLOWED_ORIGINS.add('http://127.0.0.1:' + PORT);
 }
 const RATE_BUCKETS = new Map();
-const MIME = {
-  '.html': 'text/html; charset=utf-8',
-  '.css': 'text/css; charset=utf-8',
-  '.js': 'application/javascript; charset=utf-8',
-  '.json': 'application/json; charset=utf-8',
-  '.webp': 'image/png',
-  '.jpg': 'image/jpeg',
-  '.jpeg': 'image/jpeg',
-  '.webp': 'image/webp',
-  '.svg': 'image/svg+xml',
-  '.woff': 'font/woff',
-  '.woff2': 'font/woff2',
-  '.ttf': 'font/ttf',
-  '.eot': 'application/vnd.ms-fontobject'
-};
-
 fs.mkdirSync(DATA_DIR, { recursive: true });
 const DEFAULT_COUPONS = [
   { code: 'WELCOME15', label: 'Welcome 15% off', type: 'percent', value: 15, min: 0, enabled: true },
@@ -1250,67 +1231,18 @@ function startLineLogin(req, res) {
   return redirect(res, 'https://access.line.me/oauth2/v2.1/authorize?' + params.toString());
 }
 
-function serveFileFromRoot(baseRoot, filePath, res) {
-  const resolved = path.normalize(path.join(baseRoot, filePath));
-  if (!resolved.startsWith(baseRoot)) {
-    res.writeHead(403);
-    return res.end('Forbidden');
-  }
-  fs.readFile(resolved, (err, data) => {
-    if (err) {
-      res.writeHead(404);
-      return res.end('Not found');
-    }
-    res.writeHead(200, { 'Content-Type': MIME[path.extname(resolved).toLowerCase()] || 'application/octet-stream' });
-    res.end(data);
-  });
-}
-
-function adminLoginRedirect(res) {
-  res.writeHead(302, { Location: '/admin/signin.html' });
-  res.end();
-}
-
-function serveAdmin(req, res) {
-  const url = new URL(req.url, 'http://localhost');
-  let filePath = decodeURIComponent(url.pathname).replace(/^\/admin/, '');
-  if (filePath.startsWith('/assets/images/')) {
-    const imagePath = path.join(IMAGE_ROOT, filePath.slice('/assets/images/'.length));
-    const relative = path.relative(IMAGE_ROOT, imagePath);
-    if (!relative.startsWith('..') && !path.isAbsolute(relative)) return serveFileFromRoot(IMAGE_ROOT, '/' + relative, res);
-  }
-  if (!filePath || filePath === '/') filePath = '/index.html';
-  const page = path.basename(filePath);
-  const isHtml = path.extname(filePath).toLowerCase() === '.html';
-  const isPublicAdminPage = page === 'signin.html' || page === 'signup.html' || page === '404-error.html';
-  if (isHtml && !isPublicAdminPage) {
-    const db = readDb();
-    const auth = getAuth(req, db);
-    if (!auth || !isAdminUser(auth.user)) return adminLoginRedirect(res);
-  }
-  return serveFileFromRoot(ADMIN_ROOT, filePath, res);
-}
-
-function serveStatic(req, res) {
-  const url = new URL(req.url, 'http://localhost');
-  let filePath = decodeURIComponent(url.pathname);
-  const imagePrefix = filePath.startsWith('/admin/assets/images/') ? '/admin/assets/images/' : '/assets/images/';
-  if (filePath.startsWith(imagePrefix)) {
-    const imagePath = path.join(IMAGE_ROOT, filePath.slice(imagePrefix.length));
-    const relative = path.relative(IMAGE_ROOT, imagePath);
-    if (!relative.startsWith('..') && !path.isAbsolute(relative)) return serveFileFromRoot(IMAGE_ROOT, '/' + relative, res);
-  }
-  if (filePath === '/') filePath = '/index.html';
-  return serveFileFromRoot(PUBLIC_ROOT, filePath, res);
-}
-
 http.createServer((req, res) => {
   if (req.method === 'GET' && (req.url === '/auth/line' || req.url.startsWith('/auth/line?'))) return startLineLogin(req, res);
   if (req.method === 'GET' && req.url.startsWith('/auth/line/start')) return startLineLogin(req, res);
   if (req.method === 'GET' && req.url.startsWith('/auth/line/callback')) return handleLineCallback(req, res);
   if (req.url.startsWith('/api/')) return handleApi(req, res);
-  if (req.url === '/admin' || req.url.startsWith('/admin/')) return serveAdmin(req, res);
-  return serveStatic(req, res);
+  if (req.url === '/admin' || req.url.startsWith('/admin/')) {
+    const frontendOrigin = process.env.FRONTEND_ORIGIN || 'http://127.0.0.1:3000';
+    const requestUrl = new URL(req.url, frontendOrigin);
+    return redirect(res, frontendOrigin + requestUrl.pathname + requestUrl.search);
+  }
+  res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
+  res.end(JSON.stringify({ error: '後端僅提供 API。請使用前端服務。' }));
 }).listen(PORT, HOST, () => {
   console.log('森森官網後端 running at http://' + HOST + ':' + PORT);
 });

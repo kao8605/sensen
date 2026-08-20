@@ -109,6 +109,8 @@ const BRANDED_HERO_PATHS = new Set([
   "/常見問題",
   "/門市資訊",
   "/contact",
+  "/產品介紹/伴手禮",
+  "/森森咖啡",
 ]);
 
 const NAV_CHILDREN = new Map([
@@ -425,6 +427,10 @@ function isVisiblePage(url) {
   } catch {
     return false;
   }
+}
+
+function isLatestNewsPaginationPath(localPath) {
+  return /^\/(?:最新消息|latest-news)\/page\/\d+$/i.test(localPath);
 }
 
 function localPathFromUrl(url) {
@@ -1006,10 +1012,68 @@ function cateringContent() {
       <p class="catering-intro-eyebrow">Catering Service</p>
       <h1>嚴選食材。精心烹調。味覺饗宴</h1>
       <p class="catering-intro-copy">節慶與親友同事公司聚餐、商務會議與媒體公關活動<br>用心帶給您新鮮與美味的餐點，實惠的價格，美味可口的精緻菜色，森森是你最佳的選擇</p>
-      <a class="catering-menu-download" href="https://docs.google.com/spreadsheets/d/1KrLWkMaNHhZr7AmkgCZ4WQcbLzb99YAB/edit?usp=sharing" target="_blank" rel="noreferrer"><span class="catering-menu-book" aria-hidden="true"></span>外燴菜單下載</a>
+      <a class="catering-menu-download" href="https://docs.google.com/spreadsheets/d/1KrLWkMaNHhZr7AmkgCZ4WQcbLzb99YAB/edit?gid=703529566#gid=703529566" target="_blank" rel="noreferrer"><span class="catering-menu-book" aria-hidden="true"></span>外燴菜單下載</a>
     </section>
     ${sections}
     <section class="catering-note"><span class="catering-note-icon" aria-hidden="true"></span><p>※ <strong>完整菜單請下載最上方檔案連結</strong>，圖片為參考圖，產品請以實物為主。<strong>菜色照片會陸續更新。</strong></p></section>
+    <section class="catering-inquiry" aria-labelledby="catering-inquiry-title">
+      <div class="catering-inquiry-heading">
+        <p>Inquiry</p>
+        <h2 id="catering-inquiry-title">外燴詢價專區</h2>
+        <span>請留下活動需求，森森團隊將盡快與您聯繫。</span>
+      </div>
+      <form class="catering-inquiry-form" data-catering-inquiry novalidate>
+        <label class="catering-inquiry-field">
+          <span>姓名 <b>*</b></span>
+          <input name="name" type="text" placeholder="請輸入姓名" autocomplete="name" required>
+        </label>
+        <label class="catering-inquiry-field">
+          <span>電話 <b>*</b></span>
+          <input name="phone" type="tel" placeholder="請輸入聯絡電話" autocomplete="tel" required>
+        </label>
+        <label class="catering-inquiry-field">
+          <span>Email <b>*</b></span>
+          <input name="email" type="email" placeholder="you@email.com" autocomplete="email" required>
+        </label>
+        <label class="catering-inquiry-field">
+          <span>預計人數 <b>*</b></span>
+          <select name="guests" required>
+            <option value="">請選擇人數</option>
+            <option>2–10 人</option>
+            <option>11–30 人</option>
+            <option>31–50 人</option>
+            <option>51–100 人</option>
+            <option>101 人以上</option>
+          </select>
+        </label>
+        <label class="catering-inquiry-field">
+          <span>日期 <b>*</b></span>
+          <input name="date" type="date" required>
+        </label>
+        <label class="catering-inquiry-field">
+          <span>時間 <b>*</b></span>
+          <select name="time" required>
+            <option value="">請選擇時間</option>
+            <option>上午 09:00</option>
+            <option>上午 10:00</option>
+            <option>上午 11:00</option>
+            <option>下午 01:00</option>
+            <option>下午 02:00</option>
+            <option>下午 03:00</option>
+            <option>下午 04:00</option>
+            <option>下午 05:00</option>
+          </select>
+        </label>
+        <label class="catering-inquiry-field catering-inquiry-field-wide">
+          <span>特殊需求</span>
+          <textarea name="specialRequests" placeholder="過敏、飲食需求、活動場合或其他需求……"></textarea>
+        </label>
+        <div class="catering-inquiry-actions">
+          <p class="catering-inquiry-message" data-inquiry-message role="status" aria-live="polite"></p>
+          <button class="catering-inquiry-submit" type="submit">送出詢價</button>
+        </div>
+      </form>
+    </section>
     <section class="catering-stores">
       <div class="catering-stores-panel">
         <a class="catering-store" href="https://goo.gl/maps/3oxsrUzT22G2" target="_blank" rel="noreferrer"><span class="catering-store-line" aria-hidden="true"></span><strong>澄和店</strong><span>三民區澄和路78號</span><span>07-3816662</span><i class="catering-store-pin" aria-hidden="true"></i></a>
@@ -1018,6 +1082,53 @@ function cateringContent() {
         <a class="catering-store" href="https://goo.gl/maps/NpDLVEYQHAk" target="_blank" rel="noreferrer"><span class="catering-store-line" aria-hidden="true"></span><strong>文龍店</strong><span>鳳山區文龍東路336號</span><span>07-7335812</span><i class="catering-store-pin" aria-hidden="true"></i></a>
       </div>
     </section>
+    <script>
+    (() => {
+      const form = document.querySelector("[data-catering-inquiry]");
+      if (!form) return;
+      const message = form.querySelector("[data-inquiry-message]");
+      const button = form.querySelector("button[type=submit]");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        const originalLabel = button.textContent;
+        button.disabled = true;
+        button.textContent = "送出中…";
+        message.textContent = "";
+        const value = (name) => form.elements[name]?.value.trim() || "";
+        const payload = {
+          name: value("name"),
+          phone: value("phone"),
+          email: value("email"),
+          subject: "外燴詢價",
+          message: [
+            "預計人數：" + value("guests"),
+            "活動日期：" + value("date"),
+            "活動時間：" + value("time"),
+            "特殊需求：" + (value("specialRequests") || "無")
+          ].join("\\n")
+        };
+        try {
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(data.error || "送出失敗，請稍後再試。");
+          form.reset();
+          message.className = "catering-inquiry-message is-success";
+          message.textContent = "詢價資料已送出，謝謝您！森森團隊將盡快與您聯繫。";
+        } catch (error) {
+          message.className = "catering-inquiry-message is-error";
+          message.textContent = error.message;
+        } finally {
+          button.disabled = false;
+          button.textContent = originalLabel;
+        }
+      });
+    })();
+    </script>
   </section>`;
 }
 
@@ -1042,23 +1153,69 @@ function bostonPieContent() {
         <p class="boston-product-kicker">6倍乳</p>
         <h2>波士頓鮮奶派</h2>
         <p class="boston-product-english">Boston Cream Pie</p>
-        <p class="boston-product-description">將鮮奶中去除83%的水，留下的精華爽口不甜膩且富有細緻的口感。</p>
+        <p class="boston-product-description">將鮮奶中去除83%的水，留下的精華爽口不甜<br>膩且富有細緻的口感。</p>
         <hr>
-        <p class="boston-product-spec">波士頓派尺寸：9吋(23cm±10%)<br>印刷包裝：手繪水彩風格&amp;禮盒霧模搭配高質感Pantone金屬色側邊。手提式紙盒設計，恕不另外提供袋子</p>
+        <p class="boston-product-spec">波士頓派尺寸：9吋(23cm±10%)<br>印刷包裝：手繪水彩風格&amp;禮盒霧模搭配高質感<br>Pantone金屬色側邊。手提式紙盒設計，恕不<br>另外提供袋子</p>
         <img class="boston-vegetarian-badge" src="/assets/images/icon-vlml.png" alt="奶蛋素">
       </div>
     </section>
     <section class="boston-gift-section" id="boston-gifts">
       <h2>波士頓彌月禮盒系列</h2>
-      <span class="boston-heading-dots" aria-hidden="true">•••</span>
       <div class="boston-gift-grid">${giftCards}</div>
     </section>
     <section class="boston-dm" id="boston-dm">
       <a href="https://drive.google.com/file/d/1TJ37PaOoP-FWIeEDpldMbflZhHqvNIuZ/view" target="_blank" rel="noreferrer" class="boston-dm-title"><strong>彌月禮盒DM下載</strong><span>⟶</span></a>
-      <a href="https://drive.google.com/file/d/1TJ37PaOoP-FWIeEDpldMbflZhHqvNIuZ/view" target="_blank" rel="noreferrer" class="boston-dm-icon" aria-label="下載彌月禮盒 DM"><span aria-hidden="true">▤</span></a>
+      <a href="https://drive.google.com/file/d/1TJ37PaOoP-FWIeEDpldMbflZhHqvNIuZ/view" target="_blank" rel="noreferrer" class="boston-dm-icon" aria-label="查看彌月禮盒 DM"><span class="boston-dm-book" aria-hidden="true"></span></a>
       <p>完整商品資訊及價格，請參閱彌月商品目錄!</p>
     </section>
   </section>`;
+}
+
+const SOUVENIR_PRODUCTS = [
+  ["豆塔禮盒", "/product-item/豆塔禮盒", "photo-2.jpg", 9],
+  ["森森肉鬆餅", "/product-item/森森肉鬆餅", "pork-floss-pastry-4.jpg", 17],
+  ["法式蝴蝶酥", "/product-item/法式蝴蝶酥-1657", "palmiers-2.jpg", 8],
+  ["杏仁千層酥", "/product-item/鈕扣牛軋餅", "almond-layer-pastry.jpg", 10],
+  ["經典奶油餅禮盒", "/product-item/太陽餅禮盒", "sun-cake-thumbnail-copy.jpg", 6],
+  ["手工蛋捲", "/product-item/手工蛋捲", "egg-roll-2.jpg", 4],
+  ["鈕釦牛軋餅", "/product-item/鈕扣餅乾", "button-nougat-pastry-inside-page-3-1.jpg", 7],
+  ["達克瓦茲禮盒", "/product-item/鳳梨酥禮盒", "dacquoise.jpg", 4],
+  ["土鳳梨酥禮盒", "/product-item/土鳳梨酥禮盒", "pineapple-cake-copy.jpg", 7],
+  ["日式大福禮盒", "/product-item/日式大福禮盒", "daifuku-3.jpg", 10],
+];
+
+function souvenirPageContent() {
+  const cards = SOUVENIR_PRODUCTS.map(([title, href, image, likes]) => `<article class="souvenir-card"><a class="souvenir-card-link" href="${escapeAttr(href)}"><img src="/assets/images/${escapeAttr(image)}" alt="${escapeAttr(title)}"><div class="souvenir-card-meta"><h2>${escapeHtml(title)}</h2><span class="souvenir-likes" aria-label="收藏 ${likes} 次"><span aria-hidden="true">♡</span> ${likes}</span></div></a><button class="souvenir-add-cart" type="button" data-souvenir-add-cart="${escapeAttr(title)}">加入購物車</button></article>`).join("");
+  return `<section class="souvenir-page"><section class="souvenir-products"><img class="souvenir-icon" src="/assets/images/icon-cupcake.png" alt=""><div class="souvenir-grid">${cards}</div></section></section>
+  <script>
+  (() => {
+    document.querySelectorAll("[data-souvenir-add-cart]").forEach((button) => {
+      button.addEventListener("click", async (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "加入中…";
+        try {
+          const response = await fetch("/api/cart/add", { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ title: button.dataset.souvenirAddCart, qty: 1 }) });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(data.error || "加入購物車失敗。");
+          button.textContent = "已加入購物車";
+          document.querySelector(".cart-trigger")?.click();
+        } catch (error) {
+          button.textContent = error.message;
+          window.setTimeout(() => { button.textContent = original; }, 1800);
+        } finally {
+          button.disabled = false;
+        }
+      });
+    });
+  })();
+  </script>`;
+}
+
+function coffeePageContent() {
+  return `<section class="coffee-page"><section class="coffee-menu-section"><img class="coffee-page-icon" src="/assets/images/icon-coffee.png" alt="" aria-hidden="true"><div class="coffee-menu-grid"><img src="/assets/images/coffee-menu-1.jpg" alt="森森咖啡菜單：咖啡與氣泡飲"><img src="/assets/images/coffee-menu-2.jpg" alt="森森咖啡菜單：茶飲與奶茶"></div></section></section>`;
 }
 
 function customerPageContent(route = "login") {
@@ -1169,6 +1326,15 @@ function pageContent(page) {
   if (localPath === BOSTON_PIE_PATH) {
     return bostonPieContent();
   }
+  if (localPath === "/產品介紹/伴手禮") {
+    return souvenirPageContent();
+  }
+  if (localPath === "/森森咖啡") {
+    return coffeePageContent();
+  }
+  if (localPath === "/最新消息") {
+    return latestNewsContent(page);
+  }
   if (localPath === "/customer/admin") return customerPageContent("login");
   if (localPath === "/customer/admin/backup") return customerPageContent("dashboard");
   if (localPath === "/customer") return customerPageContent("login");
@@ -1178,7 +1344,10 @@ function pageContent(page) {
 
   const markdown = markdownFromPage(page);
   if (markdown.trim()) {
-    return `<section class="content">${decorateMonthDmContent(markdownToHtml(markdown))}</section>`;
+    const visibleMarkdown = localPath === "/最新消息"
+      ? removeLatestNewsPagination(markdown)
+      : markdown;
+    return `<section class="content">${decorateMonthDmContent(markdownToHtml(visibleMarkdown))}</section>`;
   }
   if (page.html && page.html.trim()) {
     return `<section class="content">${decorateMonthDmContent(sanitizeWordPressHtml(page.html))}</section>`;
@@ -1187,6 +1356,54 @@ function pageContent(page) {
     return `<section class="content"><div class="empty">此頁在爬取結果中沒有正文，已依標題建立本地頁面。</div></section>`;
   }
   return "";
+}
+
+function latestNewsContent(page) {
+  const filters = [
+    ["全部", "all", true],
+    ["季節限定", "season-only"],
+    ["新品上市", "new-arrival"],
+    ["最新消息", "latest-news"],
+    ["森森飲品", "sensen-coffee"],
+  ];
+  const filterHtml = filters.map(([label, value, active]) => `<button class="latest-news-filter${active ? " is-active" : ""}" type="button" data-news-filter="${escapeAttr(value)}" aria-pressed="${active ? "true" : "false"}">${escapeHtml(label)}</button>`).join("");
+  return `<section class="latest-news-page" aria-labelledby="latest-news-heading">
+    <h2 class="latest-news-sr-only" id="latest-news-heading">最新消息</h2>
+    <img class="latest-news-icon" src="/assets/images/icon-wheat.png" alt="" aria-hidden="true">
+    <nav class="latest-news-filters" aria-label="最新消息分類">${filterHtml}</nav>
+    <script>
+    (() => {
+      const page = document.querySelector(".latest-news-page");
+      if (!page) return;
+      const buttons = [...page.querySelectorAll("[data-news-filter]")];
+      const cards = [...page.querySelectorAll("[data-news-category]")];
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const filter = button.dataset.newsFilter;
+          buttons.forEach((item) => {
+            const active = item === button;
+            item.classList.toggle("is-active", active);
+            item.setAttribute("aria-pressed", String(active));
+          });
+          cards.forEach((card) => {
+            card.hidden = filter !== "all" && card.dataset.newsCategory !== filter;
+          });
+        });
+      });
+    })();
+    </script>
+  </section>`;
+}
+
+function removeLatestNewsPagination(markdown) {
+  const lines = String(markdown || "").split(/\r?\n/);
+  const paginationIndex = lines.findIndex((line) =>
+    /^\[\d+\]\([^)]+\)(?:\s+\[\d+\]\([^)]+\))+\s*$/.test(line.trim()),
+  );
+  if (paginationIndex < 0) return markdown;
+  const nextContent = lines.slice(paginationIndex + 1).find((line) => line.trim());
+  if (!nextContent || !/^\[下一頁\]/.test(nextContent.trim())) return markdown;
+  return lines.slice(0, paginationIndex).join("\n");
 }
 
 function decorateMonthDmContent(html) {
@@ -1268,6 +1485,7 @@ function main() {
   sourcePages
     .map((page) => ({ ...page, url: page.url || page.metadata?.sourceURL || page.metadata?.url }))
     .filter((page) => page.url && (page.source === "sensen-store-module" || isVisiblePage(page.url)))
+    .filter((page) => !isLatestNewsPaginationPath(localPathFromUrl(page.url)))
     .forEach((page) => {
       const key = localPathFromUrl(page.url).toLocaleLowerCase();
       pageMap.set(key, mergePage(pageMap.get(key), page));
@@ -1291,7 +1509,7 @@ function main() {
   const home = pages.find((page) => localPathFromUrl(page.url) === "/") || pages[0];
   for (const page of pages) {
     const localPath = localPathFromUrl(page.url);
-    const isAboutPage = localPath === "/關於森森";
+    const isAboutPage = localPath === "/關於森森" || localPath === "/產品介紹/伴手禮" || localPath === "/森森咖啡";
     const filePath = htmlFileForLocalPath(localPath);
     ensureDir(filePath);
     const content = localPath === "/" ? homeContent(pages) : pageContent(page);
@@ -1303,7 +1521,7 @@ function main() {
       isAbout: isAboutPage,
       hasBrandedHero: BRANDED_HERO_PATHS.has(localPath) && localPath !== CATERING_PATH,
       showHero: localPath !== CATERING_PATH && localPath !== "/checkout" && localPath !== "/customer" && localPath !== "/customer/admin" && localPath !== "/customer/admin/backup",
-      heroSource: localPath === BIRTHDAY_CAKE_PATH ? "/assets/images/headtitle-bg3.jpg" : localPath === BOSTON_PIE_PATH ? "/assets/images/headtitle-bg8.jpg" : "/assets/images/headtitle-bg2.jpg",
+      heroSource: localPath === BIRTHDAY_CAKE_PATH ? "/assets/images/headtitle-bg3.jpg" : localPath === BOSTON_PIE_PATH ? "/assets/images/headtitle-bg8.jpg" : localPath === "/森森咖啡" ? "/assets/images/cafe-coffee-restaurant-cup-food-drink-1008643-pxhere-2.jpg" : "/assets/images/headtitle-bg2.jpg",
     }));
   }
 

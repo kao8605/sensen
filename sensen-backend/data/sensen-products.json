@@ -8,5 +8,15 @@
   {"id":"polar-bear","title":"北極熊","cat":"造型蛋糕","price":"$980","priceValue":980,"quantity":15,"day":"7","img":"http://127.0.0.1:3000/assets/images/cake-2020-9.png","desc":"可愛造型生日蛋糕。"},
   {"id":"oreo-ice-cream","title":"OREO","cat":"冰淇淋蛋糕","price":"$880","priceValue":880,"quantity":15,"day":"7","img":"http://127.0.0.1:3000/assets/images/cake-2024-15.png","desc":"OREO 冰淇淋蛋糕。"},
   {"id":"yellow-duck-ice-cream","title":"黃色小鴨","cat":"冰淇淋蛋糕","price":"$880","priceValue":880,"quantity":15,"day":"7","img":"http://127.0.0.1:3000/assets/images/cake-2024-14.png","desc":"黃色小鴨冰淇淋蛋糕。"},
-  {"id":"black-knight-ice-cream","title":"黑爵士","cat":"冰淇淋蛋糕","price":"$880","priceValue":880,"quantity":15,"day":"7","img":"http://127.0.0.1:3000/assets/images/cake-2024-13.png","desc":"巧克力風味冰淇淋蛋糕。"}
+  {"id":"black-knight-ice-cream","title":"黑爵士","cat":"冰淇淋蛋糕","price":"$880","priceValue":880,"quantity":15,"day":"7","img":"http://127.0.0.1:3000/assets/images/cake-2024-13.png","desc":"巧克力風味冰淇淋蛋糕。"},
+  {"id":"souvenir-bean-tower","title":"豆塔禮盒","cat":"伴手禮","price":"$480","priceValue":480,"quantity":25,"day":"5","img":"/assets/images/photo-2.jpg","desc":"暫定價格，正式價格以商品目錄為準。","temporaryPrice":true},
+  {"id":"souvenir-pork-floss","title":"森森肉鬆餅","cat":"伴手禮","price":"$360","priceValue":360,"quantity":25,"day":"5","img":"/assets/images/pork-floss-pastry-4.jpg","desc":"暫定價格，正式價格以商品目錄為準。","temporaryPrice":true},
+  {"id":"souvenir-palmier","title":"法式蝴蝶酥","cat":"伴手禮","price":"$320","priceValue":320,"quantity":25,"day":"5","img":"/assets/images/palmiers-2.jpg","desc":"暫定價格，正式價格以商品目錄為準。","temporaryPrice":true},
+  {"id":"souvenir-almond-layer","title":"杏仁千層酥","cat":"伴手禮","price":"$320","priceValue":320,"quantity":25,"day":"5","img":"/assets/images/almond-layer-pastry.jpg","desc":"暫定價格，正式價格以商品目錄為準。","temporaryPrice":true},
+  {"id":"souvenir-butter-cake","title":"經典奶油餅禮盒","cat":"伴手禮","price":"$450","priceValue":450,"quantity":25,"day":"5","img":"/assets/images/sun-cake-thumbnail-copy.jpg","desc":"暫定價格，正式價格以商品目錄為準。","temporaryPrice":true},
+  {"id":"souvenir-egg-roll","title":"手工蛋捲","cat":"伴手禮","price":"$320","priceValue":320,"quantity":25,"day":"5","img":"/assets/images/egg-roll-2.jpg","desc":"暫定價格，正式價格以商品目錄為準。","temporaryPrice":true},
+  {"id":"souvenir-button-nougat","title":"鈕釦牛軋餅","cat":"伴手禮","price":"$380","priceValue":380,"quantity":25,"day":"5","img":"/assets/images/button-nougat-pastry-inside-page-3-1.jpg","desc":"暫定價格，正式價格以商品目錄為準。","temporaryPrice":true},
+  {"id":"souvenir-dacquoise","title":"達克瓦茲禮盒","cat":"伴手禮","price":"$480","priceValue":480,"quantity":25,"day":"5","img":"/assets/images/dacquoise.jpg","desc":"暫定價格，正式價格以商品目錄為準。","temporaryPrice":true},
+  {"id":"souvenir-pineapple-cake","title":"土鳳梨酥禮盒","cat":"伴手禮","price":"$450","priceValue":450,"quantity":25,"day":"5","img":"/assets/images/pineapple-cake-copy.jpg","desc":"暫定價格，正式價格以商品目錄為準。","temporaryPrice":true},
+  {"id":"souvenir-daifuku","title":"日式大福禮盒","cat":"伴手禮","price":"$420","priceValue":420,"quantity":25,"day":"5","img":"/assets/images/daifuku-3.jpg","desc":"暫定價格，正式價格以商品目錄為準。","temporaryPrice":true}
 ]

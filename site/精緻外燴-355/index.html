@@ -32,7 +32,7 @@
       <p class="catering-intro-eyebrow">Catering Service</p>
       <h1>嚴選食材。精心烹調。味覺饗宴</h1>
       <p class="catering-intro-copy">節慶與親友同事公司聚餐、商務會議與媒體公關活動<br>用心帶給您新鮮與美味的餐點，實惠的價格，美味可口的精緻菜色，森森是你最佳的選擇</p>
-      <a class="catering-menu-download" href="https://docs.google.com/spreadsheets/d/1KrLWkMaNHhZr7AmkgCZ4WQcbLzb99YAB/edit?usp=sharing" target="_blank" rel="noreferrer"><span class="catering-menu-book" aria-hidden="true"></span>外燴菜單下載</a>
+      <a class="catering-menu-download" href="https://docs.google.com/spreadsheets/d/1KrLWkMaNHhZr7AmkgCZ4WQcbLzb99YAB/edit?gid=703529566#gid=703529566" target="_blank" rel="noreferrer"><span class="catering-menu-book" aria-hidden="true"></span>外燴菜單下載</a>
     </section>
     
     <section class="catering-category">
@@ -52,6 +52,64 @@
       <div class="catering-product-grid"><div class="catering-product"><img src="/assets/images/buffet-snacks-3.jpg" alt="炸物小點類餐點"></div><div class="catering-product"><img src="/assets/images/buffet-snacks-1.jpg" alt="炸物小點類餐點"></div><div class="catering-product"><img src="/assets/images/buffet-snacks-2.jpg" alt="炸物小點類餐點"></div></div>
     </section>
     <section class="catering-note"><span class="catering-note-icon" aria-hidden="true"></span><p>※ <strong>完整菜單請下載最上方檔案連結</strong>，圖片為參考圖，產品請以實物為主。<strong>菜色照片會陸續更新。</strong></p></section>
+    <section class="catering-inquiry" aria-labelledby="catering-inquiry-title">
+      <div class="catering-inquiry-heading">
+        <p>Inquiry</p>
+        <h2 id="catering-inquiry-title">外燴詢價專區</h2>
+        <span>請留下活動需求，森森團隊將盡快與您聯繫。</span>
+      </div>
+      <form class="catering-inquiry-form" data-catering-inquiry novalidate>
+        <label class="catering-inquiry-field">
+          <span>姓名 <b>*</b></span>
+          <input name="name" type="text" placeholder="請輸入姓名" autocomplete="name" required>
+        </label>
+        <label class="catering-inquiry-field">
+          <span>電話 <b>*</b></span>
+          <input name="phone" type="tel" placeholder="請輸入聯絡電話" autocomplete="tel" required>
+        </label>
+        <label class="catering-inquiry-field">
+          <span>Email <b>*</b></span>
+          <input name="email" type="email" placeholder="you@email.com" autocomplete="email" required>
+        </label>
+        <label class="catering-inquiry-field">
+          <span>預計人數 <b>*</b></span>
+          <select name="guests" required>
+            <option value="">請選擇人數</option>
+            <option>2–10 人</option>
+            <option>11–30 人</option>
+            <option>31–50 人</option>
+            <option>51–100 人</option>
+            <option>101 人以上</option>
+          </select>
+        </label>
+        <label class="catering-inquiry-field">
+          <span>日期 <b>*</b></span>
+          <input name="date" type="date" required>
+        </label>
+        <label class="catering-inquiry-field">
+          <span>時間 <b>*</b></span>
+          <select name="time" required>
+            <option value="">請選擇時間</option>
+            <option>上午 09:00</option>
+            <option>上午 10:00</option>
+            <option>上午 11:00</option>
+            <option>下午 01:00</option>
+            <option>下午 02:00</option>
+            <option>下午 03:00</option>
+            <option>下午 04:00</option>
+            <option>下午 05:00</option>
+          </select>
+        </label>
+        <label class="catering-inquiry-field catering-inquiry-field-wide">
+          <span>特殊需求</span>
+          <textarea name="specialRequests" placeholder="過敏、飲食需求、活動場合或其他需求……"></textarea>
+        </label>
+        <div class="catering-inquiry-actions">
+          <p class="catering-inquiry-message" data-inquiry-message role="status" aria-live="polite"></p>
+          <button class="catering-inquiry-submit" type="submit">送出詢價</button>
+        </div>
+      </form>
+    </section>
     <section class="catering-stores">
       <div class="catering-stores-panel">
         <a class="catering-store" href="https://goo.gl/maps/3oxsrUzT22G2" target="_blank" rel="noreferrer"><span class="catering-store-line" aria-hidden="true"></span><strong>澄和店</strong><span>三民區澄和路78號</span><span>07-3816662</span><i class="catering-store-pin" aria-hidden="true"></i></a>
@@ -60,6 +118,53 @@
         <a class="catering-store" href="https://goo.gl/maps/NpDLVEYQHAk" target="_blank" rel="noreferrer"><span class="catering-store-line" aria-hidden="true"></span><strong>文龍店</strong><span>鳳山區文龍東路336號</span><span>07-7335812</span><i class="catering-store-pin" aria-hidden="true"></i></a>
       </div>
     </section>
+    <script>
+    (() => {
+      const form = document.querySelector("[data-catering-inquiry]");
+      if (!form) return;
+      const message = form.querySelector("[data-inquiry-message]");
+      const button = form.querySelector("button[type=submit]");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        const originalLabel = button.textContent;
+        button.disabled = true;
+        button.textContent = "送出中…";
+        message.textContent = "";
+        const value = (name) => form.elements[name]?.value.trim() || "";
+        const payload = {
+          name: value("name"),
+          phone: value("phone"),
+          email: value("email"),
+          subject: "外燴詢價",
+          message: [
+            "預計人數：" + value("guests"),
+            "活動日期：" + value("date"),
+            "活動時間：" + value("time"),
+            "特殊需求：" + (value("specialRequests") || "無")
+          ].join("\n")
+        };
+        try {
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(data.error || "送出失敗，請稍後再試。");
+          form.reset();
+          message.className = "catering-inquiry-message is-success";
+          message.textContent = "詢價資料已送出，謝謝您！森森團隊將盡快與您聯繫。";
+        } catch (error) {
+          message.className = "catering-inquiry-message is-error";
+          message.textContent = error.message;
+        } finally {
+          button.disabled = false;
+          button.textContent = originalLabel;
+        }
+      });
+    })();
+    </script>
   </section>
   </main>
   

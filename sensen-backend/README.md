@@ -6,7 +6,8 @@
 - `/api/login`、`/api/register`、`/api/me`：森森會員
 - `/api/orders`、`/api/checkout`：森森訂單與結帳
 - `/api/admin/*`：森森員工後台
-- `/admin/`：森森員工後台頁面
+
+後端只提供 API 與 LINE 登入回呼。員工後台頁面位於 `frontend/admin/`，由前端服務提供；舊的 `http://127.0.0.1:8081/admin/...` 路徑會重新導向到前端服務。
 
 啟動：
 
@@ -30,8 +31,8 @@ ORDER_EMAIL_FROM="森森點心坊 <orders@your-domain.com>"
 
 - Email：`admin@sensen.local`
 - Password：`SensenAdmin2026!`
-- 後台：`http://127.0.0.1:8081/admin/signin.html`
-- 門市管理：`http://127.0.0.1:8081/admin/store-management.html`
+- 後台：`http://127.0.0.1:3000/admin/signin.html`
+- 門市管理：`http://127.0.0.1:3000/admin/store-management.html`
 
 正式環境請登入後更換密碼，並勿將此組測試帳號公開使用。
 
