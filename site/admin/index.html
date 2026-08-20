@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>後台總覽｜森森點心坊</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.webp">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.webp">
+  <link rel="manifest" href="./assets/site.webmanifest">
+
+  <script type="module" src="./assets/js/main-CnSylLUz.js?v=sensen-20260814"></script>
+  <link rel="stylesheet" href="./assets/css/main-CM9hUMvt.css">
+</head>
+
+<body>
+  <div id="overlay" class="overlay"></div>
+  <!-- TOPBAR -->
+  <nav id="topbar" class="navbar bg-white border-bottom fixed-top topbar px-3">
+    <button id="toggleBtn" class="d-none d-lg-inline-flex btn btn-light btn-icon btn-sm ">
+      <i class="ti ti-layout-sidebar-left-expand"></i>
+    </button>
+
+    <!-- MOBILE -->
+    <button id="mobileBtn" class="btn btn-light btn-icon btn-sm d-lg-none me-2">
+      <i class="ti ti-layout-sidebar-left-expand"></i>
+    </button>
+    <div>
+      <!-- Navbar nav -->
+      <ul class="list-unstyled d-flex align-items-center mb-0 gap-1">
+        <!-- Pages link -->
+
+        <!-- Bell icon -->
+        <li>
+          <a class="position-relative btn-icon btn-sm btn-light btn rounded-circle" data-bs-toggle="dropdown"
+            aria-expanded="false" href="#" role="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-bell">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+              <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+            </svg>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger mt-2 ms-n2" data-admin-notification-count>
+              2
+              <span class="visually-hidden">unread messages</span>
+            </span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end dropdown-menu-md p-0">
+            <ul class="list-unstyled p-0 m-0" data-admin-notifications>
+              <li class="p-3 text-secondary small">Loading customer activity...</li>
+            </ul>
+          </div>
+        </li>
+        <!-- Dropdown -->
+        <li class="ms-3 dropdown">
+          <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="./assets/images/avatar-1.jpg" alt="" class="avatar avatar-sm rounded-circle" />
+          </a>
+          <div class="dropdown-menu dropdown-menu-end p-0" style="min-width: 200px;">
+            <div>
+              <div class="d-flex gap-3 align-items-center border-dashed border-bottom px-3 py-3">
+                <img src="./assets/images/avatar-1.jpg" alt="" class="avatar avatar-md rounded-circle" />
+                <div>
+                  <h4 class="mb-0 small">森森管理員</h4>
+                  <p class="mb-0  small">@sensen</p>
+                </div>
+              </div>
+              <div class="p-3 d-flex flex-column gap-1 small lh-lg">
+                <a href="index.html" class="">
+
+                  <span>Dashboard</span>
+                </a>
+                <a href="reports.html#customer-orders" class="">
+
+                  <span> Orders</span>
+                </a>
+                <a href="inventory.html" class="">
+
+                  <span> Inventory</span>
+                </a>
+                <a href="create-product.html" class="">
+
+                  <span> Add Product</span>
+                </a>
+                <a href="discount-codes.html" class="">
+
+                  <span> Discount Codes</span>
+                </a>
+                <a href="http://127.0.0.1:3000/" class="">
+
+                  <span> Back to 森森</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="sidebar">
+    <div class="logo-area">
+     <div class="patria-admin-brand"><span class="patria-admin-icon"><i class="ti ti-tools-kitchen-2"></i></span><span class="patria-admin-copy"><strong>森森</strong><em>SENSEN BAKERY</em></span></div>
+    </div>
+    <ul class="nav flex-column">
+      <li class="px-4 py-2"><small class="nav-text">Main</small></li>
+      <li><a class="nav-link active" href="index.html"><i class="ti ti-home"></i><span
+            class="nav-text">Dashboard</span></a></li>
+      <li><a class="nav-link" href="inventory.html"><i class="ti ti-box-seam"></i><span
+            class="nav-text">Inventory</span></a></li>
+      <li><a class="nav-link" href="store-management.html"><i class="ti ti-shopping-cart"></i><span class="nav-text">門市管理</span></a></li>
+      <li><a class="nav-link" href="create-product.html"><i class="ti ti-plus"></i><span class="nav-text">Add
+            Product</span></a></li>
+    <li><a class="nav-link" href="reports.html"><i class="ti ti-receipt"></i><span class="nav-text">Reports</span></a>
+      </li>
+      <li><a class="nav-link" href="discount-codes.html"><i class="ti ti-discount-2"></i><span class="nav-text">Discount Codes</span></a>
+      </li>
+    <li><a class="nav-link" href="404-error.html"><i class="ti ti-alert-circle"></i><span class="nav-text">404 Error</span></a>
+      </li>
+      <li><a class="nav-link" href="docs.html"><i class="ti ti-file-text"></i><span class="nav-text">Docs</span></a></li>
+
+
+            <li><a class="nav-link" href="http://127.0.0.1:3000/"><i class="ti ti-arrow-back-up"></i><span class="nav-text">Back to 森森</span></a></li>
+
+<li class="px-4 pt-4 pb-2"><small class="nav-text">Account</small></li>
+      <li><a class="nav-link" href="signin.html"><i class="ti ti-logout"></i><span class="nav-text">Log in</span></a>
+      </li>
+      <li><a class="nav-link" href="signup.html"><i class="ti ti-user-plus"></i><span class="nav-text">Sign
+            up</span></a></li>
+    </ul>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main id="content" class="content py-10" data-admin-page="dashboard">
+    <div class="container-fluid">
+      <div class="row ">
+        <div class="col-12">
+          <div class="mb-6">
+            <h1 class="fs-3 mb-1">後台總覽</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 mb-3">
+        <div class="col-lg-3 col-12">
+
+          <div class="card p-4 bg-warning bg-opacity-10 border border-warning border-opacity-25 rounded-2 admin-stat-card">
+
+            <div class="d-flex gap-3 ">
+              <div class="icon-shape icon-md bg-warning text-white rounded-2">
+                <i class="ti ti-cash-banknote fs-4"></i>
+              </div>
+              <div>
+                <h2 class="mb-3 fs-6">Total Sales</h2>
+                <h3 class="fw-bold mb-0" data-admin-stat="sales">$0.00</h3>
+                <p class="text-warning mb-0 small">Synced from customer checkout</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-lg-3 col-12">
+
+          <div class="card p-4 bg-info bg-opacity-10 border border-info border-opacity-25 rounded-2 admin-stat-card">
+
+            <div class="d-flex gap-3 ">
+              <div class="icon-shape icon-md bg-info text-white rounded-2">
+                <i class="ti ti-tools-kitchen-2 fs-4"></i>
+              </div>
+              <div>
+                <h2 class="mb-3 fs-6">Products</h2>
+                <h3 class="fw-bold mb-0" data-admin-stat="products">0</h3>
+                <p class="text-info mb-0 small">Synced from Inventory</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-lg-3 col-12">
+
+          <div class="card p-4 bg-success bg-opacity-10 border border-success border-opacity-25 rounded-2 admin-stat-card">
+
+            <div class="d-flex gap-3 ">
+              <div class="icon-shape icon-md bg-success text-white rounded-2">
+                <i class="ti ti-receipt-2 fs-4"></i>
+              </div>
+              <div>
+                <h2 class="mb-3 fs-6">Orders</h2>
+                <h3 class="fw-bold mb-0" data-admin-stat="orders">0</h3>
+                <p class="text-success mb-0 small">Synced from customer orders</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-lg-3 col-12">
+
+          <div class="card p-4 bg-danger bg-opacity-10 border border-danger border-opacity-25 rounded-2 admin-stat-card">
+
+            <div class="d-flex gap-3 ">
+              <div class="icon-shape icon-md bg-danger text-white rounded-2">
+                <i class="ti ti-bowl-spoon fs-4"></i>
+              </div>
+              <div>
+                <h2 class="mb-3 fs-6">Items Sold</h2>
+                <h3 class="fw-bold mb-0" data-admin-stat="items">0</h3>
+                <p class="text-danger mb-0 small">Synced from paid orders</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="row g-3 mb-3">
+        <div class="col-lg-4 col-12">
+          <div class="card">
+            <div class="card-body p-4">
+              <div class="admin-mini-stat d-flex justify-content-between border-bottom pb-5 mb-3">
+                <div class="admin-mini-stat__copy">
+                  <h3 class="fw-bold h4" data-admin-summary="completed-sales">$0.00</h3>
+                  <span>Completed Sales</span>
+                </div>
+                <div class="admin-mini-stat__icon">
+                  <i class="ti ti-check fs-1 text-success"></i>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center small">
+                <div class="text-muted">Completed and picked-up orders</div>
+                <div><a href="reports.html#customer-orders" class="link-primary text-decoration-underline">View</a></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-12">
+          <div class="card">
+            <div class="card-body p-4">
+              <div class="admin-mini-stat d-flex justify-content-between border-bottom pb-5 mb-3">
+                <div class="admin-mini-stat__copy">
+                  <h3 class="fw-bold h4" data-admin-summary="pending-sales">$0.00</h3>
+                  <span>Processing Sales</span>
+                </div>
+                <div class="admin-mini-stat__icon">
+                  <i class="ti ti-clock fs-1 text-warning"></i>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center small">
+                <div class="text-muted">Orders still processing</div>
+                 <div><a href="reports.html#customer-orders" class="link-primary text-decoration-underline">View</a></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-12">
+          <div class="card h-100">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center px-4 py-3">
+              <h4 class="mb-0 h5">優惠碼</h4>
+              <a href="discount-codes.html" class="small text-primary text-decoration-underline">查看全部</a>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-sm align-middle mb-0">
+                <thead class="table-light"><tr><th>Code</th><th class="text-end">狀態</th></tr></thead>
+                <tbody data-admin-table="dashboard-coupons"><tr><td colspan="2" class="text-secondary">正在載入優惠碼…</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-lg-6">
+          <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center bg-transparent px-4 py-3">
+              <h3 class="h5 mb-0">Sales vs Purchase</h3>
+              <div>
+                <select class="form-select form-select-sm" data-sales-purchase-range>
+                  <option value="year" selected>This Year</option>
+                  <option value="month">This Month</option>
+                  <option value="week">This Week</option>
+                </select>
+              </div>
+            </div>
+            <div class="card-body p-4">
+
+              <div id="salesPurchaseChart"></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-12 col-lg-6">
+          <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center bg-transparent px-4 py-3">
+              <h3 class="h5 mb-0">Overall Information</h3>
+              <div>
+                <select class="form-select form-select-sm" data-customer-range>
+                  <option value="six-months" selected>Last 6 Months</option>
+                  <option value="month">This Month</option>
+                  <option value="week">This Week</option>
+                </select>
+              </div>
+            </div>
+            <div class="card-body p-4">
+              <h3 class="h6">Customers Overview</h3>
+              <div class="row align-items-center">
+                <div class="col-sm-6">
+                  <div id="customerChart">
+
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="row">
+                    <div class="col-6 border-end">
+                      <div class="text-center ">
+                        <h2 class="mb-1" data-admin-summary="first-time">0</h2>
+                        <p class="text-danger mb-2">First Time</p>
+                        <span class="badge bg-danger" data-customer-percent="first"><i class="ti ti-arrow-up-left me-1"></i>0%</span>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="text-center">
+                        <h2 class="mb-1" data-admin-summary="returning">0</h2>
+                        <p class="text-warning mb-2">Return</p>
+                        <span class="badge bg-warning badge-xs d-inline-flex align-items-center" data-customer-percent="return"><i
+                            class="ti ti-arrow-up-left me-1"></i>0%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="row text-center border-top mt-4 pt-4">
+                <div class="col-4 border-end">
+                  <h3 class="fw-bold mb-2" data-admin-summary="completed-orders">0</h3>
+                  <small class="text-secondary">Completed</small>
+                </div>
+                <div class="col-4 border-end">
+                  <h3 class="fw-bold mb-2" data-admin-summary="customers">0</h3>
+                  <small class="text-secondary">Customers</small>
+                </div>
+                <div class="col-4">
+                  <h3 class="fw-bold mb-2" data-admin-summary="orders">0</h3>
+                  <small class="text-secondary">Orders</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3">
+
+        <!-- CARD 1 — 熱銷商品 -->
+        <div class="col-lg-4">
+          <div class="card  h-100">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center px-4 py-3">
+              <h4 class="mb-0 h5">熱銷商品</h4>
+              <button class="btn btn-sm btn-outline-secondary">
+                <i class="ti ti-calendar"></i> 今日
+              </button>
+            </div>
+
+            <ul class="list-group list-group-flush" data-admin-list="top-products">
+              <li class="list-group-item text-secondary">正在載入熱銷商品…</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CARD 2 — 低庫存商品 -->
+        <div class="col-lg-4">
+          <div class="card  h-100">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center px-4 py-3">
+              <div class="d-flex align-items-center">
+
+                <h4 class="mb-0 h5">低庫存商品</h4>
+              </div>
+              <a href="inventory.html" class="small text-primary text-decoration-underline">查看全部</a>
+            </div>
+
+            <ul class="list-group list-group-flush" data-admin-list="low-stock-products">
+              <li class="list-group-item text-secondary">正在載入低庫存商品…</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CARD 3 — 訂單狀況 -->
+        <div class="col-lg-4" id="recent-orders">
+          <div class="card  h-100">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center px-4 py-3">
+              <h4 class="mb-0 h5">訂單狀況</h4>
+              <button class="btn btn-sm btn-outline-secondary">
+                <i class="ti ti-calendar-event"></i> 本週
+              </button>
+            </div>
+
+            <ul class="list-group list-group-flush" data-admin-list="recent-orders">
+              <li class="list-group-item text-secondary">正在載入近期訂單…</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-12">
+<footer class="text-center py-2 mt-6 text-secondary ">
+        <p class="mb-0">© 2018 - 2026 森森點心坊. All Rights Reserved. | Design by <a href="https://www.aq-webdesign.com/index.html" target="_blank" class="text-primary">A.Q.webdesign</a></p>
+      </footer>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+<script>
+  (() => {
+    const money = (value) => '$' + Number(value || 0).toFixed(0);
+    const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const loadSensenDashboard = async () => {
+      try {
+        const [productsResponse, ordersResponse] = await Promise.all([fetch('/api/products', {credentials:'include'}), fetch('/api/admin/orders', {credentials:'include'})]);
+        if (!productsResponse.ok || !ordersResponse.ok) throw new Error('森森資料尚未連線。');
+        const products = (await productsResponse.json()).products || [];
+        const orderData = (await ordersResponse.json()).orders || [];
+        const sensenProductIds = new Set(products.map((item) => item.id));
+        const orders = orderData.filter((order) => {
+          const items = Array.isArray(order.items) ? order.items : [];
+          return items.length > 0 && items.every((item) => sensenProductIds.has(item.id));
+        });
+        const sold = {};
+        orders.forEach((order) => (order.items || []).forEach((item) => { sold[item.id] = (sold[item.id] || 0) + Number(item.qty || 0); }));
+        const top = [...products].sort((a,b) => (sold[b.id] || 0) - (sold[a.id] || 0)).slice(0,5);
+        const low = products.filter((item) => Number(item.quantity ?? 0) < 10).sort((a,b) => Number(a.quantity || 0) - Number(b.quantity || 0)).slice(0,5);
+        const recent = [...orders].sort((a,b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0)).slice(0,5);
+        document.querySelector('[data-admin-list="top-products"]').innerHTML = top.length ? top.map((item) => `<li class="list-group-item d-flex align-items-center gap-3"><img src="${escapeHtml(item.img || '')}" alt="" class="avatar avatar-md rounded object-fit-cover"><div class="flex-grow-1"><strong>${escapeHtml(item.title)}</strong><small class="d-block text-secondary">已售 ${sold[item.id] || 0} 件</small></div><b>${money(item.priceValue)}</b></li>`).join('') : '<li class="list-group-item text-secondary">目前沒有商品資料。</li>';
+        document.querySelector('[data-admin-list="low-stock-products"]').innerHTML = low.length ? low.map((item) => `<li class="list-group-item d-flex justify-content-between"><span>${escapeHtml(item.title)}</span><strong class="text-danger">剩餘 ${Number(item.quantity || 0)} 件</strong></li>`).join('') : '<li class="list-group-item text-secondary">目前沒有低庫存商品。</li>';
+        document.querySelector('[data-admin-list="recent-orders"]').innerHTML = recent.length ? recent.map((order) => `<li class="list-group-item d-flex justify-content-between align-items-center"><span><strong>#${escapeHtml(order.id)}</strong><small class="d-block text-secondary">${escapeHtml(order.customer?.name || '森森會員')}</small></span><strong>${money(order.total)}</strong></li>`).join('') : '<li class="list-group-item text-secondary">目前沒有訂單。</li>';
+      } catch (error) { document.querySelector('[data-admin-status]').textContent = error.message; }
+    };
+    loadSensenDashboard();
+  })();
+  </script>
+  <script src="./dashboard-coupon-summary.js"></script>
+  <!-- Bootstrap JS -->
+
+
+
+<script src="./assets/zh-admin.js?v=sensen-20260814"></script>
+</body>
+
+</html>

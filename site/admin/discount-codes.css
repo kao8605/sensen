@@ -1,0 +1,32 @@
+.coupon-form-grid {
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) minmax(190px, 1.5fr) minmax(150px, 1fr) minmax(120px, .8fr) minmax(130px, .9fr) 150px;
+  align-items: end;
+  gap: 1rem;
+}
+
+.coupon-form-action .form-check {
+  padding-left: 1.75rem;
+}
+
+.coupon-page .management-card + .management-card {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 1199.98px) {
+  .coupon-form-grid {
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 767.98px) {
+  .coupon-form-grid {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .coupon-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

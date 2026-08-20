@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>商品庫存｜森森點心坊</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.webp">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.webp">
+  <link rel="manifest" href="./assets/site.webmanifest">
+  <script type="module" src="./assets/js/main-CnSylLUz.js?v=sensen-20260814"></script>
+  <link rel="stylesheet" href="./assets/css/main-CM9hUMvt.css">
+</head>
+
+<body>
+  <div id="overlay" class="overlay"></div>
+  <!-- TOPBAR -->
+  <nav id="topbar" class="navbar bg-white border-bottom fixed-top topbar px-3">
+    <button id="toggleBtn" class="d-none d-lg-inline-flex btn btn-light btn-icon btn-sm ">
+      <i class="ti ti-layout-sidebar-left-expand"></i>
+    </button>
+
+    <!-- MOBILE -->
+    <button id="mobileBtn" class="btn btn-light btn-icon btn-sm d-lg-none me-2">
+      <i class="ti ti-layout-sidebar-left-expand"></i>
+    </button>
+    <div>
+      <!-- Navbar nav -->
+       <ul class="list-unstyled d-flex align-items-center mb-0 gap-1">
+        <!-- Pages link -->
+
+        <!-- Bell icon -->
+        <li>
+          <a class="position-relative btn-icon btn-sm btn-light btn rounded-circle" data-bs-toggle="dropdown"
+            aria-expanded="false" href="#" role="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-bell">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+              <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+            </svg>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger mt-2 ms-n2">
+              2
+              <span class="visually-hidden">unread messages</span>
+            </span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end dropdown-menu-md p-0">
+            <ul class="list-unstyled p-0 m-0">
+              <li class="p-3 border-bottom ">
+                <div class="d-flex gap-3">
+                  <img src="./assets/images/avatar-1.jpg" alt="" class="avatar avatar-sm rounded-circle" />
+                  <div class="flex-grow-1 small">
+                    <p class="mb-0">New order received</p>
+                    <p class="mb-1">Order #12345 has been placed</p>
+                    <div class="text-secondary">5 minutes ago</div>
+                  </div>
+                </div>
+              </li>
+              <li class="p-3 border-bottom ">
+                <div class="d-flex gap-3">
+                  <img src="./assets/images/avatar-4.jpg" alt="" class="avatar avatar-sm rounded-circle" />
+                  <div class="flex-grow-1 small">
+                    <p class="mb-0">New user registered</p>
+                    <p class="mb-1">User @john_doe has signed up</p>
+                    <div class="text-secondary">30 minutes ago</div>
+                  </div>
+              </li>
+
+              <li class="p-3 border-bottom">
+                <div class="d-flex gap-3">
+                  <img src="./assets/images/avatar-2.jpg" alt="" class="avatar avatar-sm rounded-circle" />
+                  <div class="flex-grow-1 small">
+                    <p class="mb-0">Payment confirmed</p>
+                    <p class="mb-1">Payment of $299 has been received</p>
+                    <div class="text-secondary">1 hour ago</div>
+                  </div>
+                </div>
+              </li>
+              <li class="px-4 py-3 text-center">
+                <a href="#" class="text-primary ">View all notifications</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!-- Dropdown -->
+        <li class="ms-3 dropdown">
+          <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="./assets/images/avatar-1.jpg" alt="" class="avatar avatar-sm rounded-circle" />
+          </a>
+          <div class="dropdown-menu dropdown-menu-end p-0" style="min-width: 200px;">
+            <div>
+              <div class="d-flex gap-3 align-items-center border-dashed border-bottom px-3 py-3">
+                <img src="./assets/images/avatar-1.jpg" alt="" class="avatar avatar-md rounded-circle" />
+                <div>
+                  <h4 class="mb-0 small">Shrina Tesla</h4>
+                  <p class="mb-0  small">@imshrina</p>
+                </div>
+              </div>
+              <div class="p-3 d-flex flex-column gap-1 small lh-lg">
+                <a href="index.html" class="">
+
+                  <span>Dashboard</span>
+                </a>
+                <a href="reports.html#customer-orders" class="">
+
+                  <span> Orders</span>
+                </a>
+                <a href="inventory.html" class="">
+
+                  <span> 商品庫存</span>
+                </a>
+                <a href="create-product.html" class="">
+
+                  <span> Add Product</span>
+                </a>
+                <a href="discount-codes.html" class="">
+
+                  <span> Discount Codes</span>
+                </a>
+                <a href="http://127.0.0.1:3000/" class="">
+
+                  <span> Back to 森森</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="sidebar">
+     <div class="logo-area">
+      <div class="patria-admin-brand"><span class="patria-admin-icon"><i class="ti ti-tools-kitchen-2"></i></span><span class="patria-admin-copy"><strong>Pat<span>ria</span></strong><em>CHINESE FOOD &amp; RESTAURANT</em></span></div>
+    </div>
+    <ul class="nav flex-column">
+      <li class="px-4 py-2"><small class="nav-text">Main</small></li>
+      <li><a class="nav-link active" href="index.html"><i class="ti ti-home"></i><span
+            class="nav-text">Dashboard</span></a></li>
+      <li><a class="nav-link" href="inventory.html"><i class="ti ti-box-seam"></i><span
+            class="nav-text">商品庫存</span></a></li>
+      <li><a class="nav-link" href="store-management.html"><i class="ti ti-shopping-cart"></i><span class="nav-text">門市管理</span></a></li>
+      <li><a class="nav-link" href="create-product.html"><i class="ti ti-plus"></i><span class="nav-text">Add
+            Product</span></a></li>
+    <li><a class="nav-link" href="reports.html"><i class="ti ti-receipt"></i><span class="nav-text">Reports</span></a>
+      </li>
+      <li><a class="nav-link" href="discount-codes.html"><i class="ti ti-discount-2"></i><span class="nav-text">Discount Codes</span></a>
+      </li>
+    <li><a class="nav-link" href="404-error.html"><i class="ti ti-alert-circle"></i><span class="nav-text">404 Error</span></a>
+      </li>
+      <li><a class="nav-link" href="docs.html"><i class="ti ti-file-text"></i><span class="nav-text">Docs</span></a></li>
+
+            <li><a class="nav-link" href="http://127.0.0.1:3000/"><i class="ti ti-arrow-back-up"></i><span class="nav-text">Back to 森森</span></a></li>
+
+<li class="px-4 pt-4 pb-2"><small class="nav-text">Account</small></li>
+      <li><a class="nav-link" href="signin.html"><i class="ti ti-logout"></i><span class="nav-text">Log in</span></a>
+      </li>
+      <li><a class="nav-link" href="signup.html"><i class="ti ti-user-plus"></i><span class="nav-text">Sign
+            up</span></a></li>
+    </ul>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main id="content" class="content py-10" data-admin-page="inventory">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="">
+              <h1 class="fs-3 mb-1">商品庫存</h1>
+              <p class="mb-0">Manage your product inventory</p>
+            </div>
+            <div>
+            <a href="create-product.html" id="inventory-add-product" class="btn btn-primary">新增商品</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div>
+            <div class="d-flex gap-2 mb-3 flex-wrap justify-content-between">
+              <input id="inventory-product-search" type="text" class="form-control" placeholder="搜尋商品名稱、SKU、規格" style="max-width: 250px;">
+              <div class="d-flex gap-2">
+                <select id="inventory-category-filter" class="form-select" style="max-width:180px;"><option value="">全部分類</option></select>
+                <select id="inventory-visibility-filter" class="form-select" style="max-width:150px;"><option value="">全部狀態</option><option value="published">已上架</option><option value="unpublished">已下架</option></select>
+                <button class="btn btn-outline-secondary" type="button" data-inventory-import>
+                  <i class="ti ti-upload"></i> Import Excel
+                </button>
+                <button class="btn btn-outline-secondary" type="button" data-inventory-export>
+                  <i class="ti ti-file-excel"></i> Export Excel
+                </button>
+                <input type="file" class="d-none" accept=".csv,text/csv" data-inventory-file>
+                <button class="btn btn-outline-secondary">
+                  <i class="ti ti-file-pdf"></i> PDF
+                </button>
+              </div>
+            </div>
+            <p class="small text-secondary mb-3" data-inventory-excel-status>商品規格、售價、庫存與前台上下架狀態均在此頁管理。</p>
+          </div>
+          <div class="card table-responsive ">
+            <table class="table mb-0 text-nowrap table-hover">
+              <thead class="table-light border-light">
+                <tr>
+                  <th>商品</th>
+                  <th>SKU</th>
+                  <th>分類</th>
+                  <th>規格</th>
+                  <th>售價</th>
+                  <th>庫存</th>
+                  <th>前台狀態</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody data-admin-table="inventory">
+                <tr class="align-middle ">
+                  <td><a href=""><img src="./assets/product-1.webp" alt="" class="avatar avatar-md rounded" /><span class="ms-3">Gaming Joy Stick</span></a>
+                  </td>
+
+                  <td>PRD001</td>
+                  <td>Electronics</td>
+                  <td>5</td>
+                  <td>$99.99</td>
+                  <td>pcs</td>
+                  <td>150</td>
+                  <td class="">
+                    <a href="#" class=""><i class="ti ti-edit "></i></a>
+                    <a href="#" class="link-danger"><i class="ti ti-trash ms-2"></i></a>
+                  </td>
+                </tr>
+                <tr class="align-middle">
+                  <td><a href=""><img src="./assets/product-2.webp" alt="" class="avatar avatar-md rounded" /><span class="ms-3">Wireless Earphones</span></a>
+                  </td>
+                  <td>PRD002</td>
+                  <td>Electronics</td>
+                  <td>Tech Pro</td>
+                  <td>$89.99</td>
+                  <td>pcs</td>
+                  <td>320</td>
+                  <td class="">
+                    <a href="#" class=""><i class="ti ti-edit "></i></a>
+                    <a href="#" class="link-danger"><i class="ti ti-trash ms-2"></i></a>
+                  </td>
+                </tr>
+                <tr class="align-middle">
+                 <td><a href=""><img src="./assets/product-3.webp" alt="" class="avatar avatar-md rounded" /><span class="ms-3">Smart Watch Pro</span></a>
+                  </td>
+                  <td>PRD003</td>
+                  <td>Electronics</td>
+                  <td>Tech Pro</td>
+                  <td>$98.00</td>
+                  <td>pcs</td>
+                  <td>200</td>
+                  <td class="">
+                    <a href="#" class=""><i class="ti ti-edit "></i></a>
+                    <a href="#" class="link-danger"><i class="ti ti-trash ms-2"></i></a>
+                  </td>
+                </tr>
+                <tr class="align-middle">
+                  <td><a href=""><img src="./assets/product-4.webp" alt="" class="avatar avatar-md rounded" /><span class="ms-3">USB-C Fast Charger</span></a>
+                  </td>
+                  <td>PRD004</td>
+                  <td>Electronics</td>
+                  <td>Tech Pro</td>
+                  <td>$86.00</td>
+                  <td>pcs</td>
+                  <td>80</td>
+                  <td class="">
+                    <a href="#" class=""><i class="ti ti-edit "></i></a>
+                    <a href="#" class="link-danger"><i class="ti ti-trash ms-2"></i></a>
+                  </td>
+                </tr>
+                <tr class="align-middle">
+                  <td><a href=""><img src="./assets/product-5.webp" alt="" class="avatar avatar-md rounded" /><span class="ms-3">Portable Bluetooth Speaker</span></a>
+                  </td>
+                  <td>PRD005</td>
+                  <td>Electronics</td>
+                  <td>Tech Pro</td>
+                  <td>$32.00</td>
+                  <td>pcs</td>
+                  <td>110</td>
+                  <td class="">
+                    <a href="#" class=""><i class="ti ti-edit "></i></a>
+                    <a href="#" class="link-danger"><i class="ti ti-trash ms-2"></i></a>
+                  </td>
+                </tr>
+                <tr class="align-middle">
+                  <td><a href=""><img src="./assets/product-6.webp" alt="" class="avatar avatar-md rounded" /><span class="ms-3">Magic Keyboard</span></a>
+                  </td>
+                  <td>PRD006</td>
+                  <td>Electronics</td>
+                  <td>Tech Pro</td>
+                  <td>$49.00</td>
+                  <td>pcs</td>
+                  <td>10</td>
+                  <td class="">
+                    <a href="#" class=""><i class="ti ti-edit "></i></a>
+                    <a href="#" class="link-danger"><i class="ti ti-trash ms-2"></i></a>
+                  </td>
+                </tr>
+                <tr class="align-middle">
+                  <td><a href=""><img src="./assets/product-7.webp" alt="" class="avatar avatar-md rounded" /><span class="ms-3">MacBook Pro 16"</span></a>
+                  </td>
+                  <td>PRD007</td>
+                  <td>Electronics</td>
+                  <td>Tech Pro</td>
+                  <td>$99.00</td>
+                  <td>pcs</td>
+                  <td>10</td>
+                  <td class="">
+                    <a href="#" class=""><i class="ti ti-edit "></i></a>
+                    <a href="#" class="link-danger"><i class="ti ti-trash ms-2"></i></a>
+                  </td>
+                </tr>
+                <tr class="align-middle">
+                  <td><a href=""><img src="./assets/product-8.webp" alt="" class="avatar avatar-md rounded" /><span class="ms-3">Wireless Earphones</span></a>
+                  </td>
+                  <td>PRD008</td>
+                  <td>Electronics</td>
+                  <td>Tech Pro</td>
+                  <td>$109.00</td>
+                  <td>pcs</td>
+                  <td>200</td>
+                  <td class="">
+                    <a href="#" class=""><i class="ti ti-edit "></i></a>
+                    <a href="#" class="link-danger"><i class="ti ti-trash ms-2"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot class="">
+
+                <tr>
+                  <td class="border-bottom-0">Showing product per page</td>
+                  <td colspan="9" class="border-bottom-0">
+                    <nav aria-label="Page navigation" class="d-flex justify-content-end">
+                      <ul class="pagination mb-0">
+                        <li class="page-item disabled">
+                          <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">Next</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </td>
+                </tr>
+
+              </tfoot>
+            </table>
+          </div>
+
+
+        </div>
+
+      </div>
+    <div class="row">
+        <div class="col-12">
+<footer class="text-center py-2 mt-6 text-secondary ">
+        <p class="mb-0">© 2018 - 2026 森森點心坊. All Rights Reserved. | Design by <a href="https://www.aq-webdesign.com/index.html" target="_blank" class="text-primary">A.Q.webdesign</a></p>
+      </footer>
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+  <dialog id="inventory-product-dialog" style="width:min(760px,calc(100% - 24px));border:0;border-radius:14px;padding:0;box-shadow:0 25px 80px rgba(18,29,45,.25);"><div style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid #edf0f3;"><h2 id="inventory-dialog-title" style="margin:0;font-size:1.2rem;">新增商品</h2><button type="button" style="border:0;background:transparent;font-size:1.6rem;" onclick="this.closest('dialog').close()">×</button></div><form id="inventory-product-form"><div style="padding:22px 24px;max-height:70vh;overflow:auto;"><input type="hidden" name="id"><div class="row g-3"><div class="col-md-8"><label class="form-label">商品名稱<input class="form-control" name="title" required></label></div><div class="col-md-4"><label class="form-label">SKU<input class="form-control" name="sku"></label></div><div class="col-md-6"><label class="form-label">分類<input class="form-control" name="cat" required></label></div><div class="col-md-6"><label class="form-label">規格<input class="form-control" name="spec" placeholder="尺寸、口味、重量等"></label></div><div class="col-md-4"><label class="form-label">售價<input class="form-control" name="priceValue" type="number" min="0" step="0.01" required></label></div><div class="col-md-4"><label class="form-label">庫存數量<input class="form-control" name="quantity" type="number" min="0" step="1" required></label></div><div class="col-md-4"><label class="form-label">製作天數<input class="form-control" name="day" type="number" min="0" step="1"></label></div><div class="col-12"><label class="form-label">圖片路徑<input class="form-control" name="img"></label></div><div class="col-12"><label class="form-label">商品描述<textarea class="form-control" name="desc" rows="3"></textarea></label></div><div class="col-12"><label class="form-check"><input class="form-check-input" name="published" type="checkbox"><span class="form-check-label">商品上架（前台可見、可加入購物車）</span></label></div></div><p id="inventory-product-message" class="small"></p></div><div style="display:flex;justify-content:flex-end;gap:10px;padding:16px 24px;border-top:1px solid #edf0f3;"><button class="btn btn-light" type="button" onclick="this.closest('dialog').close()">取消</button><button class="btn btn-primary" type="submit">儲存商品</button></div></form></dialog>
+
+  <!-- Bootstrap JS -->
+
+
+
+<script src="./assets/zh-admin.js?v=sensen-20260814"></script>
+<script src="./inventory-management.js"></script>
+</body>
+
+</html>

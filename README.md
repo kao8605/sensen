@@ -24,6 +24,8 @@ npm run backend
 
 前端服務提供 `site/` 與 `frontend/admin/` 的頁面，並將 `/api/*` 代理給後端；後端服務只提供 API 與 LINE 登入回呼，不再直接提供 HTML 管理介面。
 
+Vercel 部署前台時會執行 `npm run build`，並使用 `site/` 作為輸出目錄；設定已寫在 `vercel.json`。後端 API 仍需獨立部署，並將前端的 API 代理／網址指向後端服務。
+
 ## 重新產生整站
 
 ```bash

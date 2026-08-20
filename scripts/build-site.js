@@ -1505,6 +1505,10 @@ function main() {
   if (fs.existsSync(IMAGE_DATA_DIR)) {
     fs.cpSync(IMAGE_DATA_DIR, path.join(OUT_DIR, "assets", "images"), { recursive: true });
   }
+  const adminFrontendDir = path.join(ROOT, "frontend", "admin");
+  if (fs.existsSync(adminFrontendDir)) {
+    fs.cpSync(adminFrontendDir, path.join(OUT_DIR, "admin"), { recursive: true });
+  }
 
   const home = pages.find((page) => localPathFromUrl(page.url) === "/") || pages[0];
   for (const page of pages) {
