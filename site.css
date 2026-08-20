@@ -3317,6 +3317,25 @@ body:has(.latest-news-page) .menu-item:nth-child(2) > a {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 70px 48px;
+  margin-top: 58px;
+}
+
+.latest-news-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 52px 20px;
+  color: #8f817a;
+  font-size: clamp(18px, 1.3vw, 25px);
+  text-align: center;
+}
+
+.latest-news-card-placeholder {
+  display: grid;
+  min-height: 250px;
+  place-items: center;
+  color: #a65d42;
+  background: #f4eee8;
+  font-size: clamp(18px, 1.5vw, 28px);
 }
 
 .latest-news-card {
@@ -3432,6 +3451,7 @@ body:has(.latest-news-page) .menu-item:nth-child(2) > a {
   .latest-news-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 42px 18px;
+    margin-top: 38px;
   }
 
   .latest-news-card-copy {

@@ -69,7 +69,7 @@ const DEFAULT_COUPONS = [
   { code: 'FAMILY5', label: '$5 family order discount', type: 'fixed', value: 5, min: 40, enabled: true }
 ];
 
-if (!fs.existsSync(DB_PATH)) writeDb({ users: [], sessions: {}, lineStates: {}, lineTickets: {}, guestCarts: {}, userCarts: {}, orders: [], productOverrides: {}, productAdditions: [], deletedProducts: [], reservations: [], messages: [], subscribers: [], searches: [], coupons: DEFAULT_COUPONS });
+if (!fs.existsSync(DB_PATH)) writeDb({ users: [], sessions: {}, lineStates: {}, lineTickets: {}, guestCarts: {}, userCarts: {}, orders: [], productOverrides: {}, productAdditions: [], deletedProducts: [], reservations: [], messages: [], subscribers: [], searches: [], coupons: DEFAULT_COUPONS, news: [] });
 
 function readDb() {
   const db = JSON.parse(fs.readFileSync(DB_PATH, 'utf8'));
@@ -88,6 +88,7 @@ function readDb() {
   db.subscribers ||= [];
   db.searches ||= [];
   db.coupons ||= DEFAULT_COUPONS;
+  db.news ||= [];
   // Keep legacy Patria/sample orders out of the SenSen customer and admin views.
   // Orders created from the current SenSen product catalog remain available.
   const sensenProductIds = new Set([
@@ -570,6 +571,29 @@ function normalizeCoupon(coupon) {
   };
 }
 
+function normalizeNews(article = {}) {
+  const status = article.status === 'published' ? 'published' : 'draft';
+  const category = String(article.category || 'latest-news').trim() || 'latest-news';
+  const now = new Date().toISOString();
+  return {
+    id: String(article.id || '').trim(),
+    title: String(article.title || '').trim(),
+    excerpt: String(article.excerpt || '').trim(),
+    content: String(article.content || '').trim(),
+    image: String(article.image || '').trim(),
+    category,
+    status,
+    publishAt: String(article.publishAt || article.createdAt || now).trim(),
+    createdAt: String(article.createdAt || now),
+    updatedAt: String(article.updatedAt || now)
+  };
+}
+
+function publicNews(article) {
+  const normalized = normalizeNews(article);
+  return { ...normalized, id: article.id || normalized.id };
+}
+
 function couponDetails(db, code, subtotal) {
   const normalized = String(code || '').trim().toUpperCase();
   const coupon = (db.coupons || []).map(normalizeCoupon).find(item => item.enabled && item.code === normalized);
@@ -606,8 +630,70 @@ async function handleApi(req, res) {
     if (url.pathname.startsWith('/api/admin/') && !requireAdmin(res, auth)) return;
     if (req.method === 'GET' && url.pathname === '/api/products') return send(res, 200, { products });
 
+    if (req.method === 'GET' && url.pathname === '/api/news') {
+      const now = Date.now();
+      const category = String(url.searchParams.get('category') || '').trim();
+      const news = (db.news || [])
+        .map(publicNews)
+        .filter(article => article.status === 'published' && (!article.publishAt || new Date(article.publishAt).getTime() <= now))
+        .filter(article => !category || article.category === category)
+        .sort((a, b) => new Date(b.publishAt || b.createdAt || 0) - new Date(a.publishAt || a.createdAt || 0));
+      return send(res, 200, { news });
+    }
+
     if (req.method === 'GET' && url.pathname === '/api/admin/products') {
       return send(res, 200, { products, categories: [...new Set(products.map(product => product.cat).filter(Boolean))].sort() });
+    }
+
+    if (req.method === 'GET' && url.pathname === '/api/admin/news') {
+      const news = (db.news || []).map(publicNews).sort((a, b) => new Date(b.updatedAt || b.createdAt || 0) - new Date(a.updatedAt || a.createdAt || 0));
+      return send(res, 200, { news });
+    }
+
+    if (req.method === 'POST' && url.pathname === '/api/admin/news') {
+      const title = String(body.title || '').trim();
+      if (!title) return send(res, 400, { error: '文章標題為必填。' });
+      const now = new Date().toISOString();
+      const article = normalizeNews({
+        ...body,
+        id: 'news-' + Date.now() + '-' + token().slice(0, 6),
+        title,
+        createdAt: now,
+        updatedAt: now,
+        publishAt: body.publishAt || now
+      });
+      db.news.push(article);
+      writeDb(db);
+      return send(res, 201, { news: publicNews(article) });
+    }
+
+    if (req.method === 'PATCH' && url.pathname === '/api/admin/news') {
+      const id = String(body.id || '').trim();
+      const index = db.news.findIndex(item => String(item.id || '') === id);
+      if (index < 0) return send(res, 404, { error: '文章不存在。' });
+      const existing = normalizeNews(db.news[index]);
+      const title = String(body.title ?? existing.title).trim();
+      if (!title) return send(res, 400, { error: '文章標題為必填。' });
+      const article = normalizeNews({
+        ...existing,
+        ...body,
+        id,
+        title,
+        createdAt: existing.createdAt,
+        updatedAt: new Date().toISOString()
+      });
+      db.news[index] = article;
+      writeDb(db);
+      return send(res, 200, { news: publicNews(article) });
+    }
+
+    if (req.method === 'DELETE' && url.pathname === '/api/admin/news') {
+      const id = String(body.id || '').trim();
+      const before = db.news.length;
+      db.news = db.news.filter(item => String(item.id || '') !== id);
+      if (db.news.length === before) return send(res, 404, { error: '文章不存在。' });
+      writeDb(db);
+      return send(res, 200, { ok: true, id });
     }
 
     if (req.method === 'GET' && url.pathname === '/api/coupons') {

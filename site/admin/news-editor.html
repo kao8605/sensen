@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>最新消息管理｜森森點心坊</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.webp">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.webp">
+  <link rel="manifest" href="./assets/site.webmanifest">
+  <script type="module" src="./assets/js/main-CnSylLUz.js?v=sensen-20260814"></script>
+  <link rel="stylesheet" href="./assets/css/main-CM9hUMvt.css">
+  <link rel="stylesheet" href="./store-management.css">
+  <link rel="stylesheet" href="./news-editor.css">
+</head>
+
+<body>
+  <div id="overlay" class="overlay"></div>
+
+  <nav id="topbar" class="navbar bg-white border-bottom fixed-top topbar px-3">
+    <button id="toggleBtn" class="d-none d-lg-inline-flex btn btn-light btn-icon btn-sm" type="button" aria-label="收合側欄"><i class="ti ti-layout-sidebar-left-expand"></i></button>
+    <button id="mobileBtn" class="btn btn-light btn-icon btn-sm d-lg-none me-2" type="button" aria-label="開啟側欄"><i class="ti ti-layout-sidebar-left-expand"></i></button>
+    <div class="ms-auto d-flex align-items-center gap-3"><span class="text-secondary small d-none d-sm-inline">SENSEN BAKERY · ADMIN</span><img src="./assets/images/avatar-1.jpg" alt="管理員" class="avatar avatar-sm rounded-circle"></div>
+  </nav>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="logo-area"><div class="patria-admin-brand"><span class="patria-admin-icon"><i class="ti ti-tools-kitchen-2"></i></span><span class="patria-admin-copy"><strong>森森</strong><em>SENSEN BAKERY</em></span></div></div>
+    <ul class="nav flex-column">
+      <li class="px-4 py-2"><small class="nav-text">Main</small></li>
+      <li><a class="nav-link" href="index.html"><i class="ti ti-home"></i><span class="nav-text">Dashboard</span></a></li>
+      <li><a class="nav-link" href="inventory.html"><i class="ti ti-box-seam"></i><span class="nav-text">商品庫存</span></a></li>
+      <li><a class="nav-link" href="store-management.html"><i class="ti ti-shopping-cart"></i><span class="nav-text">門市管理</span></a></li>
+      <li><a class="nav-link" href="create-product.html"><i class="ti ti-plus"></i><span class="nav-text">Add Product</span></a></li>
+      <li><a class="nav-link" href="reports.html"><i class="ti ti-receipt"></i><span class="nav-text">Reports</span></a></li>
+      <li><a class="nav-link" href="discount-codes.html"><i class="ti ti-discount-2"></i><span class="nav-text">Discount Codes</span></a></li>
+      <li><a class="nav-link active" href="news-editor.html"><i class="ti ti-news"></i><span class="nav-text">最新消息</span></a></li>
+      <li><a class="nav-link" href="docs.html"><i class="ti ti-file-text"></i><span class="nav-text">Docs</span></a></li>
+      <li><a class="nav-link" href="http://127.0.0.1:3000/"><i class="ti ti-arrow-back-up"></i><span class="nav-text">Back to 森森</span></a></li>
+      <li class="px-4 pt-4 pb-2"><small class="nav-text">Account</small></li>
+      <li><a class="nav-link" href="signin.html"><i class="ti ti-logout"></i><span class="nav-text">Log in</span></a></li>
+      <li><a class="nav-link" href="signup.html"><i class="ti ti-user-plus"></i><span class="nav-text">Sign up</span></a></li>
+    </ul>
+  </aside>
+
+  <main id="content" class="content py-10" data-admin-page="news-editor">
+    <div class="container-fluid management-content news-page">
+      <div class="management-header d-flex justify-content-between align-items-end gap-3 flex-wrap">
+        <div>
+          <p class="management-eyebrow text-primary mb-2">SENSEN BAKERY · ADMIN</p>
+          <h1 class="fs-3 mb-1">最新消息</h1>
+          <p class="text-secondary mb-0">新增與管理前台最新消息，發布後會同步顯示在最新消息頁面。</p>
+        </div>
+        <div class="d-flex gap-2 flex-wrap">
+          <a class="btn btn-outline-secondary" href="index.html"><i class="ti ti-arrow-left me-1"></i>返回後台首頁</a>
+          <a class="btn btn-primary" href="http://127.0.0.1:3000/最新消息" target="_blank" rel="noreferrer"><i class="ti ti-external-link me-1"></i>預覽前台</a>
+        </div>
+      </div>
+
+      <p id="news-message" class="text-success small mb-3" role="status"></p>
+
+      <div class="row g-4 align-items-start">
+        <div class="col-12 col-xl-8">
+          <form class="management-card" id="news-form">
+            <div class="management-card-head d-flex justify-content-between align-items-center gap-3 flex-wrap">
+              <div class="d-flex align-items-center gap-2"><i class="ti ti-edit text-primary fs-4"></i><h2 class="h5 mb-0">新增文章</h2></div>
+              <button class="btn btn-sm btn-light" type="button" data-new-article><i class="ti ti-file-plus me-1"></i>新增一篇</button>
+            </div>
+            <div class="p-4">
+              <input type="hidden" name="id">
+              <div class="mb-4"><label class="form-label" for="news-title">標題</label><input id="news-title" class="form-control news-title-input" name="title" type="text" placeholder="輸入文章標題" required></div>
+              <div class="mb-4"><label class="form-label" for="news-content">內容</label><textarea id="news-content" class="form-control news-content-input" name="content" placeholder="輸入最新消息內容…"></textarea></div>
+              <div class="mb-4"><label class="form-label" for="news-excerpt">內容摘要</label><textarea id="news-excerpt" class="form-control" name="excerpt" placeholder="前台文章卡片顯示的簡短摘要（可省略）"></textarea></div>
+              <div class="d-flex justify-content-end gap-2 flex-wrap"><button class="btn btn-outline-secondary" type="button" data-save-draft>儲存草稿</button><button class="btn btn-primary" type="button" data-publish>發布</button></div>
+            </div>
+          </form>
+
+          <section class="management-card news-list-card" id="news-list">
+            <div class="management-card-head d-flex justify-content-between align-items-center gap-3 flex-wrap"><div class="d-flex align-items-center gap-2"><i class="ti ti-list-details text-primary fs-4"></i><div><h2 class="h5 mb-1">全部文章</h2><span class="text-secondary small">草稿只會顯示在後台，已發布文章才會出現在前台。</span></div></div><button class="btn btn-sm btn-light" type="button" data-refresh><i class="ti ti-refresh me-1"></i>重新整理</button></div>
+            <div class="news-list-items" data-news-items><p class="text-secondary p-4 mb-0">載入中…</p></div>
+          </section>
+        </div>
+
+        <div class="col-12 col-xl-4">
+          <aside class="management-card news-settings-card">
+            <div class="management-card-head d-flex align-items-center gap-2"><i class="ti ti-settings text-primary fs-4"></i><h2 class="h5 mb-0">文章設定</h2></div>
+            <div class="p-4">
+              <div class="mb-3"><label class="form-label" for="news-status">狀態</label><select id="news-status" class="form-select" name="status" form="news-form"><option value="draft">草稿</option><option value="published">已發布</option></select></div>
+              <div class="mb-3"><label class="form-label" for="news-category">分類</label><select id="news-category" class="form-select" name="category" form="news-form"><option value="latest-news">最新消息</option><option value="season-only">季節限定</option><option value="new-arrival">新品上市</option><option value="sensen-coffee">森森飲品</option></select></div>
+              <div class="mb-3"><label class="form-label" for="news-publish-at">發布日期</label><input id="news-publish-at" class="form-control" name="publishAt" type="datetime-local" form="news-form"></div>
+              <div class="mb-3"><label class="form-label" for="news-image">封面圖片網址</label><input id="news-image" class="form-control" name="image" type="url" placeholder="https://… 或 assets/images/…" form="news-form"></div>
+              <div class="news-preview" data-preview><div class="news-preview-media" data-preview-media>尚未設定封面圖片</div><div class="news-preview-copy"><h3 data-preview-title>文章標題預覽</h3><p data-preview-excerpt>內容摘要會顯示在這裡。</p></div></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./news-editor.js"></script>
+</body>
+</html>

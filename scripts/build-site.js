@@ -1367,31 +1367,12 @@ function latestNewsContent(page) {
     ["森森飲品", "sensen-coffee"],
   ];
   const filterHtml = filters.map(([label, value, active]) => `<button class="latest-news-filter${active ? " is-active" : ""}" type="button" data-news-filter="${escapeAttr(value)}" aria-pressed="${active ? "true" : "false"}">${escapeHtml(label)}</button>`).join("");
-  return `<section class="latest-news-page" aria-labelledby="latest-news-heading">
+  return `<section class="latest-news-page" data-latest-news-page aria-labelledby="latest-news-heading">
     <h2 class="latest-news-sr-only" id="latest-news-heading">最新消息</h2>
     <img class="latest-news-icon" src="/assets/images/icon-wheat.png" alt="" aria-hidden="true">
     <nav class="latest-news-filters" aria-label="最新消息分類">${filterHtml}</nav>
-    <script>
-    (() => {
-      const page = document.querySelector(".latest-news-page");
-      if (!page) return;
-      const buttons = [...page.querySelectorAll("[data-news-filter]")];
-      const cards = [...page.querySelectorAll("[data-news-category]")];
-      buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const filter = button.dataset.newsFilter;
-          buttons.forEach((item) => {
-            const active = item === button;
-            item.classList.toggle("is-active", active);
-            item.setAttribute("aria-pressed", String(active));
-          });
-          cards.forEach((card) => {
-            card.hidden = filter !== "all" && card.dataset.newsCategory !== filter;
-          });
-        });
-      });
-    })();
-    </script>
+    <div class="latest-news-grid" data-news-list aria-live="polite"><p class="latest-news-empty">載入最新消息中…</p></div>
+    <script src="/assets/latest-news.js"></script>
   </section>`;
 }
 
@@ -1502,6 +1483,7 @@ function main() {
   fs.copyFileSync(path.join(__dirname, "checkout-page.js"), path.join(OUT_DIR, "assets", "checkout-page.js"));
   fs.copyFileSync(path.join(__dirname, "checkout.css"), path.join(OUT_DIR, "assets", "checkout.css"));
   fs.copyFileSync(path.join(__dirname, "orders-page.js"), path.join(OUT_DIR, "assets", "orders-page.js"));
+  fs.copyFileSync(path.join(__dirname, "latest-news.js"), path.join(OUT_DIR, "assets", "latest-news.js"));
   if (fs.existsSync(IMAGE_DATA_DIR)) {
     fs.cpSync(IMAGE_DATA_DIR, path.join(OUT_DIR, "assets", "images"), { recursive: true });
   }
