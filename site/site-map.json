@@ -141,7 +141,7 @@
   },
   {
     "title": "購物車",
-    "url": "http://127.0.0.1:3000/cart/",
+    "url": "https://www.sensen.com.tw/cart/",
     "path": "/cart"
   },
   {
@@ -251,7 +251,7 @@
   },
   {
     "title": "結帳",
-    "url": "http://127.0.0.1:3000/checkout/",
+    "url": "https://www.sensen.com.tw/checkout/",
     "path": "/checkout"
   },
   {
@@ -261,12 +261,12 @@
   },
   {
     "title": "會員登入",
-    "url": "http://127.0.0.1:3000/customer/admin/",
+    "url": "https://www.sensen.com.tw/customer/admin/",
     "path": "/customer/admin"
   },
   {
     "title": "會員後台",
-    "url": "http://127.0.0.1:3000/customer/admin/backup/",
+    "url": "https://www.sensen.com.tw/customer/admin/backup/",
     "path": "/customer/admin/backup"
   },
   {
@@ -1121,7 +1121,7 @@
   },
   {
     "title": "我的訂單",
-    "url": "http://127.0.0.1:3000/orders/",
+    "url": "https://www.sensen.com.tw/orders/",
     "path": "/orders"
   },
   {

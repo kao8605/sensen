@@ -136,11 +136,11 @@ const NAV_CHILDREN = new Map([
 ]);
 
 const STORE_MODULE_PAGES = [
-  { url: "http://127.0.0.1:3000/customer/admin/", title: "會員登入" },
-  { url: "http://127.0.0.1:3000/customer/admin/backup/", title: "會員後台" },
-  { url: "http://127.0.0.1:3000/cart/", title: "購物車" },
-  { url: "http://127.0.0.1:3000/checkout/", title: "結帳" },
-  { url: "http://127.0.0.1:3000/orders/", title: "我的訂單" },
+  { url: "https://www.sensen.com.tw/customer/admin/", title: "會員登入" },
+  { url: "https://www.sensen.com.tw/customer/admin/backup/", title: "會員後台" },
+  { url: "https://www.sensen.com.tw/cart/", title: "購物車" },
+  { url: "https://www.sensen.com.tw/checkout/", title: "結帳" },
+  { url: "https://www.sensen.com.tw/orders/", title: "我的訂單" },
 ];
 
 function readJson(filePath) {
@@ -756,12 +756,12 @@ function layout({ title, pathLabel, content, isHome = false, isAbout = false, ha
       <div class="menu" id="site-menu">${nav}<div class="mobile-nav-actions" aria-label="森森會員功能">
         <a class="mobile-nav-action" href="/customer/admin/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c.8-3.3 3.1-5 7-5s6.2 1.7 7 5"></path></svg><span>會員中心</span></a>
         <button class="mobile-nav-action cart-trigger" type="button" aria-controls="sensen-cart-drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L20 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="17" cy="20" r="1"></circle></svg><span>購物車</span><b class="cart-count" aria-live="polite">0</b></button>
-        <a class="mobile-nav-action" href="http://127.0.0.1:8081/admin/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 9h8M8 13h5M8 17h3"></path></svg><span>員工後台</span></a>
+        <a class="mobile-nav-action" href="/admin/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 9h8M8 13h5M8 17h3"></path></svg><span>員工後台</span></a>
       </div><a class="mobile-menu-social" href="https://www.facebook.com/sensenbakery/" target="_blank" rel="noreferrer" aria-label="Facebook">f</a></div>
       <div class="nav-actions" aria-label="森森會員功能">
         <a class="nav-action" href="/customer/admin/" aria-label="客戶後台" title="客戶後台"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c.8-3.3 3.1-5 7-5s6.2 1.7 7 5"></path></svg></a>
         <button class="nav-action cart-trigger" type="button" aria-controls="sensen-cart-drawer" aria-expanded="false" aria-label="開啟購物車" title="購物車"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L20 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="17" cy="20" r="1"></circle></svg><span class="cart-count" aria-live="polite">0</span></button>
-        <a class="nav-action" href="http://127.0.0.1:8081/admin/" aria-label="森森員工後台" title="森森員工後台"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 9h8M8 13h5M8 17h3"></path></svg></a>
+        <a class="nav-action" href="/admin/" aria-label="森森員工後台" title="森森員工後台"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 9h8M8 13h5M8 17h3"></path></svg></a>
       </div>
     </nav>
   </header>
