@@ -73,7 +73,7 @@
       localStorage.removeItem('sensen-cart-coupon'); localStorage.removeItem('sensen-cart-pickup'); localStorage.removeItem('sensen-cart-shipping');
       const emailText = data.email?.status === 'sent' ? '訂單確認信已寄至 ' + escapeHtml(data.email.recipient) + '。' : data.email?.status === 'pending' ? '訂單已建立；確認信寄送服務尚未設定。' : '';
       const card = root.querySelector('.checkout-order-card');
-      card.innerHTML = '<div class="checkout-order-success"><h2>訂單已建立</h2><p>訂單編號：<strong>#' + escapeHtml(data.order?.id || '') + '</strong></p><p>' + emailText + '</p><p>目前狀態：訂單已建立。你可以到 <a href="/orders/">我的訂單</a> 查看物流狀態。</p></div>';
+      card.innerHTML = '<div class="checkout-order-success"><h2>訂單已建立</h2><p>訂單編號：<strong>#' + escapeHtml(data.order?.id || '') + '</strong></p><p>' + emailText + '</p><p>目前狀態：訂單已建立。你可以到 <a href="https://sensen.jinfeng8605.workers.dev/customer/admin/backup/">會員中心</a> 查看物流狀態。</p></div>';
       setMessage('[data-checkout-submit-message]', '訂單已建立。', false);
     } catch (error) {
       setMessage('[data-checkout-submit-message]', error.message, true);

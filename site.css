@@ -3590,6 +3590,87 @@ body:has(.latest-news-page) .menu-item:nth-child(2) > a {
   background: #f4eee8;
 }
 
+.contact-page {
+  width: min(100% - 40px, 1120px);
+  margin: 0 auto;
+  padding: 72px 0 96px;
+}
+
+.contact-page-card {
+  padding: clamp(28px, 5vw, 64px);
+  border: 1px solid #ead7c4;
+  border-radius: 24px;
+  background: #fffaf3;
+}
+
+.contact-page-kicker {
+  margin: 0 0 8px;
+  color: #ae6847;
+  letter-spacing: .14em;
+  font-size: 13px;
+}
+
+.contact-page-card h1 {
+  margin: 0 0 14px;
+  color: #38251f;
+  font-size: clamp(34px, 5vw, 58px);
+}
+
+.contact-page-card > p:not(.contact-page-kicker) {
+  max-width: 680px;
+  color: #6e5b52;
+  line-height: 1.8;
+}
+
+.contact-page-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 28px;
+  margin-top: 34px;
+}
+
+.contact-page-form label {
+  display: grid;
+  gap: 8px;
+  color: #38251f;
+  font-weight: 700;
+}
+
+.contact-page-form input,
+.contact-page-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border: 1px solid #e5c298;
+  border-radius: 10px;
+  background: #fff;
+  color: #38251f;
+  font: inherit;
+}
+
+.contact-page-wide,
+.contact-page-form button,
+.contact-page-message {
+  grid-column: 1 / -1;
+}
+
+.contact-page-form button {
+  justify-self: start;
+  padding: 13px 34px;
+  border: 0;
+  border-radius: 999px;
+  background: #ee2c1f;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.contact-page-form button:disabled { opacity: .65; cursor: wait; }
+.contact-page-message { min-height: 1.5em; margin: 0; color: #6e5b52; }
+.contact-page-message.is-success { color: #277046; }
+.contact-page-message.is-error { color: #b33a2e; }
+
 @media (max-width: 760px) {
   .latest-news-card-readmore {
     margin-top: 12px;
@@ -3619,4 +3700,11 @@ body:has(.latest-news-page) .menu-item:nth-child(2) > a {
     font-size: 16px;
     line-height: 1.85;
   }
+
+  .contact-page {
+    width: min(100% - 28px, 1120px);
+    padding: 46px 0 64px;
+  }
+
+  .contact-page-form { grid-template-columns: 1fr; }
 }

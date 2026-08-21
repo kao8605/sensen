@@ -1312,6 +1312,53 @@ function ordersPageScript() {
   return '<script src="/assets/orders-page.js"></script>';
 }
 
+function contactPageContent() {
+  return `<section class="content contact-page">
+    <div class="contact-page-card">
+      <p class="contact-page-kicker">SENSEN BAKERY</p>
+      <h1>聯絡我們</h1>
+      <p>如果您有訂購、外燴或其他服務需求，歡迎留下資料，森森團隊會盡快與您聯繫。</p>
+      <form class="contact-page-form" data-contact-form>
+        <label>姓名 *<input name="name" required autocomplete="name"></label>
+        <label>Email *<input name="email" type="email" required autocomplete="email"></label>
+        <label>電話<input name="phone" autocomplete="tel"></label>
+        <label>主旨<input name="subject" value="聯絡我們"></label>
+        <label class="contact-page-wide">需求內容 *<textarea name="message" rows="6" required></textarea></label>
+        <p class="contact-page-message" data-contact-message role="status" aria-live="polite"></p>
+        <button type="submit">送出訊息</button>
+      </form>
+    </div>
+    <script>
+    (() => {
+      const form = document.querySelector('[data-contact-form]');
+      if (!form) return;
+      const message = form.querySelector('[data-contact-message]');
+      const button = form.querySelector('button[type="submit"]');
+      form.addEventListener('submit', async event => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        button.disabled = true;
+        message.textContent = '送出中…';
+        const value = name => form.elements[name]?.value.trim() || '';
+        try {
+          const response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: value('name'), email: value('email'), phone: value('phone'), subject: value('subject'), message: value('message') }) });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(data.error || '送出失敗，請稍後再試。');
+          form.reset();
+          message.className = 'contact-page-message is-success';
+          message.textContent = data.message || '訊息已送出。';
+        } catch (error) {
+          message.className = 'contact-page-message is-error';
+          message.textContent = error.message;
+        } finally {
+          button.disabled = false;
+        }
+      });
+    })();
+    </script>
+  </section>`;
+}
+
 function pageContent(page) {
   const localPath = localPathFromUrl(page.url);
   if (localPath === "/關於森森") {
@@ -1334,6 +1381,9 @@ function pageContent(page) {
   }
   if (localPath === "/最新消息") {
     return latestNewsContent(page);
+  }
+  if (localPath === "/聯絡我們") {
+    return contactPageContent();
   }
   if (localPath === "/customer/admin") return customerPageContent("login");
   if (localPath === "/customer/admin/backup") return customerPageContent("dashboard");
@@ -1472,6 +1522,7 @@ function main() {
   const supplementalPages = readSupplementalMarkdownPages();
   const sourcePages = [
     ...STORE_MODULE_PAGES.map((page) => ({ ...page, source: "sensen-store-module" })),
+    { url: "https://www.sensen.com.tw/聯絡我們/", title: "聯絡我們", html: "", source: "sensen-store-module" },
     ...wpPages,
     ...crawlPages.map((page) => ({ ...page, source: "firecrawl-crawl" })),
     ...supplementalPages,
@@ -1524,7 +1575,7 @@ function main() {
       isHome: localPath === "/",
       isAbout: isAboutPage,
       hasBrandedHero: BRANDED_HERO_PATHS.has(localPath) && localPath !== CATERING_PATH,
-      showHero: localPath !== CATERING_PATH && localPath !== "/checkout" && localPath !== "/customer" && localPath !== "/customer/admin" && localPath !== "/customer/admin/backup",
+      showHero: localPath !== CATERING_PATH && localPath !== "/聯絡我們" && localPath !== "/checkout" && localPath !== "/customer" && localPath !== "/customer/admin" && localPath !== "/customer/admin/backup",
       heroSource: localPath === BIRTHDAY_CAKE_PATH ? "/assets/images/headtitle-bg3.jpg" : localPath === BOSTON_PIE_PATH ? "/assets/images/headtitle-bg8.jpg" : localPath === "/森森咖啡" ? "/assets/images/cafe-coffee-restaurant-cup-food-drink-1008643-pxhere-2.jpg" : "/assets/images/headtitle-bg2.jpg",
     }));
   }
