@@ -1,11 +1,27 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "sensen",
+  "main": "sensen-api/src/index.ts",
   "compatibility_date": "2026-08-20",
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "./site"
-  }
+    "directory": "./site",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/health", "/images/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sensen-db",
+      "database_id": "8d3a1009-ed46-47de-afa2-9c5c5c1438bb"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "sensen-images"
+    }
+  ]
 }
