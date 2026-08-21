@@ -219,6 +219,82 @@ export default {
         }, 200, guestId);
       }
 
+      if (url.pathname === "/api/me" && request.method === "GET") {
+        // Checkout supports guests. A future authenticated session can replace this
+        // response without changing the checkout page contract.
+        return json(request, { user: null, address: null });
+      }
+
+      if (url.pathname === "/api/checkout" && request.method === "POST") {
+        const body = await parseBody(request);
+        const guestId = getGuestId(request);
+        const cart = await cartSummary(env, guestId);
+        if (!cart.items.length) return json(request, { error: "購物車是空的。" }, 400);
+
+        const shippingMethod = String(body.shippingMethod || "pickup");
+        if (!["pickup", "home", "frozen"].includes(shippingMethod)) {
+          return json(request, { error: "物流方式無效。" }, 400);
+        }
+        const fulfillmentDate = String(body.fulfillmentDate || "").trim();
+        const shippingAddress = body.shippingAddress && typeof body.shippingAddress === "object"
+          ? body.shippingAddress as Record<string, unknown>
+          : {};
+        const name = String(shippingAddress.fullName || body.name || "").trim();
+        const email = String(body.email || "").trim().toLowerCase();
+        const phone = String(shippingAddress.phone || body.phone || "").trim();
+        const address = String(shippingAddress.address || "").trim();
+        if (!name || !email || !phone || !fulfillmentDate) {
+          return json(request, { error: "請填寫姓名、電子信箱、電話與取貨／配送日期。" }, 400);
+        }
+        if (shippingMethod !== "pickup" && (!address || !String(shippingAddress.city || "").trim() || !String(shippingAddress.zip || "").trim())) {
+          return json(request, { error: "宅配訂單請填寫地址、縣市與郵遞區號。" }, 400);
+        }
+
+        const shippingFee = shippingMethod === "frozen" ? 240 : shippingMethod === "home" ? 120 : 0;
+        const total = Number((cart.subtotal + shippingFee).toFixed(2));
+        const orderNumber = `S${Date.now().toString(36).toUpperCase()}`;
+        const addressJson = JSON.stringify({
+          fullName: name,
+          phone,
+          address,
+          city: String(shippingAddress.city || "").trim(),
+          zip: String(shippingAddress.zip || "").trim(),
+        });
+
+        await env.DB.prepare(`
+          INSERT INTO orders (
+            order_number, total_amount, status, customer_name, customer_email,
+            customer_phone, shipping_method, shipping_address, fulfillment_date,
+            customer_note, shipping_fee, discount_amount
+          ) VALUES (?1, ?2, 'pending', ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, 0)
+        `).bind(
+          orderNumber,
+          total,
+          name,
+          email,
+          phone,
+          shippingMethod,
+          addressJson,
+          fulfillmentDate,
+          String(body.customerNote || "").trim(),
+          shippingFee,
+        ).run();
+
+        const order = await env.DB.prepare("SELECT id, order_number, total_amount, status, created_at FROM orders WHERE order_number = ?1").bind(orderNumber).first<Record<string, unknown>>();
+        for (const item of cart.items) {
+          const product = await findProduct(env, item.id);
+          await env.DB.prepare(`
+            INSERT INTO order_items (order_id, product_id, product_name, price, quantity)
+            VALUES (?1, ?2, ?3, ?4, ?5)
+          `).bind(order?.id, product?.db_id || null, item.title, item.priceValue, item.qty).run();
+        }
+        await env.DB.prepare("DELETE FROM cart_items WHERE guest_id = ?1").bind(guestId).run();
+        return json(request, {
+          order: { ...order, id: orderNumber, total },
+          email: { status: "pending", recipient: email },
+        }, 201, guestId);
+      }
+
       if (url.pathname.startsWith("/images/") && request.method === "GET") {
         return imageResponse(request, env);
       }

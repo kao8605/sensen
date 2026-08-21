@@ -69,7 +69,7 @@
     if (fields.shipping.value !== 'pickup' && (!fields.address.value.trim() || !fields.phone.value.trim())) { setMessage('[data-checkout-submit-message]', '宅配訂單請先填寫收件地址與電話。', true); return; }
     root.querySelectorAll('[data-checkout-submit]').forEach(item => { item.disabled = true; item.textContent = '送出中…'; });
     try {
-      const data = await api('/api/checkout', { method: 'POST', body: JSON.stringify({ fulfillmentDate: fields.pickup.value, couponCode: fields.coupon.value.trim(), shippingMethod: fields.shipping.value, shippingAddress: { fullName: fields.name.value.trim(), phone: fields.phone.value.trim(), address: fields.address?.value.trim() || '', city: fields.city?.value.trim() || '', zip: fields.zip?.value.trim() || '' }, customerNote: fields.note.value.trim() }) });
+      const data = await api('/api/checkout', { method: 'POST', body: JSON.stringify({ name: fields.name.value.trim(), email: fields.email.value.trim(), phone: fields.phone.value.trim(), fulfillmentDate: fields.pickup.value, couponCode: fields.coupon.value.trim(), shippingMethod: fields.shipping.value, shippingAddress: { fullName: fields.name.value.trim(), phone: fields.phone.value.trim(), address: fields.address?.value.trim() || '', city: fields.city?.value.trim() || '', zip: fields.zip?.value.trim() || '' }, customerNote: fields.note.value.trim() }) });
       localStorage.removeItem('sensen-cart-coupon'); localStorage.removeItem('sensen-cart-pickup'); localStorage.removeItem('sensen-cart-shipping');
       const emailText = data.email?.status === 'sent' ? '訂單確認信已寄至 ' + escapeHtml(data.email.recipient) + '。' : data.email?.status === 'pending' ? '訂單已建立；確認信寄送服務尚未設定。' : '';
       const card = root.querySelector('.checkout-order-card');
