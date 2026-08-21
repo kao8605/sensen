@@ -697,7 +697,7 @@ export default {
         const password = String(body.password || "");
         const name = String(body.name || email.split("@")[0] || "Customer").trim();
         const phone = String(body.phone || "").trim();
-        if (!email || !email.includes("@") || !password) {
+        if (!/^\S+@\S+\.\S+/.test(email) || password.length < 6) {
           return json(request, { error: "請填寫有效的 Email 與密碼。" }, 400);
         }
         const existing = await env.DB.prepare("SELECT id FROM users WHERE lower(email) = ?1 LIMIT 1").bind(email).first<{ id: number }>();
