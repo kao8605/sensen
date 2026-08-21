@@ -43,6 +43,8 @@ body:has(.account-shell) .content-section h2 { margin: 0 0 16px; color: #263238;
 body:has(.account-shell) .order-row { grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 22px; padding: 17px 4px; border-bottom: 1px solid #edf0f3; color: #66727e; }
 body:has(.account-shell) .order-row:last-child { border-bottom: 0; }
 body:has(.account-shell) .order-row b { color: #263238; font-size: .94rem; }
+body:has(.account-shell) .order-row-main { min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+body:has(.account-shell) .order-details { color: #8a96a3; font-size: .78rem; line-height: 1.5; }
 body:has(.account-shell) .order-row strong { min-width: 90px; color: #8d563d; text-align: right; }
 body:has(.account-shell) .status { padding: 5px 10px; border-radius: 999px; background: #fff2e3; color: #b36b32; font-size: .78rem; }
 body:has(.account-shell) .account-form { gap: 20px; }

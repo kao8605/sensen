@@ -15,7 +15,8 @@
     {
       "binding": "DB",
       "database_name": "sensen-db",
-      "database_id": "8d3a1009-ed46-47de-afa2-9c5c5c1438bb"
+      "database_id": "8d3a1009-ed46-47de-afa2-9c5c5c1438bb",
+      "migrations_dir": "sensen-api/migrations"
     }
   ],
   "r2_buckets": [

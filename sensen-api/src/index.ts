@@ -59,13 +59,14 @@ const responseHeaders = (request: Request, extra: Record<string, string> = {}) =
 
 const json = (request: Request, body: unknown, status = 200, guestId?: string, sessionToken?: string) => {
   const headers = new Headers(responseHeaders(request));
+  const secureCookie = new URL(request.url).protocol === "https:" ? "; Secure" : "";
   if (guestId) {
-    headers.append("Set-Cookie", `${GUEST_COOKIE}=${encodeURIComponent(guestId)}; Path=/; Max-Age=31536000; HttpOnly; SameSite=Lax; Secure`);
+    headers.append("Set-Cookie", `${GUEST_COOKIE}=${encodeURIComponent(guestId)}; Path=/; Max-Age=31536000; HttpOnly; SameSite=Lax${secureCookie}`);
   }
   if (sessionToken !== undefined) {
     const cookie = sessionToken
-      ? `${SESSION_COOKIE}=${encodeURIComponent(sessionToken)}; Path=/; Max-Age=2592000; HttpOnly; SameSite=Lax; Secure`
-      : `${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; SameSite=Lax; Secure`;
+      ? `${SESSION_COOKIE}=${encodeURIComponent(sessionToken)}; Path=/; Max-Age=2592000; HttpOnly; SameSite=Lax${secureCookie}`
+      : `${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; SameSite=Lax${secureCookie}`;
     headers.append("Set-Cookie", cookie);
   }
   return new Response(JSON.stringify(body), { status, headers });
@@ -804,7 +805,8 @@ export default {
         const result = await env.DB.prepare(`
           SELECT order_number AS id, total_amount AS total, status, created_at AS createdAt,
                  shipping_method AS shippingMethod, fulfillment_date AS fulfillmentDate,
-                 shipping_address AS shippingAddress, customer_note AS customerNote
+                 tracking_number AS trackingNumber, shipping_address AS shippingAddress,
+                 customer_note AS customerNote
           FROM orders
           WHERE user_id = ?1
           ORDER BY created_at DESC
@@ -906,8 +908,13 @@ export default {
       }
       return assetResponse;
     } catch (error) {
-      console.error("Worker request failed", error);
-      return json(request, { error: "服務暫時無法處理請求。" }, 500);
+      const requestId = crypto.randomUUID();
+      const detail = error instanceof Error ? error.message : String(error);
+      console.error("Worker request failed", { requestId, method: request.method, path: url.pathname, detail });
+      const message = /no such table|no such column/i.test(detail)
+        ? "會員資料庫尚未完成初始化，請先執行 D1 migration。"
+        : "服務暫時無法處理請求。";
+      return json(request, { error: message, requestId }, 500);
     }
   },
 } satisfies ExportedHandler<Env>;
