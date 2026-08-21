@@ -1376,6 +1376,23 @@ function latestNewsContent(page) {
   </section>`;
 }
 
+function latestNewsArticleContent() {
+  return `<section class="latest-news-article-page" data-latest-news-article-page aria-labelledby="latest-news-article-title">
+    <a class="latest-news-article-back" href="/最新消息/">← 返回最新消息</a>
+    <div class="latest-news-article-shell">
+      <p class="latest-news-article-status" data-article-status role="status">載入文章中…</p>
+      <div class="latest-news-article-image" data-article-image></div>
+      <div class="latest-news-article-copy">
+        <p class="latest-news-card-date" data-article-date></p>
+        <p class="latest-news-article-category" data-article-category></p>
+        <h1 id="latest-news-article-title" data-article-title>最新消息</h1>
+        <div class="latest-news-article-content" data-article-content></div>
+      </div>
+    </div>
+    <script src="/assets/latest-news-article.js"></script>
+  </section>`;
+}
+
 function removeLatestNewsPagination(markdown) {
   const lines = String(markdown || "").split(/\r?\n/);
   const paginationIndex = lines.findIndex((line) =>
@@ -1484,6 +1501,7 @@ function main() {
   fs.copyFileSync(path.join(__dirname, "checkout.css"), path.join(OUT_DIR, "assets", "checkout.css"));
   fs.copyFileSync(path.join(__dirname, "orders-page.js"), path.join(OUT_DIR, "assets", "orders-page.js"));
   fs.copyFileSync(path.join(__dirname, "latest-news.js"), path.join(OUT_DIR, "assets", "latest-news.js"));
+  fs.copyFileSync(path.join(__dirname, "latest-news-article.js"), path.join(OUT_DIR, "assets", "latest-news-article.js"));
   if (fs.existsSync(IMAGE_DATA_DIR)) {
     fs.cpSync(IMAGE_DATA_DIR, path.join(OUT_DIR, "assets", "images"), { recursive: true });
   }
@@ -1524,6 +1542,15 @@ function main() {
     title: "全站頁面",
     pathLabel: "/site-map.html",
     content: `<section class="directory"><h2>全站頁面</h2><p>以下為本地複製出的站內頁面索引。圖片皆以預留位呈現。</p>${createIndex(pages)}</section>`,
+  }));
+
+  const latestNewsArticleFile = path.join(OUT_DIR, "latest-news", "article", "index.html");
+  ensureDir(latestNewsArticleFile);
+  fs.writeFileSync(latestNewsArticleFile, layout({
+    title: "最新消息",
+    pathLabel: "/最新消息文章",
+    content: latestNewsArticleContent(),
+    showHero: false,
   }));
 
   const privacyFile = path.join(OUT_DIR, "隱私權條款", "index.html");

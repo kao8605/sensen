@@ -41,14 +41,17 @@
         : '<div class="latest-news-card-placeholder" aria-hidden="true">森森點心坊</div>';
       const description = article.excerpt || article.content || '';
       return `<article class="latest-news-card" data-news-category="${escapeHtml(article.category)}">
-        <div class="latest-news-card-media">
-          <div class="latest-news-card-image">${imageMarkup}</div>
-        </div>
-        <div class="latest-news-card-copy">
-          <p class="latest-news-card-date"><span aria-hidden="true">◷</span>${escapeHtml(formatDate(article.publishAt || article.createdAt))}</p>
-          <h2>${escapeHtml(article.title)}</h2>
-          <p>${escapeHtml(description)}</p>
-        </div>
+        <a class="latest-news-card-link" href="/latest-news/article/?id=${escapeHtml(encodeURIComponent(article.id))}" aria-label="查看${escapeHtml(article.title)}完整內容">
+          <div class="latest-news-card-media">
+            <div class="latest-news-card-image">${imageMarkup}</div>
+          </div>
+          <div class="latest-news-card-copy">
+            <p class="latest-news-card-date"><span aria-hidden="true">◷</span>${escapeHtml(formatDate(article.publishAt || article.createdAt))}</p>
+            <h2>${escapeHtml(article.title)}</h2>
+            <p class="latest-news-card-excerpt">${escapeHtml(description)}</p>
+            <span class="latest-news-card-readmore">查看完整內容 <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
       </article>`;
     }).join('');
   };

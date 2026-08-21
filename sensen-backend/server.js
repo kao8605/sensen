@@ -633,9 +633,11 @@ async function handleApi(req, res) {
     if (req.method === 'GET' && url.pathname === '/api/news') {
       const now = Date.now();
       const category = String(url.searchParams.get('category') || '').trim();
+      const requestedId = String(url.searchParams.get('id') || '').trim();
       const news = (db.news || [])
         .map(publicNews)
         .filter(article => article.status === 'published' && (!article.publishAt || new Date(article.publishAt).getTime() <= now))
+        .filter(article => !requestedId || article.id === requestedId)
         .filter(article => !category || article.category === category)
         .sort((a, b) => new Date(b.publishAt || b.createdAt || 0) - new Date(a.publishAt || a.createdAt || 0));
       return send(res, 200, { news });
