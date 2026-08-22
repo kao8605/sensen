@@ -336,7 +336,7 @@ export default {
       if (url.pathname === "/api/contact" && request.method === "POST") {
         const body = await parseBody(request);
         const name = String(body.name || "").trim();
-        const email = String(body.email || "").trim().toLowerCase();
+        const email = String(body.email || sessionUser?.email || "").trim().toLowerCase();
         const phone = String(body.phone || "").trim();
         const subject = String(body.subject || "外燴詢價").trim();
         const message = String(body.message || body.requests || "").trim();
@@ -352,7 +352,7 @@ export default {
         const body = await parseBody(request);
         const name = String(body.name || "").trim();
         const phone = String(body.phone || "").trim();
-        const email = String(body.email || "").trim().toLowerCase();
+        const email = String(body.email || sessionUser?.email || "").trim().toLowerCase();
         const date = String(body.date || "").trim();
         const time = String(body.time || "").trim();
         if (!name || !phone || !email || !date || !time) return json(request, { error: "請填寫完整的預約資料。" }, 400);
@@ -363,7 +363,7 @@ export default {
 
       if (url.pathname === "/api/newsletter" && request.method === "POST") {
         const body = await parseBody(request);
-        const email = String(body.email || "").trim().toLowerCase();
+        const email = String(body.email || sessionUser?.email || "").trim().toLowerCase();
         if (!email || !email.includes("@")) return json(request, { error: "請填寫有效的 Email。" }, 400);
         await env.DB.prepare("INSERT INTO engagement_records (record_type, payload_json) VALUES ('subscriber', ?1)")
           .bind(JSON.stringify({ email, status: "active" })).run();
@@ -697,7 +697,7 @@ export default {
 
       if (url.pathname === "/api/register" && request.method === "POST") {
         const body = await parseBody(request);
-        const email = String(body.email || "").trim().toLowerCase();
+        const email = String(body.email || sessionUser?.email || "").trim().toLowerCase();
         const password = String(body.password || "");
         const name = String(body.name || email.split("@")[0] || "Customer").trim();
         const phone = String(body.phone || "").trim();
@@ -830,12 +830,16 @@ export default {
           return json(request, { error: "物流方式無效。" }, 400);
         }
         const fulfillmentDate = String(body.fulfillmentDate || "").trim();
-        const shippingAddress = body.shippingAddress && typeof body.shippingAddress === "object"
+        const requestedAddress = body.shippingAddress && typeof body.shippingAddress === "object"
           ? body.shippingAddress as Record<string, unknown>
           : {};
-        const name = String(shippingAddress.fullName || body.name || "").trim();
-        const email = String(body.email || "").trim().toLowerCase();
-        const phone = String(shippingAddress.phone || body.phone || "").trim();
+        const savedAddress = sessionUser
+          ? await env.DB.prepare("SELECT full_name AS fullName, phone, address, city, zip FROM user_addresses WHERE user_id = ?1 ORDER BY is_default DESC, id ASC LIMIT 1").bind(sessionUser.id).first<Record<string, unknown>>()
+          : null;
+        const shippingAddress = { ...(savedAddress || {}), ...requestedAddress };
+        const name = String(shippingAddress.fullName || sessionUser?.name || body.name || "").trim();
+        const email = String(body.email || sessionUser?.email || "").trim().toLowerCase();
+        const phone = String(shippingAddress.phone || sessionUser?.phone || body.phone || "").trim();
         const address = String(shippingAddress.address || "").trim();
         if (!name || !email || !phone || !fulfillmentDate) {
           return json(request, { error: "請填寫姓名、電子信箱、電話與取貨／配送日期。" }, 400);
