@@ -98,7 +98,7 @@ const derivePasswordHash = async (password: string, salt: string) => {
     ["deriveBits"],
   );
   const bits = await crypto.subtle.deriveBits(
-    { name: "PBKDF2", salt: new TextEncoder().encode(salt), iterations: 120000, hash: "SHA-512" },
+    { name: "PBKDF2", salt: new TextEncoder().encode(salt), iterations: 100000, hash: "SHA-512" },
     key,
     512,
   );
@@ -112,7 +112,11 @@ const createPasswordHash = async (password: string) => {
 
 const verifyPassword = async (password: string, user: UserRow) => {
   if (!user.password_salt || !user.password_hash) return false;
-  return (await derivePasswordHash(password, user.password_salt)) === user.password_hash;
+  try {
+    return (await derivePasswordHash(password, user.password_salt)) === user.password_hash;
+  } catch {
+    return false;
+  }
 };
 
 const getSessionUser = async (env: Env, request: Request) => {
